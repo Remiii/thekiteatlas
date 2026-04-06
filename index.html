@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TheKiteAtlas - Spots de Kitesurf par Mois</title>
+    <title>TheKiteAtlas - Kitesurf Spots Month by Month</title>
     <!--
       Fonts: Playfair Display & DM Sans
       Both are open-source, licensed under the SIL Open Font License 1.1
@@ -565,8 +565,8 @@
       <!-- Hero -->
       <section class="hero">
         <div class="ls">
-          <button class="lb a" data-lang="fr" onclick="switchLang('fr')">FR</button>
-          <button class="lb" data-lang="en" onclick="switchLang('en')">EN</button>
+          <button class="lb a" data-lang="en" onclick="switchLang('en')">EN</button>
+          <button class="lb" data-lang="fr" onclick="switchLang('fr')">FR</button>
         </div>
 
         <svg class="hk" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -663,7 +663,7 @@
       /* ═══════════════════════════════════════════
          State
          ═══════════════════════════════════════════ */
-      let lang = "fr";
+      let lang = "en";
       let activeFilter = "all";
       let spotsData = null; // loaded from JSON
 
@@ -677,7 +677,12 @@
         })
         .then((data) => {
           spotsData = data.months;
-          switchLang("fr");
+          /* Detect browser language: use French if any navigator language starts with "fr" */
+          const browserLang = (navigator.languages || [navigator.language || "en"])
+            .some((l) => l.toLowerCase().startsWith("fr"))
+            ? "fr"
+            : "en";
+          switchLang(browserLang);
         })
         .catch((err) => {
           console.error(err);
@@ -869,6 +874,7 @@
          ═══════════════════════════════════════════ */
       function switchLang(l) {
         lang = l;
+        document.documentElement.lang = l;
         document.querySelectorAll(".lb").forEach((b) => b.classList.toggle("a", b.dataset.lang === l));
         document.getElementById("hSub").textContent = UI[l].sub;
         document.getElementById("hExp").textContent = UI[l].exp;
