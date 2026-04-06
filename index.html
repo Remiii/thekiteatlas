@@ -1,5 +1,884 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheKiteAtlas - Spots de Kitesurf par Mois</title>
+    <!--
+      Fonts: Playfair Display & DM Sans
+      Both are open-source, licensed under the SIL Open Font License 1.1
+      https://fonts.google.com/specimen/Playfair+Display
+      https://fonts.google.com/specimen/DM+Sans
+      You can also self-host them if you prefer.
+    -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --od: #0a1628;
+        --sand: #f0d9a8;
+        --sl: #faecd4;
+        --coral: #ff6b4a;
+        --tq: #2dd4bf;
+        --sky: #7dd3fc;
+        --wi: #a78bfa;
+        --sun: #fb923c;
+        --tp: #f1f5f9;
+        --ts: #94a3b8;
+        --gl: rgba(15, 40, 71, 0.6);
+        --gb: rgba(255, 255, 255, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--od);
+        color: var(--tp);
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 120% 60% at 20% 80%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse 80% 50% at 80% 20%, rgba(125, 211, 252, 0.06) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .G {
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .C {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* ── Hero ── */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .hk {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 2rem;
+        animation: fl 4s ease-in-out infinite;
+      }
+
+      @keyframes fl {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-5deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(5deg);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 8vw, 7rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, var(--sl), var(--tq), var(--sky));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hs {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        font-weight: 300;
+        color: var(--ts);
+        margin-bottom: 3rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      /* ── Language switcher ── */
+
+      .ls {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--gb);
+      }
+
+      .lb {
+        padding: 0.5rem 1rem;
+        background: var(--gl);
+        border: none;
+        color: var(--ts);
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.05em;
+      }
+
+      .lb.a {
+        background: var(--tq);
+        color: var(--od);
+      }
+
+      .lb:hover:not(.a) {
+        color: var(--tq);
+      }
+
+      /* ── Scroll hint ── */
+
+      .sh {
+        position: absolute;
+        bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--ts);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        animation: pu 2s ease-in-out infinite;
+      }
+
+      @keyframes pu {
+        0%,
+        100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .sh svg {
+        width: 20px;
+        animation: bo 2s ease-in-out infinite;
+      }
+
+      @keyframes bo {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(6px);
+        }
+      }
+
+      /* ── Month nav ── */
+
+      .mn {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background: rgba(10, 22, 40, 0.85);
+        border-bottom: 1px solid var(--gb);
+      }
+
+      .mni {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .mni::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mb {
+        flex-shrink: 0;
+        padding: 1rem 1.2rem;
+        background: none;
+        border: none;
+        color: var(--ts);
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .mb:hover {
+        color: var(--tq);
+      }
+
+      .mb.a {
+        color: var(--tq);
+      }
+
+      .mb.a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 2px;
+        background: var(--tq);
+        border-radius: 1px;
+      }
+
+      /* ── Filter bar ── */
+
+      .fb {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.2rem 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .fl {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--ts);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-right: 0.3rem;
+      }
+
+      .ft {
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.73rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 100px;
+        border: 1px solid var(--gb);
+        background: transparent;
+        color: var(--ts);
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .ft:hover,
+      .ft.a {
+        border-color: var(--tq);
+        color: var(--tq);
+        background: rgba(45, 212, 191, 0.08);
+      }
+
+      .ft.a[data-filter="warm"] {
+        border-color: var(--coral);
+        color: var(--coral);
+        background: rgba(255, 107, 74, 0.1);
+      }
+
+      .ft.a[data-filter="cold"] {
+        border-color: var(--sky);
+        color: var(--sky);
+        background: rgba(125, 211, 252, 0.1);
+      }
+
+      /* ── Month sections ── */
+
+      .ms {
+        padding: 4rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .mh {
+        display: flex;
+        align-items: baseline;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .mt {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--sand), var(--coral));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .me {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--tq);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.8rem;
+        border: 1px solid rgba(45, 212, 191, 0.3);
+        border-radius: 100px;
+      }
+
+      .mi {
+        color: var(--ts);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 700px;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+      }
+
+      /* ── Spot grid ── */
+
+      .sg {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        gap: 1.5rem;
+      }
+
+      /* ── Spot card ── */
+
+      .sc {
+        background: var(--gl);
+        border: 1px solid var(--gb);
+        border-radius: 16px;
+        padding: 1.8rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sc::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--tq), var(--coral));
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+
+      .sc:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .sc:hover::before {
+        opacity: 1;
+      }
+
+      .sc.H {
+        display: none;
+      }
+
+      .sr {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--tq);
+        margin-bottom: 0.6rem;
+      }
+
+      .sn {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+        color: var(--sl);
+      }
+
+      .so {
+        font-size: 0.9rem;
+        color: var(--ts);
+        margin-bottom: 1rem;
+      }
+
+      /* ── Tags ── */
+
+      .st {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+      }
+
+      .tg {
+        font-size: 0.7rem;
+        font-weight: 500;
+        padding: 0.25rem 0.6rem;
+        border-radius: 100px;
+        letter-spacing: 0.03em;
+      }
+
+      .tw {
+        background: rgba(167, 139, 250, 0.15);
+        color: var(--wi);
+        border: 1px solid rgba(167, 139, 250, 0.25);
+      }
+
+      .ta {
+        background: rgba(45, 212, 191, 0.12);
+        color: var(--tq);
+        border: 1px solid rgba(45, 212, 191, 0.25);
+      }
+
+      .tl {
+        background: rgba(251, 146, 60, 0.12);
+        color: var(--sun);
+        border: 1px solid rgba(251, 146, 60, 0.25);
+      }
+
+      .tt {
+        background: rgba(125, 211, 252, 0.12);
+        color: var(--sky);
+        border: 1px solid rgba(125, 211, 252, 0.2);
+      }
+
+      /* ── Card details ── */
+
+      .sd {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--ts);
+        font-weight: 300;
+      }
+
+      .sm {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.2rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--gb);
+      }
+
+      .si {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.78rem;
+        color: var(--ts);
+      }
+
+      .si svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.6;
+      }
+
+      .wa {
+        background: rgba(167, 139, 250, 0.12);
+        color: var(--wi);
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.78rem;
+        border: 1px solid rgba(167, 139, 250, 0.2);
+      }
+
+      .wr {
+        display: flex;
+        gap: 2px;
+      }
+
+      .wb {
+        width: 4px;
+        border-radius: 2px;
+        background: rgba(167, 139, 250, 0.2);
+      }
+
+      .wb.a {
+        background: var(--wi);
+      }
+
+      /* ── Footer ── */
+
+      footer {
+        text-align: center;
+        padding: 4rem 1.5rem 2rem;
+        color: var(--ts);
+        font-size: 0.8rem;
+        border-top: 1px solid var(--gb);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* ── Responsive ── */
+
+      @media (max-width: 768px) {
+        .sg {
+          grid-template-columns: 1fr;
+        }
+        .ms {
+          padding: 3rem 1rem;
+        }
+        .sc {
+          padding: 1.4rem;
+        }
+        .ls {
+          top: 1rem;
+          right: 1rem;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
   <body>
-    <h1>Hello world</h1>
+    <div class="G"></div>
+
+    <div class="C">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="ls">
+          <button class="lb a" data-lang="fr" onclick="switchLang('fr')">FR</button>
+          <button class="lb" data-lang="en" onclick="switchLang('en')">EN</button>
+        </div>
+
+        <svg class="hk" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 5 L65 40 L40 55 L15 40 Z" fill="url(#kG)" opacity=".9" />
+          <path d="M40 5 L40 55" stroke="rgba(255,255,255,.3)" stroke-width=".5" />
+          <path d="M15 40 L65 40" stroke="rgba(255,255,255,.3)" stroke-width=".5" />
+          <path d="M40 55 Q42 65 38 75" stroke="var(--sand)" stroke-width="1" fill="none" stroke-dasharray="2 3" />
+          <defs>
+            <linearGradient id="kG" x1="15" y1="5" x2="65" y2="55">
+              <stop offset="0%" stop-color="#ff6b4a" />
+              <stop offset="50%" stop-color="#fb923c" />
+              <stop offset="100%" stop-color="#2dd4bf" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <h1>TheKiteAtlas</h1>
+        <p class="hs" id="hSub"></p>
+
+        <div class="sh">
+          <span id="hExp"></span>
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 14l-5-5h10l-5 5z" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- Month navigation -->
+      <nav class="mn" id="MN">
+        <div class="mni" id="MNI"></div>
+      </nav>
+
+      <!-- Filter bar -->
+      <div class="fb" id="FB"></div>
+
+      <!-- Month sections -->
+      <div id="MS"></div>
+
+      <!-- Footer -->
+      <footer>
+        <p id="FT"></p>
+      </footer>
+    </div>
+
+    <script>
+      /* ═══════════════════════════════════════════
+         UI translations (lightweight, kept inline)
+         ═══════════════════════════════════════════ */
+      const UI = {
+        fr: {
+          sub: "Spots de kitesurf - mois par mois - dans le monde entier",
+          exp: "Explorer",
+          fl: "Filtrer :",
+          fa: "Tous",
+          ff: "Flat water",
+          fw: "Vagues",
+          fb: "Débutant",
+          fe: "Europe",
+          ft: "Tropical",
+          fwm: "Eau chaude (>23°C)",
+          fc: "Eau froide (<20°C)",
+          fo: "thekiteatlas.com · Compilé avec passion pour les riders du monde entier",
+          ai: "Air",
+          wa: "Eau",
+          aw: "Vent moy.",
+          mo: [
+            "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+            "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre",
+          ],
+        },
+        en: {
+          sub: "Kitesurf spots - month by month - worldwide",
+          exp: "Explore",
+          fl: "Filter:",
+          fa: "All",
+          ff: "Flat water",
+          fw: "Waves",
+          fb: "Beginner",
+          fe: "Europe",
+          ft: "Tropical",
+          fwm: "Warm water (>23°C)",
+          fc: "Cold water (<20°C)",
+          fo: "thekiteatlas.com · Compiled with passion for riders worldwide",
+          ai: "Air",
+          wa: "Water",
+          aw: "Avg. wind",
+          mo: [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December",
+          ],
+        },
+      };
+
+      /* ═══════════════════════════════════════════
+         State
+         ═══════════════════════════════════════════ */
+      let lang = "fr";
+      let activeFilter = "all";
+      let spotsData = null; // loaded from JSON
+
+      /* ═══════════════════════════════════════════
+         Load spots.json then boot the app
+         ═══════════════════════════════════════════ */
+      fetch("spots.json")
+        .then((r) => {
+          if (!r.ok) throw new Error("Failed to load spots.json");
+          return r.json();
+        })
+        .then((data) => {
+          spotsData = data.months;
+          switchLang("fr");
+        })
+        .catch((err) => {
+          console.error(err);
+          document.getElementById("MS").innerHTML =
+            '<p style="text-align:center;padding:4rem;color:var(--coral)">Impossible de charger les données (spots.json).</p>';
+        });
+
+      /* ═══════════════════════════════════════════
+         Build month navigation
+         ═══════════════════════════════════════════ */
+      function buildNav() {
+        const container = document.getElementById("MNI");
+        container.innerHTML = spotsData
+          .map(
+            (m, i) =>
+              `<button class="mb${i === 0 ? " a" : ""}" data-month="${m.id}">${UI[lang].mo[i]}</button>`
+          )
+          .join("");
+
+        container.querySelectorAll(".mb").forEach((btn) =>
+          btn.addEventListener("click", () => {
+            const section = document.getElementById(btn.dataset.month);
+            if (section) {
+              const navH = document.getElementById("MN").offsetHeight;
+              window.scrollTo({
+                top: section.getBoundingClientRect().top + window.scrollY - navH - 10,
+                behavior: "smooth",
+              });
+            }
+          })
+        );
+      }
+
+      /* ═══════════════════════════════════════════
+         Build filter bar
+         ═══════════════════════════════════════════ */
+      function buildFilters() {
+        const t = UI[lang];
+        document.getElementById("FB").innerHTML = `
+          <span class="fl">${t.fl}</span>
+          <button class="ft a" data-filter="all">${t.fa}</button>
+          <button class="ft" data-filter="flat">${t.ff}</button>
+          <button class="ft" data-filter="wave">${t.fw}</button>
+          <button class="ft" data-filter="beginner">${t.fb}</button>
+          <button class="ft" data-filter="europe">${t.fe}</button>
+          <button class="ft" data-filter="tropical">${t.ft}</button>
+          <button class="ft" data-filter="warm">${t.fwm}</button>
+          <button class="ft" data-filter="cold">${t.fc}</button>
+        `;
+      }
+
+      /* ═══════════════════════════════════════════
+         Render a single spot card
+         ═══════════════════════════════════════════ */
+      const TAG_CLASSES = ["tw", "ta", "tl", "tt"];
+
+      function renderSpotCard(spot) {
+        const t = UI[lang];
+        const country = spot.country[lang];
+        const region = spot.region[lang];
+        const tags = spot.tags[lang];
+        const desc = spot.description[lang];
+
+        const tagsHtml = tags
+          .map((g, j) => `<span class="tg ${TAG_CLASSES[j] || "tt"}">${g}</span>`)
+          .join("");
+
+        const windBars = [1, 2, 3, 4, 5]
+          .map(
+            (x) =>
+              `<div class="wb${x <= spot.wind_score ? " a" : ""}" style="height:${8 + x * 3}px"></div>`
+          )
+          .join("");
+
+        return `
+          <article class="sc" data-filters='${JSON.stringify(spot.filters)}' data-water="${spot.water_temp}">
+            <div class="sr">${region}</div>
+            <h3 class="sn">${spot.name}</h3>
+            <div class="so">${country}</div>
+            <div class="st">${tagsHtml}</div>
+            <p class="sd">${desc}</p>
+            <div class="sm">
+              <div class="si">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                  <path d="M8 5v3h2"/>
+                </svg>
+                ${t.ai} ${spot.air_temp}°C
+              </div>
+              <div class="si">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 10 Q5 6 8 10 Q11 14 14 10"/>
+                </svg>
+                ${t.wa} ${spot.water_temp}°C
+              </div>
+              <div class="si">
+                <span class="wa">${t.aw} ~${spot.avg_wind_kts} kts</span>
+              </div>
+              <div class="si">
+                <div class="wr">${windBars}</div>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      /* ═══════════════════════════════════════════
+         Build all month sections
+         ═══════════════════════════════════════════ */
+      function buildSections() {
+        const t = UI[lang];
+        const container = document.getElementById("MS");
+
+        container.innerHTML = spotsData
+          .map((month, i) => {
+            const loc = month[lang];
+            const cards = month.spots.map(renderSpotCard).join("");
+
+            return `
+              <section class="ms" id="${month.id}">
+                <div class="mh">
+                  <h2 class="mt">${t.mo[i]}</h2>
+                  <span class="me">${loc.season}</span>
+                </div>
+                <p class="mi">${loc.intro}</p>
+                <div class="sg">${cards}</div>
+              </section>
+            `;
+          })
+          .join("");
+
+        setupScrollObserver();
+      }
+
+      /* ═══════════════════════════════════════════
+         Scroll observer — highlights active month
+         ═══════════════════════════════════════════ */
+      function setupScrollObserver() {
+        const navButtons = document.querySelectorAll(".mb");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navButtons.forEach((b) => b.classList.remove("a"));
+                const btn = document.querySelector(`.mb[data-month="${entry.target.id}"]`);
+                if (btn) {
+                  btn.classList.add("a");
+                  btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                }
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "-80px 0px -60% 0px" }
+        );
+
+        document.querySelectorAll("section.ms").forEach((s) => observer.observe(s));
+      }
+
+      /* ═══════════════════════════════════════════
+         Apply active filter to all cards
+         ═══════════════════════════════════════════ */
+      function applyFilter() {
+        document.querySelectorAll(".sc").forEach((card) => {
+          const filters = JSON.parse(card.dataset.filters || "[]");
+          const waterTemp = parseInt(card.dataset.water);
+          let show = true;
+
+          if (activeFilter === "warm") show = waterTemp >= 23;
+          else if (activeFilter === "cold") show = waterTemp < 20;
+          else if (activeFilter !== "all") show = filters.includes(activeFilter);
+
+          card.classList.toggle("H", !show);
+        });
+      }
+
+      /* Filter bar click delegation */
+      document.getElementById("FB").addEventListener("click", (e) => {
+        const btn = e.target.closest(".ft");
+        if (!btn) return;
+        document.querySelectorAll(".ft").forEach((x) => x.classList.remove("a"));
+        btn.classList.add("a");
+        activeFilter = btn.dataset.filter;
+        applyFilter();
+      });
+
+      /* ═══════════════════════════════════════════
+         Language switch
+         ═══════════════════════════════════════════ */
+      function switchLang(l) {
+        lang = l;
+        document.querySelectorAll(".lb").forEach((b) => b.classList.toggle("a", b.dataset.lang === l));
+        document.getElementById("hSub").textContent = UI[l].sub;
+        document.getElementById("hExp").textContent = UI[l].exp;
+        document.getElementById("FT").textContent = UI[l].fo;
+        buildNav();
+        buildFilters();
+        buildSections();
+        applyFilter();
+      }
+    </script>
   </body>
 </html>
+
