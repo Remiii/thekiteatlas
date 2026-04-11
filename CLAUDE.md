@@ -7,10 +7,38 @@ TheKiteAtlas aims to become a large-scale kitesurf destination guide (200+ spots
 ## Current state
 
 - 46 unique kite spots, 74 monthly entries (some spots appear in multiple months)
-- Single-page app: `index.html` (HTML/CSS/JS embedded) + `spots.json`
-- Bilingual: French and English
-- Filterable by spot type (flat, wave, beginner, europe, tropical, warm, cold)
+- Home page: `index.html` — spot list with month navigation and filters
+- Shared stylesheet: `style.css` — design system (variables, tags, footer, animations)
+- First spot page: `spots/dakhla.html` — full bilingual guide (wind, spots, accommodations, activities, practical, budget)
+- Bilingual: French and English, auto-detected from browser language
 - Hosted on GitHub Pages with a custom domain (thekiteatlas.com)
+- Deployment is automatic on push to `main`
+
+## File structure
+
+```
+index.html          ← home: spot list, month nav, filters
+style.css           ← shared CSS (variables, tags, base layout)
+spots.json          ← spot data (months > spots structure — to be migrated)
+spots/
+  dakhla.html       ← spot page: Dakhla
+CNAME
+CLAUDE.md
+README.md
+```
+
+## CSS architecture
+
+- `style.css` contains all shared styles: CSS variables, reset, body, grain overlay, language switcher, tags, wind rating bars, footer base, `fadeUp` animation
+- Each page has a `<style>` block with only its specific styles
+- New spot pages must link `../style.css` and keep only page-specific CSS inline
+- The `.ls` language switcher is positioned `absolute` on the home page (override in `index.html`), and inside `.topbar` on spot pages (no override needed)
+
+## Adding a spot page
+
+1. Create `spots/<slug>.html`
+2. Link `<link rel="stylesheet" href="../style.css" />`
+3. Register the slug in `index.html` → `renderSpotCard()` → `spotPage` object
 
 ## Target data model
 

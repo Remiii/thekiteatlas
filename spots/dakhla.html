@@ -5,51 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dakhla - Kite Spot Guide | TheKiteAtlas</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    :root {
-      --od: #0a1628;
-      --sand: #f0d9a8;
-      --sl: #faecd4;
-      --coral: #ff6b4a;
-      --tq: #2dd4bf;
-      --sky: #7dd3fc;
-      --wi: #a78bfa;
-      --sun: #fb923c;
-      --tp: #f1f5f9;
-      --ts: #94a3b8;
-      --gl: rgba(15, 40, 71, 0.6);
-      --gb: rgba(255, 255, 255, 0.08);
-      --rd: #ef4444;
-      --gn: #22c55e;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      background: var(--od);
-      color: var(--tp);
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: "";
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 120% 60% at 20% 80%, rgba(45,212,191,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 50% at 80% 20%, rgba(125,211,252,0.06) 0%, transparent 50%);
-      pointer-events: none; z-index: 0;
-    }
-
-    .G {
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 1;
-    }
-
-    .C { position: relative; z-index: 2; }
 
     /* ── Top bar ── */
     .topbar {
@@ -72,22 +29,6 @@
     }
     .back-link:hover { color: var(--tq); }
     .back-link svg { width: 14px; height: 14px; }
-
-    /* ── Language switcher ── */
-    .ls {
-      display: flex; border-radius: 8px; overflow: hidden;
-      border: 1px solid var(--gb);
-    }
-    .lb {
-      padding: 0.5rem 1rem;
-      background: var(--gl); border: none;
-      color: var(--ts); font-family: "DM Sans", sans-serif;
-      font-size: 0.8rem; font-weight: 600;
-      cursor: pointer; transition: all 0.3s;
-      letter-spacing: 0.05em;
-    }
-    .lb.a { background: var(--tq); color: var(--od); }
-    .lb:hover:not(.a) { color: var(--tq); }
 
     /* ── Hero ── */
     .hero {
@@ -177,7 +118,6 @@
     .content { max-width: 780px; margin: 0 auto; padding: 0 16px; }
     .tab-panel { display: none; padding: 28px 0 40px; }
     .tab-panel.active { display: block; animation: fadeUp 0.35s ease; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
     /* ── Section titles ── */
     .section-title {
@@ -207,24 +147,6 @@
     }
     .card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.12); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
     .card:hover::before { opacity: 1; }
-
-    /* ── Tags ── */
-    .tag {
-      display: inline-block; font-size: 0.68rem; font-weight: 500;
-      padding: 3px 10px; border-radius: 100px; letter-spacing: 0.03em;
-    }
-    .tag-tq  { background: rgba(45,212,191,0.12);  color: var(--tq);  border: 1px solid rgba(45,212,191,0.25); }
-    .tag-coral { background: rgba(255,107,74,0.12); color: var(--coral); border: 1px solid rgba(255,107,74,0.25); }
-    .tag-wi  { background: rgba(167,139,250,0.15); color: var(--wi);  border: 1px solid rgba(167,139,250,0.25); }
-    .tag-sun { background: rgba(251,146,60,0.12);  color: var(--sun); border: 1px solid rgba(251,146,60,0.25); }
-    .tag-sky { background: rgba(125,211,252,0.12); color: var(--sky); border: 1px solid rgba(125,211,252,0.2); }
-    .tag-gn  { background: rgba(34,197,94,0.12);   color: var(--gn);  border: 1px solid rgba(34,197,94,0.25); }
-    .tag-rd  { background: rgba(239,68,68,0.12);   color: var(--rd);  border: 1px solid rgba(239,68,68,0.25); }
-
-    /* ── Wind bars ── */
-    .wr { display: flex; gap: 2px; align-items: flex-end; }
-    .wb { width: 5px; border-radius: 2px; background: rgba(167,139,250,0.2); }
-    .wb.on { background: var(--wi); }
 
     /* ── Wind chart ── */
     .wind-chart { display: flex; gap: 4px; align-items: flex-end; overflow-x: auto; padding-bottom: 4px; }
@@ -291,9 +213,8 @@
     .profile-btn .icon { font-size: 1.5rem; }
     .profile-btn .name { font-size: 0.72rem; font-weight: 700; margin-top: 4px; }
 
-    /* ── Footer ── */
-    footer { text-align: center; padding: 3rem 1.5rem 2rem; color: var(--ts); font-size: 0.8rem; border-top: 1px solid var(--gb); max-width: 780px; margin: 0 auto; }
-    footer .logo { font-family: "Playfair Display", serif; font-size: 1.1rem; font-weight: 900; margin-bottom: 4px; background: linear-gradient(135deg, var(--sl), var(--tq)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    /* ── Footer (spot page specifics) ── */
+    footer { padding: 3rem 1.5rem 2rem; max-width: 780px; }
 
     /* ── Responsive ── */
     @media (max-width: 640px) {

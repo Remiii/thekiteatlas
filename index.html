@@ -23,59 +23,8 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --od: #0a1628;
-        --sand: #f0d9a8;
-        --sl: #faecd4;
-        --coral: #ff6b4a;
-        --tq: #2dd4bf;
-        --sky: #7dd3fc;
-        --wi: #a78bfa;
-        --sun: #fb923c;
-        --tp: #f1f5f9;
-        --ts: #94a3b8;
-        --gl: rgba(15, 40, 71, 0.6);
-        --gb: rgba(255, 255, 255, 0.08);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--od);
-        color: var(--tp);
-        overflow-x: hidden;
-        min-height: 100vh;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background:
-          radial-gradient(ellipse 120% 60% at 20% 80%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
-          radial-gradient(ellipse 80% 50% at 80% 20%, rgba(125, 211, 252, 0.06) 0%, transparent 50%);
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .G {
-        position: fixed;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .C {
-        position: relative;
-        z-index: 2;
-      }
 
       /* ── Hero ── */
 
@@ -129,38 +78,11 @@
         text-transform: uppercase;
       }
 
-      /* ── Language switcher ── */
-
+      /* ── Language switcher (position override for home) ── */
       .ls {
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
-        display: flex;
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px solid var(--gb);
-      }
-
-      .lb {
-        padding: 0.5rem 1rem;
-        background: var(--gl);
-        border: none;
-        color: var(--ts);
-        font-family: "DM Sans", sans-serif;
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s;
-        letter-spacing: 0.05em;
-      }
-
-      .lb.a {
-        background: var(--tq);
-        color: var(--od);
-      }
-
-      .lb:hover:not(.a) {
-        color: var(--tq);
       }
 
       /* ── Scroll hint ── */
@@ -432,7 +354,7 @@
         margin-bottom: 1rem;
       }
 
-      /* ── Tags ── */
+      /* ── Spot card tag rows ── */
 
       .st {
         display: flex;
@@ -515,31 +437,10 @@
         border: 1px solid rgba(167, 139, 250, 0.2);
       }
 
-      .wr {
-        display: flex;
-        gap: 2px;
-      }
-
-      .wb {
-        width: 4px;
-        border-radius: 2px;
-        background: rgba(167, 139, 250, 0.2);
-      }
-
-      .wb.a {
-        background: var(--wi);
-      }
-
-      /* ── Footer ── */
-
+      /* ── Footer (home specifics) ── */
       footer {
-        text-align: center;
         padding: 4rem 1.5rem 2rem;
-        color: var(--ts);
-        font-size: 0.8rem;
-        border-top: 1px solid var(--gb);
         max-width: 1200px;
-        margin: 0 auto;
       }
 
       /* ── Responsive ── */
@@ -615,7 +516,7 @@
 
       <!-- Footer -->
       <footer>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;margin-bottom:6px;background:linear-gradient(135deg,var(--sl),var(--tq));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">TheKiteAtlas</div>
+        <div class="logo">TheKiteAtlas</div>
         <p id="FT"></p>
         <p style="margin-top:4px;font-size:0.75rem;color:var(--ts);opacity:0.6" id="FTW"></p>
       </footer>

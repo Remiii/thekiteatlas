@@ -8,20 +8,27 @@ Interactive guide to the best kitesurf spots worldwide, month by month.
 
 TheKiteAtlas lists 46 kite spots (74 monthly entries) across 12 months, with wind conditions, air/water temperatures, required level and water type for each spot. The site is bilingual (French/English) and filterable by spot type (flat, waves, beginner, tropical, warm/cold water, Europe…).
 
+Spot pages provide detailed guides: wind probability by month, sub-spots, accommodations, activities, practical info and budget estimator.
+
 ## Stack
 
 - Vanilla HTML / CSS / JS — zero frameworks, zero dependencies
-- Spot data externalized in `spots.json`
+- Shared stylesheet in `style.css`, page-specific styles inline per page
+- Spot data in `spots.json`
 - Fonts: [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) + [DM Sans](https://fonts.google.com/specimen/DM+Sans) (SIL Open Font License)
 - Hosted on GitHub Pages
 
 ## Files
 
 ```
-index.html    ← single page, CSS and JS embedded
-spots.json    ← data for all 46 spots × 12 months (74 monthly entries)
-CNAME         ← GitHub Pages custom domain
-README.md     ← this file
+index.html        ← home page (spot list, month/filter navigation)
+style.css         ← shared design system (variables, tags, layout base)
+spots.json        ← data for all 46 spots × 12 months (74 monthly entries)
+spots/
+  dakhla.html     ← full spot guide: Dakhla, Morocco
+CNAME             ← GitHub Pages custom domain
+README.md         ← this file
+CLAUDE.md         ← project context for AI-assisted development
 ```
 
 ## Local development
@@ -65,6 +72,14 @@ Edit `spots.json`. Each spot follows this structure:
 ```
 
 Available filters: `flat`, `wave`, `beginner`, `europe`, `tropical`, `warm` (water ≥ 23°C), `cold` (water < 20°C).
+
+## Adding a spot page
+
+1. Create `spots/<slug>.html` — link `../style.css`, add page-specific CSS inline
+2. Register the slug in `index.html` → `renderSpotCard()` → `spotPage` object:
+   ```js
+   const spotPage = { "Dakhla": "spots/dakhla.html", "New Spot": "spots/new-spot.html" }[spot.name];
+   ```
 
 ## Contributing
 
