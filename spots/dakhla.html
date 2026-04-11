@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dakhla - Kite Spot Guide | TheKiteAtlas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --od: #0a1628;
+      --sand: #f0d9a8;
+      --sl: #faecd4;
+      --coral: #ff6b4a;
+      --tq: #2dd4bf;
+      --sky: #7dd3fc;
+      --wi: #a78bfa;
+      --sun: #fb923c;
+      --tp: #f1f5f9;
+      --ts: #94a3b8;
+      --gl: rgba(15, 40, 71, 0.6);
+      --gb: rgba(255, 255, 255, 0.08);
+      --rd: #ef4444;
+      --gn: #22c55e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--od);
+      color: var(--tp);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 120% 60% at 20% 80%, rgba(45,212,191,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 80% 20%, rgba(125,211,252,0.06) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .G {
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1;
+    }
+
+    .C { position: relative; z-index: 2; }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      z-index: 10;
+    }
+
+    .back-link {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--ts);
+      text-decoration: none; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      background: var(--gl); border: 1px solid var(--gb);
+      backdrop-filter: blur(8px);
+      transition: color 0.3s;
+    }
+    .back-link:hover { color: var(--tq); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    /* ── Language switcher ── */
+    .ls {
+      display: flex; border-radius: 8px; overflow: hidden;
+      border: 1px solid var(--gb);
+    }
+    .lb {
+      padding: 0.5rem 1rem;
+      background: var(--gl); border: none;
+      color: var(--ts); font-family: "DM Sans", sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      cursor: pointer; transition: all 0.3s;
+      letter-spacing: 0.05em;
+    }
+    .lb.a { background: var(--tq); color: var(--od); }
+    .lb:hover:not(.a) { color: var(--tq); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 20px 48px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 20%, rgba(255,107,74,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 30% 80%, rgba(45,212,191,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 5px 16px; border-radius: 100px;
+      background: var(--gb); backdrop-filter: blur(8px);
+      font-size: 0.7rem; font-weight: 600; color: var(--ts);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 20px; position: relative;
+    }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      font-weight: 900; line-height: 1;
+      letter-spacing: -0.03em; margin-bottom: 6px;
+      background: linear-gradient(135deg, var(--sl), var(--tq), var(--sky));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; position: relative;
+    }
+    .hero-sub {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-weight: 300; color: var(--ts);
+      letter-spacing: 0.02em; max-width: 520px;
+      margin: 0 auto 28px; line-height: 1.6;
+    }
+
+    /* ── Scores bar ── */
+    .scores {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+      padding: 16px 20px; max-width: 680px; margin: 0 auto;
+      background: var(--gl); backdrop-filter: blur(12px);
+      border-radius: 14px; border: 1px solid var(--gb);
+    }
+    .score-item { text-align: center; flex: 1 1 62px; }
+    .score-label {
+      font-size: 0.68rem; font-weight: 600; color: var(--ts);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
+    }
+    .score-dots { display: flex; gap: 3px; justify-content: center; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.1); }
+    .dot.on { background: var(--sand); }
+
+    /* ── Tabs ── */
+    .tabs {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      background: rgba(10,22,40,0.88);
+      border-bottom: 1px solid var(--gb);
+    }
+    .tabs-inner {
+      display: flex; overflow-x: auto; scrollbar-width: none;
+      max-width: 780px; margin: 0 auto;
+    }
+    .tabs-inner::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex-shrink: 0; padding: 14px 16px;
+      background: none; border: none;
+      color: var(--ts); font-family: "DM Sans", sans-serif;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.3s;
+      position: relative; white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--tq); }
+    .tab-btn.a { color: var(--tq); }
+    .tab-btn.a::after {
+      content: ""; position: absolute; bottom: 0;
+      left: 50%; transform: translateX(-50%);
+      width: 60%; height: 2px;
+      background: var(--tq); border-radius: 1px;
+    }
+
+    /* ── Content ── */
+    .content { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+    .tab-panel { display: none; padding: 28px 0 40px; }
+    .tab-panel.active { display: block; animation: fadeUp 0.35s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 900; margin-bottom: 6px;
+      background: linear-gradient(135deg, var(--sand), var(--coral));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-sub {
+      font-size: 0.88rem; color: var(--ts); font-weight: 300;
+      line-height: 1.6; margin-bottom: 20px; max-width: 600px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--gl); border: 1px solid var(--gb);
+      border-radius: 16px; padding: 22px;
+      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+      position: relative; overflow: hidden; margin-bottom: 12px;
+    }
+    .card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: linear-gradient(90deg, var(--tq), var(--coral));
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.12); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .card:hover::before { opacity: 1; }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block; font-size: 0.68rem; font-weight: 500;
+      padding: 3px 10px; border-radius: 100px; letter-spacing: 0.03em;
+    }
+    .tag-tq  { background: rgba(45,212,191,0.12);  color: var(--tq);  border: 1px solid rgba(45,212,191,0.25); }
+    .tag-coral { background: rgba(255,107,74,0.12); color: var(--coral); border: 1px solid rgba(255,107,74,0.25); }
+    .tag-wi  { background: rgba(167,139,250,0.15); color: var(--wi);  border: 1px solid rgba(167,139,250,0.25); }
+    .tag-sun { background: rgba(251,146,60,0.12);  color: var(--sun); border: 1px solid rgba(251,146,60,0.25); }
+    .tag-sky { background: rgba(125,211,252,0.12); color: var(--sky); border: 1px solid rgba(125,211,252,0.2); }
+    .tag-gn  { background: rgba(34,197,94,0.12);   color: var(--gn);  border: 1px solid rgba(34,197,94,0.25); }
+    .tag-rd  { background: rgba(239,68,68,0.12);   color: var(--rd);  border: 1px solid rgba(239,68,68,0.25); }
+
+    /* ── Wind bars ── */
+    .wr { display: flex; gap: 2px; align-items: flex-end; }
+    .wb { width: 5px; border-radius: 2px; background: rgba(167,139,250,0.2); }
+    .wb.on { background: var(--wi); }
+
+    /* ── Wind chart ── */
+    .wind-chart { display: flex; gap: 4px; align-items: flex-end; overflow-x: auto; padding-bottom: 4px; }
+    .wind-bar-col { display: flex; flex-direction: column; align-items: center; cursor: pointer; flex: 1; min-width: 44px; transition: all 0.2s; }
+    .wind-bar-col .pct { font-size: 0.65rem; font-weight: 600; margin-bottom: 3px; flex-shrink: 0; }
+    .wind-bar-zone { height: 110px; display: flex; align-items: flex-end; justify-content: center; }
+    .wind-bar-col .bar { border-radius: 5px 5px 2px 2px; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); width: 30px; }
+    .wind-bar-col.sel .bar { width: 38px; box-shadow: 0 4px 16px rgba(245,158,11,0.35); }
+    .wind-bar-col .mo-label { font-size: 0.7rem; font-weight: 500; margin-top: 5px; flex-shrink: 0; }
+
+    /* ── Stat grid month ── */
+    .stat-grid-month { grid-template-columns: repeat(5, 1fr); }
+    @media (max-width: 600px) { .stat-grid-month { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Accordion ── */
+    .acc-header {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; gap: 10px; width: 100%;
+    }
+    .acc-arrow { font-size: 14px; color: var(--ts); transition: transform 0.3s; }
+    .acc-body { display: none; padding-top: 14px; border-top: 1px solid var(--gb); margin-top: 14px; }
+    .acc-body.open { display: block; animation: fadeUp 0.25s ease; }
+    .acc-arrow.open { transform: rotate(180deg); }
+
+    /* ── Detail grid ── */
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+    .detail-item { padding: 10px 12px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid var(--gb); }
+    .detail-label { font-size: 0.62rem; font-weight: 600; color: var(--ts); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+    .detail-value { font-size: 0.82rem; font-weight: 500; color: var(--tp); line-height: 1.5; }
+
+    /* ── Stat grid ── */
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+    .stat-box { padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--gb); }
+    .stat-label { font-size: 0.6rem; font-weight: 600; color: var(--ts); text-transform: uppercase; letter-spacing: 0.08em; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--tp); margin-top: 4px; }
+    .stat-sub { font-size: 0.75rem; color: var(--ts); margin-top: 2px; }
+
+    /* ── Tip / Warning / Info boxes ── */
+    .tip { padding: 14px 16px; border-radius: 12px; margin-top: 10px; background: rgba(251,146,60,0.06); border: 1px solid rgba(251,146,60,0.2); border-left: 3px solid var(--sun); }
+    .tip-title { font-size: 0.75rem; font-weight: 700; color: var(--sun); margin-bottom: 4px; }
+    .tip-text { font-size: 0.8rem; color: var(--ts); line-height: 1.6; }
+
+    .warning { padding: 14px 16px; border-radius: 12px; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-left: 3px solid var(--rd); }
+    .warning-title { font-size: 0.75rem; font-weight: 700; color: var(--rd); margin-bottom: 4px; }
+    .warning-text { font-size: 0.8rem; color: var(--ts); line-height: 1.6; }
+
+    .info { padding: 14px 16px; border-radius: 12px; background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.2); border-left: 3px solid var(--tq); }
+    .info-title { font-size: 0.75rem; font-weight: 700; color: var(--tq); margin-bottom: 4px; }
+    .info-text { font-size: 0.8rem; color: var(--ts); line-height: 1.6; }
+
+    /* ── Budget bar ── */
+    .budget-bar { display: flex; height: 10px; border-radius: 6px; overflow: hidden; margin: 14px 0; }
+    .budget-seg { transition: flex 0.3s ease; }
+
+    /* ── Profile selector ── */
+    .profile-grid { display: flex; gap: 8px; margin-bottom: 18px; }
+    .profile-btn {
+      flex: 1; padding: 12px 8px; border-radius: 12px;
+      border: 1px solid var(--gb); background: var(--gl);
+      cursor: pointer; font-family: "DM Sans", sans-serif;
+      text-align: center; transition: all 0.2s; color: var(--tp);
+    }
+    .profile-btn.sel { border-color: var(--sand); background: rgba(240,217,168,0.08); }
+    .profile-btn .icon { font-size: 1.5rem; }
+    .profile-btn .name { font-size: 0.72rem; font-weight: 700; margin-top: 4px; }
+
+    /* ── Footer ── */
+    footer { text-align: center; padding: 3rem 1.5rem 2rem; color: var(--ts); font-size: 0.8rem; border-top: 1px solid var(--gb); max-width: 780px; margin: 0 auto; }
+    footer .logo { font-family: "Playfair Display", serif; font-size: 1.1rem; font-weight: 900; margin-bottom: 4px; background: linear-gradient(135deg, var(--sl), var(--tq)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .detail-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 80px 16px 36px; }
+      .card { padding: 16px; }
+      .profile-grid { flex-wrap: wrap; }
+      .profile-btn { flex: 1 1 45%; }
+      .topbar { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="G"></div>
+<div class="C">
+
+  <!-- ═══ TOP BAR ═══ -->
+  <div class="topbar">
+    <a class="back-link" href="../index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg>
+      <span id="backLabel">TheKiteAtlas</span>
+    </a>
+    <div class="ls">
+      <button class="lb" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lb" data-lang="fr" onclick="switchLang('fr')">FR</button>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-badge" id="heroBadge"></div>
+    <h1>Dakhla</h1>
+    <p class="hero-sub" id="heroSub"></p>
+    <div class="scores" id="scores"></div>
+  </section>
+
+  <!-- ═══ TABS ═══ -->
+  <nav class="tabs">
+    <div class="tabs-inner" id="tabsBar"></div>
+  </nav>
+
+  <!-- ═══ CONTENT ═══ -->
+  <div class="content">
+    <div id="panels"></div>
+  </div>
+
+  <footer>
+    <div class="logo">TheKiteAtlas</div>
+    <p id="footerSub"></p>
+    <p style="margin-top:4px;font-size:0.75rem;opacity:0.6" id="footerWarn"></p>
+  </footer>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   UI STRINGS
+   ═══════════════════════════════════════════════════════════════ */
+const UI = {
+  fr: {
+    back: "TheKiteAtlas",
+    badge: "🇲🇦 Maroc · Sahara · 23.7°N 15.9°W",
+    heroSub: "45 km de lagune · 300+ jours de vent · Le terrain de jeu ultime entre Sahara et Atlantique",
+    footerSub: "Fait avec ❤️ pour les riders du monde entier",
+    footerWarn: "Contenu compilé bénévolement · Les informations peuvent être inexactes ou périmées · Vérifiez toujours les conditions locales avant de naviguer",
+    scores: ["Vent","Flat","Vagues","Débutant","Freestyle","Wingfoil","Infra","Budget"],
+    tabs: ["Vue d'ensemble","Spots","Hébergements","Activités","Pratique","Budget"],
+
+    /* Overview */
+    windProb: "Probabilité de vent",
+    windProbSub: "Cliquez sur un mois pour voir le détail",
+    flatLabel: "Flat water", wavesLabel: "Vagues", crowdLabel: "Affluence",
+    whenTitle: "Quand partir ?",
+    whenPeriods: [
+      {p:"Juin – Août",  tag:"PEAK",       cls:"tag-sun", desc:"Vent fort (25-35 kts), 90%+ jours ventés. Lagune agitée, freestyle heaven. Très fréquenté."},
+      {p:"Avr-Mai / Sep-Oct",tag:"SWEET SPOT",cls:"tag-gn",  desc:"Meilleur compromis : vent fiable, moins de monde. Vagues en automne. Recommandé premier trip."},
+      {p:"Nov – Mars",   tag:"OFF-PEAK",   cls:"tag-sky", desc:"Vent léger (12-22 kts), gros kites. Tarifs bas, peu de monde. Vagues côté océan."},
+    ],
+    statsLabels: ["Direction","Créneau kite","Climat","Aéroport","Marée","Fuseau"],
+    statsValues: [
+      {v:"NNE (alizés)",  s:"Side-shore lagune"},
+      {v:"13h → sunset",  s:"Thermique l'après-midi"},
+      {v:"Aride chaud",   s:"22-29°C · Nuits fraîches"},
+      {v:"VIL (Dakhla)",  s:"Via Casablanca 1h30"},
+      {v:"Semi-diurne",   s:"~1.5m amplitude"},
+      {v:"GMT+1",         s:"Toute l'année"},
+    ],
+    statsIcons: ["🧭","⏰","🌡️","✈️","🌊","🕐"],
+    downTitle: "Downwinders",
+    downSub: "Les parcours mythiques de Dakhla.",
+
+    /* Month detail */
+    monthDetailLabels: ["Vent moyen","Températures","Ailes recommandées","Direction","Soleil"],
+    monthDetailSubs: [m=>`Range ${m.min}-${m.max} kts`, m=>`Eau ${m.water}°C`, m=>`Combi ${m.wet}`, ()=>"Thermique dès ~13h", ()=>"Créneau kite : 14h-sunset"],
+
+    /* Spots tab */
+    spotsTitle: "Les spots",
+    spotsSub: "6 spots principaux, du flat ultra-lisse aux vagues de l'Atlantique.",
+    tidesInfo: "L'impact des marées",
+    tidesText: "Marée basse : Speed Spot = miroir, lagune peu profonde par endroits. Marée haute : plus d'espace mais chop amplifié. Pleines lunes = rafales et courants intensifiés.",
+    detailLabels: ["💧 Eau","📏 Profondeur","🏜️ Fond","🌊 Meilleure marée","⚠️ Dangers"],
+    proTip: "💡 Pro tip",
+
+    /* Camps tab */
+    campsTitle: "Hébergements",
+    campsSub: "De 40€/nuit à 350€ en resort de luxe, tous en pension complète.",
+    campsInfoTitle: "💡 Comment choisir ?",
+    campsInfoText: "<strong>Solo :</strong> Spirit pour l'ambiance. <strong>Couple :</strong> Lagon Energy ou Le Cercle. <strong>Famille :</strong> Dakhla Club. <strong>Budget :</strong> Auberge des Nomades (280€/sem). <strong>Waves :</strong> Westpoint. <strong>Luxe :</strong> Tour d'Eole.",
+    perNight: "/nuit · PC",
+
+    /* Activities tab */
+    activitiesTitle: "Activités",
+    activitiesSub: "Wingfoil, surf, excursions désert, bivouac sahraoui... de quoi remplir les jours sans vent.",
+
+    /* Practical tab */
+    flightTitle: "Y aller",
+    gearTitle: "Quoi emmener",
+    safetyTitle: "Sécurité",
+    safetyBoxTitle: "⚠️ Règles essentielles",
+    safetyText: "<strong>Speed Spot :</strong> Vent offshore – JAMAIS seul. Rescue boat obligatoire.<br><strong>Dune Blanche :</strong> Aucune sécurité. Partez en groupe.<br><strong>Marées :</strong> Consultez les horaires. L'assèchement bloque.<br><strong>Camps :</strong> Vérifiez le rescue boat avant de réserver.<br><strong>Nuits :</strong> Le désert refroidit vite. Vêtements chauds le soir.",
+    knowTitle: "Bon à savoir",
+    knowText: "🍽️ <strong style='color:var(--tp)'>Cuisine :</strong> PC dans tous les camps. Marocain/international. Poisson excellent.<br>🍺 <strong style='color:var(--tp)'>Alcool :</strong> Interdit d'en ramener (douane). Dispo dans certains camps.<br>🌙 <strong style='color:var(--tp)'>Nightlife :</strong> Inexistant. Eat-kite-sleep-repeat. Feux de camp.<br>🔧 <strong style='color:var(--tp)'>Réparations :</strong> Ateliers dans camps principaux. Pièces limitées.<br>📶 <strong style='color:var(--tp)'>WiFi :</strong> Souvent lent. SIM locale 4G = meilleure option.<br>🏥 <strong style='color:var(--tp)'>Santé :</strong> Centre médical à Dakhla ville (25 min).<br>🐕 <strong style='color:var(--tp)'>Faune :</strong> Flamants roses, dauphins, crabes violonistes.",
+    tripTipTitle: "💡 Astuce",
+    tripTipText: "Vols souvent en pleine nuit. Prenez un hôtel en ville (~30€) pour la 1ère nuit. Le camp viendra vous chercher le lendemain.",
+
+    /* Budget tab */
+    budgetTitle: "Estimateur de budget",
+    budgetSub: "Budget estimé pour 7 nuits en pension complète (vol A/R Paris inclus).",
+    budgetTotalLabel: "Budget total estimé – 7 nuits",
+    budgetPerDay: total => `soit ~${Math.round(total/7)}€/jour`,
+    budgetItems: ["Vol A/R", n=>`Héberg. PC (${n}n)`, "Location matos", "Extras & excursions"],
+    budgetTipTitle: "💡 Ce profil",
+    budgetAdviceTitle: "💡 Astuces budget",
+    budgetAdviceText: "<strong>Royal Air Maroc :</strong> Bagages kite gratuits = économie ~90€ vs Transavia<br><strong>Basse saison :</strong> Tarifs camps -20 à -40%<br><strong>Matos perso :</strong> Économisez ~35€/jour de location<br><strong>En ville :</strong> Restaurants ~5-10€/repas vs camps",
+  },
+
+  en: {
+    back: "TheKiteAtlas",
+    badge: "🇲🇦 Morocco · Sahara · 23.7°N 15.9°W",
+    heroSub: "45 km of lagoon · 300+ wind days · The ultimate playground between the Sahara and the Atlantic",
+    footerSub: "Made with ❤️ for riders worldwide",
+    footerWarn: "Voluntarily compiled content · Information may be inaccurate or outdated · Always check local conditions before riding",
+    scores: ["Wind","Flat","Waves","Beginner","Freestyle","Wingfoil","Infra","Budget"],
+    tabs: ["Overview","Spots","Accommodations","Activities","Practical","Budget"],
+
+    /* Overview */
+    windProb: "Wind probability",
+    windProbSub: "Click a month to see details",
+    flatLabel: "Flat water", wavesLabel: "Waves", crowdLabel: "Crowd",
+    whenTitle: "When to go?",
+    whenPeriods: [
+      {p:"June – August",    tag:"PEAK",       cls:"tag-sun", desc:"Strong wind (25-35 kts), 90%+ windy days. Choppy lagoon, freestyle heaven. Very busy."},
+      {p:"Apr-May / Sep-Oct",tag:"SWEET SPOT", cls:"tag-gn",  desc:"Best compromise: reliable wind, fewer crowds. Waves in autumn. Recommended for a first trip."},
+      {p:"Nov – March",      tag:"OFF-PEAK",   cls:"tag-sky", desc:"Light wind (12-22 kts), bigger kites. Low prices, few crowds. Waves on the ocean side."},
+    ],
+    statsLabels: ["Direction","Kite window","Climate","Airport","Tides","Timezone"],
+    statsValues: [
+      {v:"NNE (trade winds)", s:"Side-shore lagoon"},
+      {v:"1pm → sunset",      s:"Afternoon thermal"},
+      {v:"Hot arid",          s:"22-29°C · Cool nights"},
+      {v:"VIL (Dakhla)",      s:"Via Casablanca 1h30"},
+      {v:"Semi-diurnal",      s:"~1.5m amplitude"},
+      {v:"GMT+1",             s:"Year-round"},
+    ],
+    statsIcons: ["🧭","⏰","🌡️","✈️","🌊","🕐"],
+    downTitle: "Downwinders",
+    downSub: "The legendary routes of Dakhla.",
+
+    /* Month detail */
+    monthDetailLabels: ["Avg. wind","Temperatures","Recommended kites","Direction","Daylight"],
+    monthDetailSubs: [m=>`Range ${m.min}-${m.max} kts`, m=>`Water ${m.water}°C`, m=>`Wetsuit ${m.wet}`, ()=>"Thermal from ~1pm", ()=>"Kite window: 2pm-sunset"],
+
+    /* Spots tab */
+    spotsTitle: "The spots",
+    spotsSub: "6 main spots, from ultra-smooth flat water to Atlantic waves.",
+    tidesInfo: "Tidal impact",
+    tidesText: "Low tide: Speed Spot is a mirror, lagoon shallow in places. High tide: more space but amplified chop. Full moons = intensified gusts and currents.",
+    detailLabels: ["💧 Water","📏 Depth","🏜️ Bottom","🌊 Best tide","⚠️ Hazards"],
+    proTip: "💡 Pro tip",
+
+    /* Camps tab */
+    campsTitle: "Accommodations",
+    campsSub: "From 40€/night to 350€ luxury resort, all full board.",
+    campsInfoTitle: "💡 How to choose?",
+    campsInfoText: "<strong>Solo:</strong> Spirit for the vibe. <strong>Couple:</strong> Lagon Energy or Le Cercle. <strong>Family:</strong> Dakhla Club. <strong>Budget:</strong> Auberge des Nomades (280€/week). <strong>Waves:</strong> Westpoint. <strong>Luxury:</strong> Tour d'Eole.",
+    perNight: "/night · FB",
+
+    /* Activities tab */
+    activitiesTitle: "Activities",
+    activitiesSub: "Wingfoil, surf, desert excursions, Sahrawi bivouac... plenty to fill windless days.",
+
+    /* Practical tab */
+    flightTitle: "Getting there",
+    gearTitle: "What to bring",
+    safetyTitle: "Safety",
+    safetyBoxTitle: "⚠️ Essential rules",
+    safetyText: "<strong>Speed Spot:</strong> Offshore wind – NEVER alone. Rescue boat required.<br><strong>White Dune:</strong> No safety cover. Go in groups.<br><strong>Tides:</strong> Check tide times. Drying out will strand you.<br><strong>Camps:</strong> Verify rescue boat before booking.<br><strong>Nights:</strong> Desert cools fast. Bring warm clothes for evenings.",
+    knowTitle: "Good to know",
+    knowText: "🍽️ <strong style='color:var(--tp)'>Food:</strong> Full board in all camps. Moroccan/international. Excellent fish.<br>🍺 <strong style='color:var(--tp)'>Alcohol:</strong> Not allowed to bring in (customs). Available in some camps.<br>🌙 <strong style='color:var(--tp)'>Nightlife:</strong> Non-existent. Eat-kite-sleep-repeat. Campfires.<br>🔧 <strong style='color:var(--tp)'>Repairs:</strong> Workshops in main camps. Spare parts limited.<br>📶 <strong style='color:var(--tp)'>WiFi:</strong> Often slow. Local 4G SIM = best option.<br>🏥 <strong style='color:var(--tp)'>Health:</strong> Medical centre in Dakhla town (25 min).<br>🐕 <strong style='color:var(--tp)'>Wildlife:</strong> Flamingos, dolphins, fiddler crabs.",
+    tripTipTitle: "💡 Tip",
+    tripTipText: "Flights often arrive in the middle of the night. Book a hotel in town (~30€) for the first night. Your camp will pick you up the next morning.",
+
+    /* Budget tab */
+    budgetTitle: "Budget estimator",
+    budgetSub: "Estimated budget for 7 nights full board (return flight from Paris included).",
+    budgetTotalLabel: "Estimated total – 7 nights",
+    budgetPerDay: total => `approx. ~${Math.round(total/7)}€/day`,
+    budgetItems: ["Return flight", n=>`Accommodation FB (${n}n)`, "Gear rental", "Extras & excursions"],
+    budgetTipTitle: "💡 This profile",
+    budgetAdviceTitle: "💡 Budget tips",
+    budgetAdviceText: "<strong>Royal Air Maroc:</strong> Free kite baggage = save ~90€ vs Transavia<br><strong>Low season:</strong> Camp rates -20 to -40%<br><strong>Own gear:</strong> Save ~35€/day on rental<br><strong>In town:</strong> Restaurants ~5-10€/meal vs camps",
+  },
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   DATA
+   ═══════════════════════════════════════════════════════════════ */
+const WIND = [
+  {mo:{fr:"Jan",en:"Jan"},avg:16,min:10,max:22,prob:55,air:21,water:18,wet:"4/3",kites:"10-14m",wave:4,flat:3,crowd:1,dir:"NNE",rise:"08:50",set:"19:10"},
+  {mo:{fr:"Fév",en:"Feb"},avg:17,min:11,max:23,prob:60,air:21,water:18,wet:"4/3",kites:"10-14m",wave:4,flat:3,crowd:1,dir:"NNE",rise:"08:35",set:"19:30"},
+  {mo:{fr:"Mar",en:"Mar"},avg:19,min:13,max:25,prob:70,air:22,water:19,wet:"3/2",kites:"9-12m", wave:4,flat:4,crowd:2,dir:"NNE",rise:"08:05",set:"19:45"},
+  {mo:{fr:"Avr",en:"Apr"},avg:21,min:15,max:28,prob:78,air:23,water:20,wet:"3/2",kites:"8-12m", wave:3,flat:4,crowd:3,dir:"NNE",rise:"07:30",set:"20:00"},
+  {mo:{fr:"Mai",en:"May"},avg:23,min:17,max:30,prob:82,air:24,water:21,wet:"3/2",kites:"8-11m", wave:2,flat:5,crowd:3,dir:"NNE",rise:"07:10",set:"20:20"},
+  {mo:{fr:"Juin",en:"Jun"},avg:25,min:18,max:33,prob:88,air:26,water:21,wet:"Shorty",kites:"7-10m",wave:1,flat:5,crowd:4,dir:"NNE",rise:"07:00",set:"20:35"},
+  {mo:{fr:"Juil",en:"Jul"},avg:27,min:20,max:35,prob:92,air:28,water:22,wet:"Shorty",kites:"6-9m", wave:1,flat:5,crowd:5,dir:"NNE-NE",rise:"07:05",set:"20:35"},
+  {mo:{fr:"Aoû",en:"Aug"},avg:27,min:20,max:35,prob:93,air:29,water:23,wet:"Shorty",kites:"6-9m", wave:1,flat:5,crowd:5,dir:"NNE-NE",rise:"07:20",set:"20:15"},
+  {mo:{fr:"Sep",en:"Sep"},avg:22,min:16,max:28,prob:80,air:28,water:23,wet:"Shorty",kites:"8-11m",wave:3,flat:4,crowd:3,dir:"NNE",rise:"07:35",set:"19:40"},
+  {mo:{fr:"Oct",en:"Oct"},avg:20,min:14,max:26,prob:75,air:26,water:22,wet:"3/2",kites:"8-12m", wave:4,flat:4,crowd:2,dir:"NNE",rise:"07:50",set:"19:05"},
+  {mo:{fr:"Nov",en:"Nov"},avg:18,min:12,max:24,prob:65,air:24,water:21,wet:"3/2",kites:"9-12m", wave:4,flat:3,crowd:2,dir:"NNE",rise:"08:15",set:"18:40"},
+  {mo:{fr:"Déc",en:"Dec"},avg:16,min:10,max:22,prob:55,air:22,water:19,wet:"4/3",kites:"10-14m",wave:4,flat:3,crowd:1,dir:"NNE",rise:"08:40",set:"18:35"},
+];
+
+const SPOTS = [
+  {
+    name:       {fr:"Lagune principale", en:"Main Lagoon"},
+    emoji:      "🏖️",
+    type:       {fr:"Flat / Chop",       en:"Flat / Chop"},
+    level:      {fr:["Débutant","Intermédiaire","Avancé"],   en:["Beginner","Intermediate","Advanced"]},
+    wind:       "NNE side-shore",
+    tide:       {fr:"Toutes",            en:"All tides"},
+    water:      {fr:"Flat (basse) → chop (haute)",           en:"Flat (low tide) → chop (high tide)"},
+    depth:      "0.5–3m",
+    bottom:     {fr:"Sable",             en:"Sand"},
+    hazards:    {fr:"Dunes = rafales · Zone école encombrée", en:"Dunes = gusts · Crowded school zone"},
+    desc:       {fr:"Le cœur de Dakhla. 45 km de lagune avec zone debout sur 300m. Thermique dès 13-14h. 90% des riders sont ici.",
+                 en:"The heart of Dakhla. 45 km of lagoon with a standing zone for 300m. Thermal from 1–2pm. 90% of riders are here."},
+    tips:       {fr:"Ridez tôt le matin pour du flat avant le thermique. Évitez la zone face aux écoles après 14h.",
+                 en:"Ride early morning for flat water before the thermal kicks in. Avoid the school zone after 2pm."},
+    disciplines:{fr:["Kitesurf","Wingfoil","Windsurf","SUP"], en:["Kitesurf","Wingfoil","Windsurf","SUP"]},
+  },
+  {
+    name:       {fr:"Speed Spot",        en:"Speed Spot"},
+    emoji:      "⚡",
+    type:       {fr:"Ultra flat",        en:"Ultra flat"},
+    level:      {fr:["Intermédiaire","Avancé"],              en:["Intermediate","Advanced"]},
+    wind:       "NNE offshore",
+    tide:       {fr:"Marée basse ++",    en:"Low tide ++"},
+    water:      {fr:"Miroir (basse) → clapot (haute)",       en:"Mirror (low tide) → chop (high tide)"},
+    depth:      "0.3–1.5m",
+    bottom:     {fr:"Sable",             en:"Sand"},
+    hazards:    {fr:"Vent offshore – JAMAIS seul · Courants", en:"Offshore wind – NEVER alone · Currents"},
+    desc:       {fr:"Paradis du freestyle et de la vitesse. Eau huileuse à marée basse. Départ des downwinders vers la Dune Blanche (13 km).",
+                 en:"Freestyle and speed paradise. Glass-flat water at low tide. Starting point for the downwinder to White Dune (13 km)."},
+    tips:       {fr:"Optimal 2h avant/après marée basse. Rescue boat indispensable.",
+                 en:"Optimal 2h before/after low tide. Rescue boat essential."},
+    disciplines:{fr:["Kitesurf","Foil"], en:["Kitesurf","Foil"]},
+  },
+  {
+    name:       {fr:"Dune Blanche",      en:"White Dune"},
+    emoji:      "🏝️",
+    type:       {fr:"Flat + Dune jump",  en:"Flat + Dune jump"},
+    level:      {fr:["Avancé"],          en:["Advanced"]},
+    wind:       "NNE",
+    tide:       {fr:"Mi-marée montante", en:"Rising mid-tide"},
+    water:      {fr:"Turquoise ultra-plate",                 en:"Ultra-flat turquoise"},
+    depth:      "1–2m",
+    bottom:     {fr:"Sable blanc",       en:"White sand"},
+    hazards:    {fr:"Accès downwinder ou 4x4 · Aucune sécurité · Self-rescue obligatoire",
+                 en:"Downwinder or 4x4 access only · No safety cover · Self-rescue required"},
+    desc:       {fr:"LE spot iconique. Dune de 20m, saut kite dans un lagon turquoise. Arrivée du downwinder mythique depuis le Speed Spot.",
+                 en:"THE iconic spot. 20m dune, kite jump into a turquoise lagoon. End point of the legendary downwinder from Speed Spot."},
+    tips:       {fr:"Partez en groupe. Prévoyez eau et crème solaire. Retour en 4x4.",
+                 en:"Go in groups. Bring water and sunscreen. Return by 4x4."},
+    disciplines:{fr:["Kitesurf"],        en:["Kitesurf"]},
+  },
+  {
+    name:       {fr:"Oum Lbouer",        en:"Oum Lbouer"},
+    emoji:      "🌊",
+    type:       {fr:"Vagues – Point break", en:"Waves – Point break"},
+    level:      {fr:["Avancé"],          en:["Advanced"]},
+    wind:       "NNE gusty",
+    tide:       {fr:"Mi-marée",          en:"Mid-tide"},
+    water:      {fr:"Droites longues et régulières",         en:"Long regular rights"},
+    depth:      "1–4m",
+    bottom:     {fr:"Sable / rochers",   en:"Sand / rocks"},
+    hazards:    {fr:"Vent rafageux · Rochers à basse mer · 30 min en 4x4",
+                 en:"Gusty wind · Rocks at low tide · 30 min by 4x4"},
+    desc:       {fr:"Spot de vagues côté Atlantique. GKA World Tour. Vent plus léger (−3/5 kts) que la lagune. Saison vagues : sept à mai.",
+                 en:"Atlantic wave spot. GKA World Tour venue. Wind lighter (−3/5 kts) than the lagoon. Wave season: Sep to May."},
+    tips:       {fr:"Octobre = meilleur compromis vent + vagues. Prenez un kite de plus qu'à la lagune.",
+                 en:"October = best wind + waves combo. Go one kite size up compared to the lagoon."},
+    disciplines:{fr:["Kitesurf","Surf"], en:["Kitesurf","Surf"]},
+  },
+  {
+    name:       {fr:"Lassarga / L'Or",   en:"Lassarga / L'Or"},
+    emoji:      "🔱",
+    type:       {fr:"Vagues – Point break", en:"Waves – Point break"},
+    level:      {fr:["Avancé"],          en:["Advanced"]},
+    wind:       "NNE",
+    tide:       {fr:"Mi-marée montante", en:"Rising mid-tide"},
+    water:      {fr:"Droite jusqu'à 400m",                  en:"Right up to 400m"},
+    depth:      {fr:"Variable",          en:"Variable"},
+    bottom:     {fr:"Sable / roche / falaise",               en:"Sand / rock / cliff"},
+    hazards:    {fr:"Rochers · Accès 4x4 · Isolé",          en:"Rocks · 4x4 access only · Isolated"},
+    desc:       {fr:"Spots moins fréquentés au sud. L'Or offre une droite de 400m autour d'une falaise. Vague world-class en hiver.",
+                 en:"Less crowded spots to the south. L'Or offers a 400m right around a cliff. World-class wave in winter."},
+    tips:       {fr:"Le spot secret des locaux. Écolodge Océan Vagabond sur place à Lassarga.",
+                 en:"The locals' secret spot. Océan Vagabond ecolodge on-site at Lassarga."},
+    disciplines:{fr:["Kitesurf","Surf","Windsurf"], en:["Kitesurf","Surf","Windsurf"]},
+  },
+  {
+    name:       {fr:"Dragon Island / Piscine", en:"Dragon Island / Pool"},
+    emoji:      "🐉",
+    type:       {fr:"Flat sheltered",    en:"Flat sheltered"},
+    level:      {fr:["Débutant","Intermédiaire"], en:["Beginner","Intermediate"]},
+    wind:       {fr:"Variable",          en:"Variable"},
+    tide:       {fr:"Haute marée",       en:"High tide"},
+    water:      {fr:"Plate et protégée", en:"Flat and sheltered"},
+    depth:      "0.5–2m",
+    bottom:     {fr:"Sable",             en:"Sand"},
+    hazards:    {fr:"Navigation limitée · Assèchement rapide marée descendante",
+                 en:"Limited navigation · Fast drying on falling tide"},
+    desc:       {fr:"Petit lagon protégé. Conditions calmes, idéal wingfoil et débutants. Flamants roses et crabes violonistes sur l'île.",
+                 en:"Small sheltered lagoon. Calm conditions, ideal for wingfoil and beginners. Flamingos and fiddler crabs on the island."},
+    tips:       {fr:"Parfait les jours de vent fort quand la lagune est trop agitée.",
+                 en:"Perfect on strong wind days when the main lagoon is too choppy."},
+    disciplines:{fr:["Wingfoil","Kitesurf","SUP"], en:["Wingfoil","Kitesurf","SUP"]},
+  },
+];
+
+const CAMPS = [
+  {name:"Dakhla Spirit / New Spirit",   url:"https://www.dakhla-spirit.com",              vibe:{fr:"Social & fun",      en:"Social & fun"},      price:"90–150€",  spot:{fr:"Lagune nord",          en:"North lagoon"},   plus:{fr:["Communauté active","37 bungalows rénovés","Piscine + bar","F-ONE gear"],           en:["Active community","37 renovated bungalows","Pool + bar","F-ONE gear"]}},
+  {name:"Le Cercle (Océan Adventure)",  url:"https://www.oceanadventure-dakhla.com",       vibe:{fr:"Design & luxe",     en:"Design & luxury"},   price:"180–280€", spot:{fr:"Lagune",                en:"Lagoon"},          plus:{fr:["Spa & yoga quotidien","Kite safari","Architecture designée"],                       en:["Daily spa & yoga","Kite safari","Designer architecture"]}},
+  {name:"Dakhla Club Hôtel",            url:"https://www.dakhlaclub.com",                  vibe:{fr:"Confort & famille",  en:"Comfort & family"},  price:"120–200€", spot:{fr:"Lagune nord",          en:"North lagoon"},   plus:{fr:["Piscine 25m","Hammam","60 kites F-ONE","Sécurité renforcée"],                        en:["25m pool","Hammam","60 F-ONE kites","Enhanced safety"]}},
+  {name:"Héliophora",                   url:"https://www.heliophora.com",                  vibe:{fr:"Éco & roots",        en:"Eco & roots"},        price:"80–130€",  spot:{fr:"Sud lagune",           en:"South lagoon"},   plus:{fr:["Pionnier de Dakhla","Écolodge authentique","Proche Dune Blanche"],                   en:["Dakhla pioneer","Authentic ecolodge","Close to White Dune"]}},
+  {name:"PK25",                         url:"https://www.pk25dakhla.com",                  vibe:{fr:"Confort & all-wind", en:"Comfort & all-wind"},price:"100–170€", spot:{fr:"Lagune est",           en:"East lagoon"},    plus:{fr:["Toutes orientations de vent","Bungalows 45m²","SPA"],                               en:["All wind directions","45m² bungalows","Spa"]}},
+  {name:"Lagon Energy",                 url:"https://www.lagon-energy.com",                vibe:{fr:"Nature & chic",      en:"Nature & chic"},      price:"120–180€", spot:{fr:"Lagune est",           en:"East lagoon"},    plus:{fr:["Bungalows bois pilotis","Centre Duotone/Fanatic","Downwinders exclusifs"],           en:["Stilted wood bungalows","Duotone/Fanatic center","Exclusive downwinders"]}},
+  {name:"Tour d'Eole",                  url:"https://www.toureole-dakhla.com",             vibe:{fr:"Luxe isolé",         en:"Secluded luxury"},   price:"200–350€", spot:{fr:"Côte continentale",    en:"Continental coast"},plus:{fr:["Spot exclusif privé","Piscine à débordement","Spa"],                                en:["Private exclusive spot","Infinity pool","Spa"]}},
+  {name:"White Dune Canyon",            url:"https://whitedunecanyon.com",                 vibe:{fr:"Premium & nature",   en:"Premium & nature"},  price:"150–280€", spot:{fr:"Lagune",               en:"Lagoon"},          plus:{fr:["Hôtel premium","Vue sur la lagune","Proche Dune Blanche"],                          en:["Premium hotel","Lagoon view","Close to White Dune"]}},
+  {name:"Auberge des Nomades",          url:null,                                           vibe:{fr:"Budget",             en:"Budget"},             price:"40–60€",   spot:{fr:"Lagune",               en:"Lagoon"},          plus:{fr:["280€/semaine PC","Le moins cher","Ambiance backpacker"],                             en:["280€/week full board","Cheapest option","Backpacker vibe"]}},
+  {name:"Westpoint",                    url:"https://www.westpoint-dakhla.com",            vibe:{fr:"Vagues & nature",    en:"Waves & nature"},     price:"130–200€", spot:{fr:"Côté océan",           en:"Ocean side"},     plus:{fr:["Accès direct vagues","Écolodge pilotis","Surf + kite"],                              en:["Direct wave access","Stilted ecolodge","Surf + kite"]}},
+];
+
+const ACTIVITIES = [
+  {name:{fr:"Wingfoil",              en:"Wingfoil"},              emoji:"🪁", price:"40–80€/h",       desc:{fr:"Conditions parfaites pour apprendre. Idéal jours de vent léger.",                                           en:"Perfect conditions to learn. Ideal on lighter wind days."}},
+  {name:{fr:"Surf",                  en:"Surf"},                  emoji:"🏄", price:"50–80€/session", desc:{fr:"Oum Lbouer, Lassarga. Vagues sept à mai. Excursions 4x4.",                                                  en:"Oum Lbouer, Lassarga. Waves Sep to May. 4x4 excursions."}},
+  {name:{fr:"Excursion Dune Blanche",en:"White Dune excursion"},  emoji:"🏜️", price:"~50€",           desc:{fr:"4x4 privé avec guide. Source thermale 38°C et parc à huîtres.",                                             en:"Private 4x4 with guide. 38°C hot spring and oyster farm."}},
+  {name:{fr:"Île du Dragon",         en:"Dragon Island"},         emoji:"🐉", price:"~40€",           desc:{fr:"Catamaran. Baignade, apéro, flamants roses.",                                                                 en:"Catamaran trip. Swimming, sundowner drinks, flamingos."}},
+  {name:{fr:"Balade à cheval",       en:"Horse riding"},          emoji:"🐎", price:"~60€",           desc:{fr:"Dunes au lever du soleil puis plage atlantique.",                                                             en:"Sand dunes at sunrise then the Atlantic beach."}},
+  {name:{fr:"Bivouac désert",        en:"Desert bivouac"},        emoji:"🔥", price:"~80€",           desc:{fr:"Dîner sahraoui sous les étoiles. Thé, chameau, feu de camp.",                                                en:"Sahrawi dinner under the stars. Tea, camel ride, campfire."}},
+  {name:{fr:"Plongée",               en:"Scuba diving"},          emoji:"🤿", price:"~60€",           desc:{fr:"Baie de Dakhla, 4-6m. Instructeur certifié, aucun niveau requis.",                                           en:"Dakhla bay, 4–6m depth. Certified instructor, no experience needed."}},
+  {name:{fr:"Yoga",                  en:"Yoga"},                  emoji:"🧘", price:{fr:"Inclus/~15€",en:"Included/~15€"}, desc:{fr:"Quotidien dans les camps haut de gamme. Face lagune ou désert.", en:"Daily in upscale camps. Facing the lagoon or desert."}},
+];
+
+const FLIGHTS = {
+  fr: [
+    {airline:"Royal Air Maroc",  route:"Via Casablanca (1h30)",                  bonus:"🎒 Bagages kite GRATUITS jusqu'à 23 kg !"},
+    {airline:"Transavia",        route:"Direct Paris Orly → Dakhla (saisonnier)",bonus:"À partir de ~69€ A/S · Supplément kite ~44€/trajet"},
+    {airline:"Air Arabia",       route:"Vols domestiques Casablanca",            bonus:"Low cost · Vérifier franchise sport"},
+  ],
+  en: [
+    {airline:"Royal Air Maroc",  route:"Via Casablanca (1h30)",                  bonus:"🎒 FREE kite baggage up to 23 kg!"},
+    {airline:"Transavia",        route:"Direct Paris Orly → Dakhla (seasonal)",  bonus:"From ~69€ return · Kite surcharge ~44€/way"},
+    {airline:"Air Arabia",       route:"Domestic flights from Casablanca",       bonus:"Low cost · Check sports baggage allowance"},
+  ],
+};
+
+const GEAR = {
+  fr: [
+    {c:"Ailes",       v:"2-3 kites (7-12m)",                      e:true},
+    {c:"Boards",      v:"Twintip 135-150cm + directional opt.",    e:true},
+    {c:"Combi",       v:"3/2 longue oblig. · 4/3 hiver · Shorty été", e:true},
+    {c:"Protection",  v:"Gilet impact · Casque · SPF50",           e:true},
+    {c:"Soirées",     v:"Pull chaud · Coupe-vent · Bonnet hiver",  e:false},
+    {c:"Tech",        v:"SIM locale 4G · WiFi souvent faible",     e:false},
+    {c:"Santé",       v:"Médicaments estomac · Trousse 1ers soins",e:false},
+    {c:"Admin",       v:"Pas de visa UE ≤90j · Cash MAD",          e:false},
+  ],
+  en: [
+    {c:"Kites",       v:"2-3 kites (7-12m)",                      e:true},
+    {c:"Boards",      v:"Twin tip 135-150cm + directional opt.",   e:true},
+    {c:"Wetsuit",     v:"3/2 full required · 4/3 winter · Shorty summer", e:true},
+    {c:"Protection",  v:"Impact vest · Helmet · SPF50",            e:true},
+    {c:"Evenings",    v:"Warm jumper · Windbreaker · Beanie",      e:false},
+    {c:"Tech",        v:"Local 4G SIM · WiFi often weak",          e:false},
+    {c:"Health",      v:"Stomach meds · First aid kit",            e:false},
+    {c:"Admin",       v:"No visa for EU ≤90 days · Cash MAD",      e:false},
+  ],
+};
+
+const DOWNWINDERS = [
+  {name:{fr:"Lagune → Speed Spot",            en:"Lagoon → Speed Spot"},            dist:"4 km",  time:"20–40 min", level:{fr:"Inter",  en:"Intermediate"}, desc:{fr:"Introduction au downwind. Arrivée au paradis du flat.",                                                         en:"Introduction to downwinding. Arrival at flat water paradise."}},
+  {name:{fr:"Speed Spot → Dune Blanche",      en:"Speed Spot → White Dune"},        dist:"13 km", time:"45–90 min", level:{fr:"Avancé", en:"Advanced"},      desc:{fr:"LE downwinder mythique. Traversée entre île du Dragon, désert et eaux turquoises.",                            en:"THE legendary downwinder. Crossing between Dragon Island, desert and turquoise waters."}},
+  {name:{fr:"Lagune → Dakhla ville",          en:"Lagoon → Dakhla town"},           dist:"25 km", time:"2–3h",      level:{fr:"Expert", en:"Expert"},        desc:{fr:"L'aventure ultime. Descente complète de la lagune. Rescue boat obligatoire.",                                  en:"The ultimate adventure. Full lagoon descent. Rescue boat required."}},
+];
+
+const BUDGETS = [
+  {name:{fr:"Backpacker",en:"Backpacker"}, icon:"🎒", flight:200, accom:40,  gear:20, extras:10, note:{fr:"Auberge des Nomades, PC, location matos basique",           en:"Auberge des Nomades, full board, basic gear rental"}},
+  {name:{fr:"Standard",  en:"Standard"},  icon:"🏄", flight:300, accom:120, gear:35, extras:20, note:{fr:"Camp milieu de gamme (Spirit, PK25), PC, matos récent",      en:"Mid-range camp (Spirit, PK25), full board, recent gear"}},
+  {name:{fr:"Confort",   en:"Comfort"},   icon:"🏨", flight:400, accom:200, gear:0,  extras:40, note:{fr:"Dakhla Club / Lagon Energy, PC, matos perso, excursions",    en:"Dakhla Club / Lagon Energy, full board, own gear, excursions"}},
+  {name:{fr:"Premium",   en:"Premium"},   icon:"💎", flight:500, accom:250, gear:0,  extras:60, note:{fr:"White Dune Canyon / Le Cercle, tout inclus, spa, excursions privées",en:"White Dune Canyon / Le Cercle, all-inclusive, spa, private excursions"}},
+  {name:{fr:"Luxe",      en:"Luxury"},    icon:"🌟", flight:500, accom:320, gear:0,  extras:80, note:{fr:"Tour d'Eole, tout inclus, spot exclusif privé, spa, services haut de gamme",en:"Tour d'Eole, all-inclusive, private exclusive spot, spa, premium services"}},
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════════════════════ */
+let lang = "en";
+let selMonth = new Date().getMonth();
+let selBudget = 1;
+
+/* ═══════════════════════════════════════════════════════════════
+   HELPERS
+   ═══════════════════════════════════════════════════════════════ */
+function t(obj) { return typeof obj === "object" && obj !== null && (obj.fr || obj.en) ? (obj[lang] ?? obj.fr ?? obj.en) : obj; }
+
+function dots(n, max=5) {
+  return Array.from({length:max}, (_,i) => `<span class="dot${i<n?' on':''}"></span>`).join('');
+}
+
+function seasonTag(prob) {
+  const u = UI[lang];
+  if (prob >= 85) return `<span class="tag tag-sun">${lang==='fr'?'Peak season':'Peak season'}</span>`;
+  if (prob >= 70) return `<span class="tag tag-gn">${lang==='fr'?'Bonne saison':'Good season'}</span>`;
+  if (prob >= 60) return `<span class="tag tag-sky">${lang==='fr'?'Saison intermédiaire':'Shoulder season'}</span>`;
+  return `<span class="tag tag-wi">${lang==='fr'?'Basse saison':'Low season'}</span>`;
+}
+
+function levelTag(l) {
+  const beginner = ["Débutant","Beginner"];
+  const intermediate = ["Intermédiaire","Intermediate"];
+  if (beginner.includes(l)) return `<span class="tag tag-gn">${l}</span>`;
+  if (intermediate.includes(l)) return `<span class="tag tag-sun">${l}</span>`;
+  return `<span class="tag tag-rd">${l}</span>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUILD PANELS
+   ═══════════════════════════════════════════════════════════════ */
+function buildPanels() {
+  const u = UI[lang];
+  const d = WIND[selMonth];
+  const panels = document.getElementById('panels');
+
+  panels.innerHTML = `
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div class="tab-panel active" id="panel-overview">
+    <h2 class="section-title">${u.windProb}</h2>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <p class="section-sub" style="margin-bottom:0">${u.windProbSub}</p>
+      ${seasonTag(d.prob)}
+    </div>
+    <div class="card" style="padding:20px">
+      <div class="wind-chart" id="windChart"></div>
+      <div class="stat-grid stat-grid-month" style="margin-top:18px" id="monthDetail"></div>
+      <div style="display:flex;gap:16px;margin-top:14px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:10px;flex-wrap:nowrap">
+        <div style="flex:1 1 80px"><div class="detail-label">${u.flatLabel}</div><div class="score-dots">${dots(d.flat)}</div></div>
+        <div style="flex:1 1 80px"><div class="detail-label">${u.wavesLabel}</div><div class="score-dots">${dots(d.wave)}</div></div>
+        <div style="flex:1 1 80px"><div class="detail-label">${u.crowdLabel}</div><div class="score-dots">${dots(d.crowd)}</div></div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:28px">${u.whenTitle}</h2>
+    ${u.whenPeriods.map(x=>`
+      <div class="card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="tag ${x.cls}" style="flex-shrink:0;margin-top:2px">${x.tag}</span>
+        <div>
+          <div style="font-size:0.95rem;font-weight:700;color:var(--sl)">${x.p}</div>
+          <div style="font-size:0.82rem;color:var(--ts);line-height:1.6;margin-top:3px">${x.desc}</div>
+        </div>
+      </div>
+    `).join('')}
+
+    <div class="stat-grid" style="margin-top:20px">
+      ${u.statsLabels.map((label,i)=>`
+        <div class="stat-box">
+          <span style="font-size:1.3rem">${u.statsIcons[i]}</span>
+          <div class="stat-label" style="margin-top:8px">${label}</div>
+          <div style="font-size:0.95rem;font-weight:700;color:var(--tp);margin-top:3px">${u.statsValues[i].v}</div>
+          <div class="stat-sub">${u.statsValues[i].s}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <h2 class="section-title" style="margin-top:28px">${u.downTitle}</h2>
+    <p class="section-sub">${u.downSub}</p>
+    ${DOWNWINDERS.map(dw=>`
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <div style="flex:1">
+          <div style="font-size:0.92rem;font-weight:700;color:var(--sl)">${t(dw.name)}</div>
+          <div style="font-size:0.8rem;color:var(--ts);margin-top:2px">${t(dw.desc)}</div>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <span class="tag tag-tq">${dw.dist}</span>
+          <span class="tag tag-wi">${dw.time}</span>
+          <span class="tag ${['Expert','Avancé','Advanced'].includes(t(dw.level))?'tag-rd':'tag-sun'}">${t(dw.level)}</span>
+        </div>
+      </div>
+    `).join('')}
+  </div>
+
+  <!-- ═══ SPOTS ═══ -->
+  <div class="tab-panel" id="panel-spots">
+    <h2 class="section-title">${u.spotsTitle}</h2>
+    <p class="section-sub">${u.spotsSub}</p>
+    ${SPOTS.map((sp,i)=>`
+      <div class="card" id="spot-${i}">
+        <div class="acc-header" onclick="toggleSpot(${i})">
+          <div style="display:flex;align-items:center;gap:12px;flex:1">
+            <span style="font-size:1.6rem">${sp.emoji}</span>
+            <div>
+              <div style="font-weight:700;font-size:0.95rem;color:var(--sl)">${t(sp.name)}</div>
+              <div style="font-size:0.75rem;color:var(--ts);margin-top:1px">${t(sp.type)} · ${t(sp.wind)}</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end">${t(sp.level).map(l=>levelTag(l)).join('')}</div>
+          <span class="acc-arrow" id="arrow-spot-${i}">▾</span>
+        </div>
+        <div class="acc-body" id="body-spot-${i}">
+          <p style="font-size:0.85rem;line-height:1.7;color:var(--ts);font-style:italic;margin-bottom:14px">${t(sp.desc)}</p>
+          <div class="detail-grid">
+            ${[t(sp.water),sp.depth,t(sp.bottom),t(sp.tide),t(sp.hazards)].map((v,j)=>`
+              <div class="detail-item">
+                <div class="detail-label">${u.detailLabels[j]}</div>
+                <div class="detail-value">${v}</div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="tip">
+            <div class="tip-title">${u.proTip}</div>
+            <div class="tip-text">${t(sp.tips)}</div>
+          </div>
+          <div style="display:flex;gap:6px;margin-top:12px;flex-wrap:wrap">
+            ${t(sp.disciplines).map(d=>`<span class="tag tag-tq">${d}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+    `).join('')}
+    <div class="info" style="margin-top:12px">
+      <div class="info-title">🌊 ${u.tidesInfo}</div>
+      <div class="info-text">${u.tidesText}</div>
+    </div>
+  </div>
+
+  <!-- ═══ CAMPS ═══ -->
+  <div class="tab-panel" id="panel-camps">
+    <h2 class="section-title">${u.campsTitle}</h2>
+    <p class="section-sub">${u.campsSub}</p>
+    ${CAMPS.map((c,i)=>`
+      <div class="card" id="camp-${i}">
+        <div class="acc-header" onclick="toggleCamp(${i})">
+          <div style="flex:1">
+            <div style="font-weight:700;font-size:0.92rem;color:var(--sl)">${c.name}</div>
+            <div style="font-size:0.75rem;color:var(--ts);margin-top:2px">${t(c.vibe)} · ${t(c.spot)}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <div style="font-size:1rem;font-weight:700;color:var(--sand)">${c.price}</div>
+            <div style="font-size:0.65rem;color:var(--ts)">${u.perNight}</div>
+          </div>
+          <span class="acc-arrow" id="arrow-camp-${i}">▾</span>
+        </div>
+        <div class="acc-body" id="body-camp-${i}">
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            ${t(c.plus).map(p=>`<span class="tag tag-tq">✓ ${p}</span>`).join('')}
+          </div>
+          ${c.url ? `<div style="margin-top:12px"><a href="${c.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:600;color:var(--tq);text-decoration:none;padding:5px 10px;border:1px solid rgba(45,212,191,0.3);border-radius:8px;transition:all 0.2s" onmouseover="this.style.background='rgba(45,212,191,0.08)'" onmouseout="this.style.background=''">${lang==='fr'?'Voir le site':'Visit website'} ↗</a></div>` : ''}
+        </div>
+      </div>
+    `).join('')}
+    <div class="info" style="margin-top:12px">
+      <div class="info-title">${u.campsInfoTitle}</div>
+      <div class="info-text">${u.campsInfoText}</div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITIES ═══ -->
+  <div class="tab-panel" id="panel-activities">
+    <h2 class="section-title">${u.activitiesTitle}</h2>
+    <p class="section-sub">${u.activitiesSub}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+      ${ACTIVITIES.map(a=>`
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:1.4rem">${a.emoji}</span>
+              <span style="font-weight:700;font-size:0.95rem;color:var(--sl)">${t(a.name)}</span>
+            </div>
+            <span class="tag tag-gn">${t(a.price)}</span>
+          </div>
+          <p style="font-size:0.82rem;color:var(--ts);line-height:1.6">${t(a.desc)}</p>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+  <!-- ═══ PRACTICAL ═══ -->
+  <div class="tab-panel" id="panel-practical">
+    <h2 class="section-title">${u.flightTitle}</h2>
+    ${FLIGHTS[lang].map(x=>`
+      <div class="card">
+        <div style="font-size:0.95rem;font-weight:700;color:var(--sl)">${x.airline}</div>
+        <div style="font-size:0.82rem;color:var(--ts);margin-top:2px">${x.route}</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--tq);margin-top:6px">${x.bonus}</div>
+      </div>
+    `).join('')}
+    <div class="tip">
+      <div class="tip-title">${u.tripTipTitle}</div>
+      <div class="tip-text">${u.tripTipText}</div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:28px">${u.gearTitle}</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      ${GEAR[lang].map(g=>`
+        <div class="detail-item" style="border-left:3px solid ${g.e?'var(--sun)':'var(--gb)'}">
+          <div class="detail-label">${g.c}</div>
+          <div class="detail-value">${g.v}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <h2 class="section-title" style="margin-top:28px">${u.safetyTitle}</h2>
+    <div class="warning">
+      <div class="warning-title">${u.safetyBoxTitle}</div>
+      <div class="warning-text">${u.safetyText}</div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:28px">${u.knowTitle}</h2>
+    <div class="card">
+      <div style="font-size:0.82rem;color:var(--ts);line-height:1.9">${u.knowText}</div>
+    </div>
+  </div>
+
+  <!-- ═══ BUDGET ═══ -->
+  <div class="tab-panel" id="panel-budget">
+    <h2 class="section-title">${u.budgetTitle}</h2>
+    <p class="section-sub">${u.budgetSub}</p>
+    <div class="profile-grid" id="profileGrid"></div>
+    <div class="card" id="budgetCard"></div>
+    <div class="info" style="margin-top:12px">
+      <div class="info-title">${u.budgetAdviceTitle}</div>
+      <div class="info-text">${u.budgetAdviceText}</div>
+    </div>
+  </div>
+  `;
+
+  renderWindChart();
+  renderMonthDetail();
+  renderBudget();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER FUNCTIONS
+   ═══════════════════════════════════════════════════════════════ */
+function renderWindChart() {
+  const el = document.getElementById('windChart');
+  if (!el) return;
+  el.innerHTML = WIND.map((m,i) => {
+    const h   = (m.prob / 100) * 110;
+    const sel = selMonth === i;
+    const peak = m.prob >= 85;
+    return `<div class="wind-bar-col${sel?' sel':''}" onclick="selectMonth(${i})">
+      <span class="pct" style="color:${peak?'var(--sun)':'var(--ts)'}">${m.prob}%</span>
+      <div class="wind-bar-zone">
+        <div class="bar" style="height:${h}px;background:${sel?'linear-gradient(180deg,var(--sun),var(--coral))':peak?'linear-gradient(180deg,var(--sand),var(--sun))':'linear-gradient(180deg,var(--sky),var(--wi))'};opacity:${sel?1:0.6}"></div>
+      </div>
+      <span class="mo-label" style="color:${sel?'var(--sun)':'var(--tp)'};font-weight:${sel?700:500}">${t(m.mo)}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderMonthDetail() {
+  const el = document.getElementById('monthDetail');
+  if (!el) return;
+  const d = WIND[selMonth];
+  const u = UI[lang];
+  el.innerHTML = [
+    {l:u.monthDetailLabels[0], v:`${d.avg} kts`,  s:u.monthDetailSubs[0](d)},
+    {l:u.monthDetailLabels[1], v:`${d.air}°C air`, s:u.monthDetailSubs[1](d)},
+    {l:u.monthDetailLabels[2], v:d.kites,           s:u.monthDetailSubs[2](d)},
+    {l:u.monthDetailLabels[3], v:d.dir,             s:u.monthDetailSubs[3](d)},
+    {l:u.monthDetailLabels[4], v:`${d.rise} → ${d.set}`, s:u.monthDetailSubs[4](d)},
+  ].map(x=>`<div class="stat-box"><div class="stat-label">${x.l}</div><div class="stat-value">${x.v}</div><div class="stat-sub">${x.s}</div></div>`).join('');
+}
+
+function renderBudget() {
+  const grid = document.getElementById('profileGrid');
+  const card = document.getElementById('budgetCard');
+  if (!grid || !card) return;
+  const u = UI[lang];
+  const days = 7;
+
+  grid.innerHTML = BUDGETS.map((b,i)=>`
+    <div class="profile-btn${selBudget===i?' sel':''}" onclick="selectBudget(${i})">
+      <div class="icon">${b.icon}</div>
+      <div class="name">${t(b.name)}</div>
+    </div>
+  `).join('');
+
+  const b = BUDGETS[selBudget];
+  const items = [
+    {l:u.budgetItems[0],          v:b.flight,       c:"var(--wi)"},
+    {l:u.budgetItems[1](days),    v:b.accom*days,   c:"var(--sky)"},
+    {l:u.budgetItems[2],          v:b.gear*days,    c:"var(--sun)"},
+    {l:u.budgetItems[3],          v:b.extras*days,  c:"var(--tq)"},
+  ];
+  const total = items.reduce((s,x)=>s+x.v, 0);
+
+  card.innerHTML = `
+    <div style="text-align:center;margin-bottom:18px">
+      <div class="stat-label">${u.budgetTotalLabel}</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;margin-top:4px;background:linear-gradient(135deg,var(--sl),var(--sand));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${total.toLocaleString()}€</div>
+      <div style="font-size:0.82rem;color:var(--ts);margin-top:2px">${u.budgetPerDay(total)}</div>
+    </div>
+    <div class="budget-bar">${items.map(it=>`<div class="budget-seg" style="flex:${it.v/total};background:${it.c}"></div>`).join('')}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      ${items.map(it=>`
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.03);border-radius:8px">
+          <div style="width:10px;height:10px;border-radius:50%;background:${it.c};flex-shrink:0"></div>
+          <div style="flex:1"><div style="font-size:0.75rem;font-weight:600;color:var(--tp)">${it.l}</div><div style="font-size:0.88rem;font-weight:700;color:${it.c}">${it.v}€</div></div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="tip" style="margin-top:14px">
+      <div class="tip-title">${u.budgetTipTitle}</div>
+      <div class="tip-text">${t(b.note)}</div>
+    </div>
+  `;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INTERACTIONS
+   ═══════════════════════════════════════════════════════════════ */
+function selectMonth(i) {
+  selMonth = i;
+  renderWindChart();
+  renderMonthDetail();
+}
+
+function selectBudget(i) {
+  selBudget = i;
+  renderBudget();
+}
+
+function toggleSpot(i) {
+  document.getElementById('body-spot-'+i).classList.toggle('open');
+  document.getElementById('arrow-spot-'+i).classList.toggle('open');
+}
+
+function toggleCamp(i) {
+  document.getElementById('body-camp-'+i).classList.toggle('open');
+  document.getElementById('arrow-camp-'+i).classList.toggle('open');
+}
+
+/* Tabs */
+document.getElementById('tabsBar').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('a'));
+  btn.classList.add('a');
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   LANGUAGE SWITCH
+   ═══════════════════════════════════════════════════════════════ */
+function switchLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('.lb').forEach(b => b.classList.toggle('a', b.dataset.lang === l));
+
+  const u = UI[l];
+  document.getElementById('heroBadge').textContent  = u.badge;
+  document.getElementById('heroSub').textContent    = u.heroSub;
+  document.getElementById('footerSub').textContent  = u.footerSub;
+  document.getElementById('footerWarn').textContent = u.footerWarn;
+
+  /* Scores */
+  const scoreValues = [5,5,4,4,5,4,3,4];
+  document.getElementById('scores').innerHTML = u.scores.map((label,i)=>
+    `<div class="score-item"><div class="score-label">${label}</div><div class="score-dots">${dots(scoreValues[i])}</div></div>`
+  ).join('');
+
+  /* Tabs */
+  const tabIds = ["overview","spots","camps","activities","practical","budget"];
+  document.getElementById('tabsBar').innerHTML = u.tabs.map((label,i)=>
+    `<button class="tab-btn${i===0?' a':''}" data-tab="${tabIds[i]}">${label}</button>`
+  ).join('');
+
+  /* Restore active tab */
+  const activePanel = document.querySelector('.tab-panel.active');
+  const activeId = activePanel ? activePanel.id.replace('panel-','') : 'overview';
+
+  buildPanels();
+
+  /* Re-activate previously active tab */
+  const btn = document.querySelector(`.tab-btn[data-tab="${activeId}"]`);
+  if (btn && activeId !== 'overview') {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('a'));
+    btn.classList.add('a');
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById('panel-'+activeId);
+    if (panel) panel.classList.add('active');
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════════════════════════ */
+const browserLang = (navigator.languages || [navigator.language || 'en'])
+  .some(l => l.toLowerCase().startsWith('fr')) ? 'fr' : 'en';
+switchLang(browserLang);
+</script>
+</body>
+</html>

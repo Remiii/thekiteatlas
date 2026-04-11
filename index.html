@@ -615,7 +615,9 @@
 
       <!-- Footer -->
       <footer>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;margin-bottom:6px;background:linear-gradient(135deg,var(--sl),var(--tq));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">TheKiteAtlas</div>
         <p id="FT"></p>
+        <p style="margin-top:4px;font-size:0.75rem;color:var(--ts);opacity:0.6" id="FTW"></p>
       </footer>
     </div>
 
@@ -636,7 +638,8 @@
           ft: "Tropical",
           fwm: "Eau chaude (>23°C)",
           fc: "Eau froide (<20°C)",
-          fo: "thekiteatlas.com · Compilé avec passion pour les riders du monde entier",
+          fo: "Fait avec ❤️ pour les riders du monde entier",
+          fw: "Contenu compilé bénévolement · Les informations peuvent être inexactes ou périmées · Vérifiez toujours les conditions locales avant de naviguer",
           ai: "Air",
           wa: "Eau",
           aw: "Vent moy.",
@@ -657,7 +660,8 @@
           ft: "Tropical",
           fwm: "Warm water (>23°C)",
           fc: "Cold water (<20°C)",
-          fo: "thekiteatlas.com · Compiled with passion for riders worldwide",
+          fo: "Made with ❤️ for riders worldwide",
+          fw: "Voluntarily compiled content · Information may be inaccurate or outdated · Always check local conditions before riding",
           ai: "Air",
           wa: "Water",
           aw: "Avg. wind",
@@ -765,8 +769,16 @@
           )
           .join("");
 
-        return `
-          <article class="sc" data-filters='${JSON.stringify(spot.filters)}' data-water="${spot.water_temp}">
+        const spotPage = { "Dakhla": "spots/dakhla.html" }[spot.name];
+        const wrapper = spotPage
+          ? `href="${spotPage}" style="text-decoration:none;color:inherit;display:block"`
+          : null;
+
+        const cardOpen  = wrapper ? `<a ${wrapper}>` : ``;
+        const cardClose = wrapper ? `</a>`            : ``;
+
+        return cardOpen + `
+          <article class="sc" data-filters='${JSON.stringify(spot.filters)}' data-water="${spot.water_temp}" style="${spotPage?'cursor:pointer':''}">
             <div class="sr">${region}</div>
             <h3 class="sn">${spot.name}</h3>
             <div class="so">${country}</div>
@@ -794,7 +806,7 @@
               </div>
             </div>
           </article>
-        `;
+        ` + cardClose;
       }
 
       /* ═══════════════════════════════════════════
@@ -887,6 +899,7 @@
         document.getElementById("hSub").textContent = UI[l].sub;
         document.getElementById("hExp").textContent = UI[l].exp;
         document.getElementById("FT").textContent = UI[l].fo;
+        document.getElementById("FTW").textContent = UI[l].fw;
         buildNav();
         buildFilters();
         buildSections();
