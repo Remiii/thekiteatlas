@@ -32,6 +32,7 @@ README.md
 - `style.css` contains all shared styles: CSS variables, reset, body, grain overlay, language switcher, tags, wind rating bars, footer base, `fadeUp` animation
 - Each page has a `<style>` block with only its specific styles
 - New spot pages must link `../style.css` and keep only page-specific CSS inline
+- All pages use `max-width: 1200px` for consistency with the home page
 - The `.ls` language switcher is positioned `absolute` on the home page (override in `index.html`), and inside `.topbar` on spot pages (no override needed)
 
 ## Adding a spot page
