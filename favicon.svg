@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#0a1628"/>
+  <!-- Kite body -->
+  <path d="M16 3 L27 16 L16 22 L5 16 Z" fill="url(#g)" opacity=".95"/>
+  <!-- Kite structure lines -->
+  <path d="M16 3 L16 22" stroke="rgba(255,255,255,.25)" stroke-width=".5"/>
+  <path d="M5 16 L27 16" stroke="rgba(255,255,255,.25)" stroke-width=".5"/>
+  <!-- Tail -->
+  <path d="M16 22 Q17 27 15 30" stroke="#f0d9a8" stroke-width="1" fill="none" stroke-dasharray="1.5 2"/>
+  <defs>
+    <linearGradient id="g" x1="5" y1="3" x2="27" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#ff6b4a"/>
+      <stop offset="50%"  stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+</svg>
