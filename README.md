@@ -1,12 +1,12 @@
 # TheKiteAtlas
 
-Interactive guide to the best kitesurf spots worldwide, month by month.
+[![Live](https://img.shields.io/badge/live-thekiteatlas.com-blue)](https://thekiteatlas.com)
 
-**[thekiteatlas.com](https://thekiteatlas.com)**
+Interactive guide to the best kitesurf spots worldwide, month by month.
 
 ## Overview
 
-TheKiteAtlas lists 74 kite spots across 12 months, with wind conditions, air/water temperatures, required level and water type for each spot. The site is bilingual (French/English) and filterable by spot type (flat, waves, beginner, tropical, warm/cold water, Europe…).
+TheKiteAtlas lists 46 kite spots (74 monthly entries) across 12 months, with wind conditions, air/water temperatures, required level and water type for each spot. The site is bilingual (French/English) and filterable by spot type (flat, waves, beginner, tropical, warm/cold water, Europe…).
 
 ## Stack
 
@@ -19,8 +19,9 @@ TheKiteAtlas lists 74 kite spots across 12 months, with wind conditions, air/wat
 
 ```
 index.html    ← single page, CSS and JS embedded
-spots.json    ← data for all 74 spots (12 months)
+spots.json    ← data for all 46 spots × 12 months (74 monthly entries)
 CNAME         ← GitHub Pages custom domain
+README.md     ← this file
 ```
 
 ## Local development
@@ -65,3 +66,12 @@ Edit `spots.json`. Each spot follows this structure:
 
 Available filters: `flat`, `wave`, `beginner`, `europe`, `tropical`, `warm` (water ≥ 23°C), `cold` (water < 20°C).
 
+## Contributing
+
+Spotted a missing spot or an error? Contributions are welcome.
+
+1. Fork the repo
+2. Edit `spots.json` — add or update a spot following the structure above
+3. Open a pull request with a short description of the change
+
+Please keep one spot per PR to make review easier.
