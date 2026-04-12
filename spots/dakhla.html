@@ -246,13 +246,13 @@
 
   <!-- ═══ TOP BAR ═══ -->
   <div class="topbar">
-    <a class="back-link" href="../index.html">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg>
+    <a class="back-link" href="../index.html" aria-label="Back to TheKiteAtlas home">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
       <span id="backLabel">TheKiteAtlas</span>
     </a>
-    <div class="ls">
-      <button class="lb" data-lang="en" onclick="switchLang('en')">EN</button>
-      <button class="lb" data-lang="fr" onclick="switchLang('fr')">FR</button>
+    <div class="ls" role="group" aria-label="Language switcher">
+      <button class="lb" data-lang="en" onclick="switchLang('en')" aria-label="English">EN</button>
+      <button class="lb" data-lang="fr" onclick="switchLang('fr')" aria-label="Fran&#231;ais">FR</button>
     </div>
   </div>
 

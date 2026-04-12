@@ -485,12 +485,12 @@
     <div class="C">
       <!-- Hero -->
       <section class="hero">
-        <div class="ls">
-          <button class="lb a" data-lang="en" onclick="switchLang('en')">EN</button>
-          <button class="lb" data-lang="fr" onclick="switchLang('fr')">FR</button>
+        <div class="ls" role="group" aria-label="Language switcher">
+          <button class="lb a" data-lang="en" onclick="switchLang('en')" aria-label="English">EN</button>
+          <button class="lb" data-lang="fr" onclick="switchLang('fr')" aria-label="Fran&#231;ais">FR</button>
         </div>
 
-        <svg class="hk" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hk" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kite logo">
           <path d="M40 5 L65 40 L40 55 L15 40 Z" fill="url(#kG)" opacity=".9" />
           <path d="M40 5 L40 55" stroke="rgba(255,255,255,.3)" stroke-width=".5" />
           <path d="M15 40 L65 40" stroke="rgba(255,255,255,.3)" stroke-width=".5" />
@@ -509,19 +509,19 @@
 
         <div class="sh">
           <span id="hExp"></span>
-          <svg viewBox="0 0 20 20" fill="currentColor">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path d="M10 14l-5-5h10l-5 5z" />
           </svg>
         </div>
       </section>
 
       <!-- Month navigation -->
-      <nav class="mn" id="MN">
+      <nav class="mn" id="MN" aria-label="Month navigation">
         <div class="mni" id="MNI"></div>
       </nav>
 
       <!-- Filter bar -->
-      <div class="fb" id="FB"></div>
+      <div class="fb" id="FB" role="group" aria-label="Spot filters"></div>
 
       <!-- Month sections -->
       <div id="MS"></div>
@@ -699,14 +699,14 @@
             <p class="sd">${desc}</p>
             <div class="sm">
               <div class="si">
-                <svg viewBox="0 0 16 16" fill="currentColor">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                   <circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
                   <path d="M8 5v3h2"/>
                 </svg>
                 ${t.ai} ${spot.air_temp}°C
               </div>
               <div class="si">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                   <path d="M2 10 Q5 6 8 10 Q11 14 14 10"/>
                 </svg>
                 ${t.wa} ${spot.water_temp}°C
