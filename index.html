@@ -589,7 +589,7 @@
          State
          ═══════════════════════════════════════════ */
       let lang = "en";
-      let activeFilter = "all";
+      let activeFilters = new Set();
       let spotsData = null; // loaded from JSON
 
       /* ═══════════════════════════════════════════
@@ -646,16 +646,15 @@
          ═══════════════════════════════════════════ */
       function buildFilters() {
         const t = UI[lang];
+        const filters = [
+          ["flat", t.ff], ["wave", t.fw], ["beginner", t.fb],
+          ["europe", t.fe], ["tropical", t.ft], ["warm", t.fwm], ["cold", t.fc],
+        ];
         document.getElementById("FB").innerHTML = `
           <span class="fl">${t.fl}</span>
-          <button class="ft a" data-filter="all">${t.fa}</button>
-          <button class="ft" data-filter="flat">${t.ff}</button>
-          <button class="ft" data-filter="wave">${t.fw}</button>
-          <button class="ft" data-filter="beginner">${t.fb}</button>
-          <button class="ft" data-filter="europe">${t.fe}</button>
-          <button class="ft" data-filter="tropical">${t.ft}</button>
-          <button class="ft" data-filter="warm">${t.fwm}</button>
-          <button class="ft" data-filter="cold">${t.fc}</button>
+          ${filters.map(([k, label]) =>
+            `<button class="ft${activeFilters.has(k) ? " a" : ""}" data-filter="${k}">${label}</button>`
+          ).join("")}
         `;
       }
 
@@ -782,11 +781,19 @@
         document.querySelectorAll(".sc").forEach((card) => {
           const filters = JSON.parse(card.dataset.filters || "[]");
           const waterTemp = parseInt(card.dataset.water);
-          let show = true;
 
-          if (activeFilter === "warm") show = waterTemp >= 23;
-          else if (activeFilter === "cold") show = waterTemp < 20;
-          else if (activeFilter !== "all") show = filters.includes(activeFilter);
+          if (activeFilters.size === 0) {
+            card.classList.remove("H");
+            return;
+          }
+
+          let show = true;
+          for (const f of activeFilters) {
+            if (f === "warm") { if (waterTemp < 23) show = false; }
+            else if (f === "cold") { if (waterTemp >= 20) show = false; }
+            else { if (!filters.includes(f)) show = false; }
+            if (!show) break;
+          }
 
           card.classList.toggle("H", !show);
         });
@@ -796,9 +803,10 @@
       document.getElementById("FB").addEventListener("click", (e) => {
         const btn = e.target.closest(".ft");
         if (!btn) return;
-        document.querySelectorAll(".ft").forEach((x) => x.classList.remove("a"));
-        btn.classList.add("a");
-        activeFilter = btn.dataset.filter;
+        const f = btn.dataset.filter;
+        if (activeFilters.has(f)) activeFilters.delete(f);
+        else activeFilters.add(f);
+        btn.classList.toggle("a");
         applyFilter();
       });
 
