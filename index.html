@@ -352,6 +352,20 @@
         display: none;
       }
 
+      .ws {
+        position: absolute;
+        top: 1.4rem;
+        right: 1.4rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+      }
+
+      .ws .wb {
+        width: 3px;
+        border-radius: 1.5px;
+      }
+
       .sr {
         font-size: 0.7rem;
         font-weight: 600;
@@ -702,6 +716,7 @@
 
         return cardOpen + `
           <article class="sc" data-filters='${JSON.stringify(spot.filters)}' data-water="${spot.water_temp}" style="${spotPage?'cursor:pointer':''}">
+            <div class="ws">${windBars}</div>
             <div class="sr">${region}</div>
             <h3 class="sn">${spot.name}</h3>
             <div class="so">${country}</div>
@@ -709,23 +724,21 @@
             <p class="sd">${desc}</p>
             <div class="sm">
               <div class="si">
-                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                  <circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                  <path d="M8 5v3h2"/>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                  <rect x="6" y="2" width="4" height="10" rx="2"/>
+                  <circle cx="8" cy="12.5" r="2.5"/>
+                  <line x1="8" y1="7" x2="8" y2="10"/>
                 </svg>
                 ${t.ai} ${spot.air_temp}°C
               </div>
               <div class="si">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path d="M2 10 Q5 6 8 10 Q11 14 14 10"/>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                  <path d="M8 2 Q4 8 4 11 a4 4 0 0 0 8 0 Q12 8 8 2Z"/>
                 </svg>
                 ${t.wa} ${spot.water_temp}°C
               </div>
               <div class="si">
                 <span class="wa">${t.aw} ~${spot.avg_wind_kts} kts</span>
-              </div>
-              <div class="si">
-                <div class="wr">${windBars}</div>
               </div>
             </div>
           </article>
