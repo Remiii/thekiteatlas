@@ -56,8 +56,8 @@ Edit `spots.json`. Each spot follows this structure:
   "country": { "fr": "Pays", "en": "Country" },
   "region": { "fr": "Région", "en": "Region" },
   "tags": {
-    "fr": ["15-25 kts", "flat", "débutant", "freeride"],
-    "en": ["15-25 kts", "flat", "beginner", "freeride"]
+    "fr": [["15-25 kts"], ["flat"], ["débutant"], ["freeride"]],
+    "en": [["15-25 kts"], ["flat"], ["beginner"], ["freeride"]]
   },
   "description": {
     "fr": "Description en français.",
@@ -71,7 +71,24 @@ Edit `spots.json`. Each spot follows this structure:
 }
 ```
 
+### Tags
+
+Each spot has 4 tag groups. Each group is an array (supports multiple values).
+
+| # | Color | Meaning | EN values | FR values |
+|---|-------|---------|-----------|-----------|
+| 1 | Purple | Wind range | `10-20 kts`, `15-25 kts`, `20-30 kts`, `25-35 kts` | same |
+| 2 | Teal | Water type | `flat`, `waves`, `choppy` | `flat`, `vagues`, `clapot` |
+| 3 | Orange | Level | `beginner`, `intermediate`, `advanced` | `débutant`, `intermédiaire`, `confirmé` |
+| 4 | Sky blue | Ride style | `freeride`, `freestyle`, `wave` | same |
+
+Multi-value example: a spot with flat water and waves uses `["flat", "waves"]` for tag 2.
+
+### Filters
+
 Available filters: `flat`, `wave`, `beginner`, `europe`, `tropical`, `warm` (water ≥ 23°C), `cold` (water < 20°C).
+
+Filters are combinable (AND logic). Make sure filters are consistent with the tags.
 
 ## Adding a spot page
 
