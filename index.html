@@ -211,13 +211,20 @@
         align-items: center;
       }
 
-      .fl {
-        font-size: 0.75rem;
+      .fg {
+        font-size: 0.65rem;
         font-weight: 600;
         color: var(--ts);
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        margin-right: 0.3rem;
+        opacity: 0.6;
+      }
+
+      .fs {
+        width: 1px;
+        height: 18px;
+        background: var(--gb);
+        flex-shrink: 0;
       }
 
       .ft {
@@ -566,14 +573,15 @@
           sub: "Spots de kitesurf - mois par mois - dans le monde entier",
           exp: "Explorer",
           fl: "Filtrer :",
-          fa: "Tous",
-          ff: "Flat water",
-          fw: "Vagues",
-          fb: "Débutant",
-          fe: "Europe",
-          ft: "Tropical",
-          fwm: "Eau chaude (>23°C)",
-          fc: "Eau froide (<20°C)",
+          fg: { wind: "Vent", water: "Eau", level: "Niveau", style: "Style", cond: "Conditions" },
+          filters: {
+            "10-20 kts": "10-20 kts", "15-25 kts": "15-25 kts", "20-30 kts": "20-30 kts", "25-35 kts": "25-35 kts",
+            flat: "Flat", waves: "Vagues", choppy: "Clapot",
+            beginner: "Débutant", intermediate: "Intermédiaire",
+            freeride: "Freeride", freestyle: "Freestyle", "wave ride": "Wave ride",
+            warm: "Eau chaude", cold: "Eau froide",
+            europe: "Europe", tropical: "Tropical",
+          },
           nr: "Pas de spot ce mois-ci avec ces critères — essaie une autre combinaison !",
           fo: "Fait avec ❤️ pour les riders du monde entier",
           fd: "Contenu compilé bénévolement · Les informations peuvent être inexactes ou périmées · Vérifiez toujours les conditions locales avant de naviguer",
@@ -589,14 +597,15 @@
           sub: "Kitesurf spots - month by month - worldwide",
           exp: "Explore",
           fl: "Filter:",
-          fa: "All",
-          ff: "Flat water",
-          fw: "Waves",
-          fb: "Beginner",
-          fe: "Europe",
-          ft: "Tropical",
-          fwm: "Warm water (>23°C)",
-          fc: "Cold water (<20°C)",
+          fg: { wind: "Wind", water: "Water", level: "Level", style: "Style", cond: "Conditions" },
+          filters: {
+            "10-20 kts": "10-20 kts", "15-25 kts": "15-25 kts", "20-30 kts": "20-30 kts", "25-35 kts": "25-35 kts",
+            flat: "Flat", waves: "Waves", choppy: "Choppy",
+            beginner: "Beginner", intermediate: "Intermediate",
+            freeride: "Freeride", freestyle: "Freestyle", "wave ride": "Wave ride",
+            warm: "Warm water", cold: "Cold water",
+            europe: "Europe", tropical: "Tropical",
+          },
           nr: "No spots this month with these filters — try another combo!",
           fo: "Made with ❤️ for riders worldwide",
           fd: "Voluntarily compiled content · Information may be inaccurate or outdated · Always check local conditions before riding",
@@ -671,16 +680,20 @@
          ═══════════════════════════════════════════ */
       function buildFilters() {
         const t = UI[lang];
-        const filters = [
-          ["flat", t.ff], ["wave", t.fw], ["beginner", t.fb],
-          ["europe", t.fe], ["tropical", t.ft], ["warm", t.fwm], ["cold", t.fc],
+        const groups = [
+          { label: t.fg.wind,  keys: ["10-20 kts", "15-25 kts", "20-30 kts", "25-35 kts"] },
+          { label: t.fg.water, keys: ["flat", "waves", "choppy"] },
+          { label: t.fg.level, keys: ["beginner", "intermediate"] },
+          { label: t.fg.style, keys: ["freeride", "freestyle", "wave ride"] },
+          { label: t.fg.cond,  keys: ["warm", "cold", "europe", "tropical"] },
         ];
-        document.getElementById("FB").innerHTML = `
-          <span class="fl">${t.fl}</span>
-          ${filters.map(([k, label]) =>
-            `<button class="ft${activeFilters.has(k) ? " a" : ""}" data-filter="${k}">${label}</button>`
-          ).join("")}
-        `;
+        const html = groups.map((g) =>
+          `<span class="fg">${g.label}</span>` +
+          g.keys.map((k) =>
+            `<button class="ft${activeFilters.has(k) ? " a" : ""}" data-filter="${k}">${t.filters[k]}</button>`
+          ).join("")
+        ).join('<span class="fs"></span>');
+        document.getElementById("FB").innerHTML = html;
       }
 
       /* ═══════════════════════════════════════════
@@ -717,7 +730,7 @@
         const cardClose = wrapper ? `</a>`            : ``;
 
         return cardOpen + `
-          <article class="sc" data-filters='${JSON.stringify(spot.filters)}' data-water="${spot.water_temp}" style="${spotPage?'cursor:pointer':''}">
+          <article class="sc" data-tags='${JSON.stringify(spot.tags.en)}' data-region='${JSON.stringify(spot.filters.filter(f=>["europe","tropical"].includes(f)))}' data-water="${spot.water_temp}" style="${spotPage?'cursor:pointer':''}">
             <div class="ws">${windBars}</div>
             <div class="sr">${region}</div>
             <h3 class="sn">${spot.name}</h3>
@@ -803,9 +816,16 @@
       /* ═══════════════════════════════════════════
          Apply active filter to all cards
          ═══════════════════════════════════════════ */
+      const WIND_KEYS = new Set(["10-20 kts", "15-25 kts", "20-30 kts", "25-35 kts"]);
+      const WATER_KEYS = new Set(["flat", "waves", "choppy"]);
+      const LEVEL_KEYS = new Set(["beginner", "intermediate"]);
+      const LEVEL_RANK = { beginner: 1, intermediate: 2, advanced: 3 };
+      const STYLE_KEYS = new Set(["freeride", "freestyle", "wave ride"]);
+
       function applyFilter() {
         document.querySelectorAll(".sc").forEach((card) => {
-          const filters = JSON.parse(card.dataset.filters || "[]");
+          const tags = JSON.parse(card.dataset.tags || "[[],[],[],[]]");
+          const region = JSON.parse(card.dataset.region || "[]");
           const waterTemp = parseInt(card.dataset.water);
 
           if (activeFilters.size === 0) {
@@ -815,9 +835,17 @@
 
           let show = true;
           for (const f of activeFilters) {
-            if (f === "warm") { if (waterTemp < 23) show = false; }
+            if (WIND_KEYS.has(f)) { if (!tags[0].includes(f)) show = false; }
+            else if (WATER_KEYS.has(f)) { if (!tags[1].includes(f)) show = false; }
+            else if (LEVEL_KEYS.has(f)) {
+              const filterRank = LEVEL_RANK[f];
+              const spotMax = Math.max(...tags[2].map(l => LEVEL_RANK[l] || 3));
+              if (spotMax > filterRank) show = false;
+            }
+            else if (STYLE_KEYS.has(f)) { if (!tags[3].includes(f)) show = false; }
+            else if (f === "warm") { if (waterTemp < 23) show = false; }
             else if (f === "cold") { if (waterTemp >= 20) show = false; }
-            else { if (!filters.includes(f)) show = false; }
+            else if (f === "europe" || f === "tropical") { if (!region.includes(f)) show = false; }
             if (!show) break;
           }
 
