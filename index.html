@@ -140,7 +140,7 @@
 
       /* ── Month nav ── */
 
-      .mn {
+      .toolbar {
         position: sticky;
         top: 0;
         z-index: 100;
@@ -515,13 +515,13 @@
         </div>
       </section>
 
-      <!-- Month navigation -->
-      <nav class="mn" id="MN" aria-label="Month navigation">
-        <div class="mni" id="MNI"></div>
-      </nav>
-
-      <!-- Filter bar -->
-      <div class="fb" id="FB" role="group" aria-label="Spot filters"></div>
+      <!-- Sticky toolbar: month nav + filters -->
+      <div class="toolbar">
+        <nav class="mn" id="MN" aria-label="Month navigation">
+          <div class="mni" id="MNI"></div>
+        </nav>
+        <div class="fb" id="FB" role="group" aria-label="Spot filters"></div>
+      </div>
 
       <!-- Month sections -->
       <div id="MS"></div>
@@ -631,7 +631,7 @@
           btn.addEventListener("click", () => {
             const section = document.getElementById(btn.dataset.month);
             if (section) {
-              const navH = document.getElementById("MN").offsetHeight;
+              const navH = document.querySelector(".toolbar").offsetHeight;
               window.scrollTo({
                 top: section.getBoundingClientRect().top + window.scrollY - navH - 10,
                 behavior: "smooth",
