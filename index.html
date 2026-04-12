@@ -305,6 +305,15 @@
         gap: 1.5rem;
       }
 
+      .no-results {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 2rem 1rem;
+        color: var(--ts);
+        font-size: 0.85rem;
+        font-style: italic;
+      }
+
       /* ── Spot card ── */
 
       .sc {
@@ -551,6 +560,7 @@
           ft: "Tropical",
           fwm: "Eau chaude (>23°C)",
           fc: "Eau froide (<20°C)",
+          nr: "Pas de spot ce mois-ci avec ces critères — essaie une autre combinaison !",
           fo: "Fait avec ❤️ pour les riders du monde entier",
           fd: "Contenu compilé bénévolement · Les informations peuvent être inexactes ou périmées · Vérifiez toujours les conditions locales avant de naviguer",
           ai: "Air",
@@ -573,6 +583,7 @@
           ft: "Tropical",
           fwm: "Warm water (>23°C)",
           fc: "Cold water (<20°C)",
+          nr: "No spots this month with these filters — try another combo!",
           fo: "Made with ❤️ for riders worldwide",
           fd: "Voluntarily compiled content · Information may be inaccurate or outdated · Always check local conditions before riding",
           ai: "Air",
@@ -796,6 +807,22 @@
           }
 
           card.classList.toggle("H", !show);
+        });
+
+        document.querySelectorAll("section.ms").forEach((section) => {
+          const cards = section.querySelectorAll(".sc");
+          const visible = [...cards].some((c) => !c.classList.contains("H"));
+          let msg = section.querySelector(".no-results");
+          if (!visible && cards.length > 0) {
+            if (!msg) {
+              msg = document.createElement("p");
+              msg.className = "no-results";
+              msg.textContent = UI[lang].nr;
+              section.querySelector(".sg").appendChild(msg);
+            }
+          } else if (msg) {
+            msg.remove();
+          }
         });
       }
 
