@@ -741,60 +741,6 @@
             "wave",
             "warm"
           ]
-        },
-        {
-          "name": "Dakhla",
-          "country": {
-            "fr": "Maroc",
-            "en": "Morocco"
-          },
-          "region": {
-            "fr": "Afrique",
-            "en": "Africa"
-          },
-          "tags": {
-            "fr": [
-              [
-                "10-20 kts"
-              ],
-              [
-                "flat"
-              ],
-              [
-                "débutant"
-              ],
-              [
-                "freeride"
-              ]
-            ],
-            "en": [
-              [
-                "10-20 kts"
-              ],
-              [
-                "flat"
-              ],
-              [
-                "beginner"
-              ],
-              [
-                "freeride"
-              ]
-            ]
-          },
-          "description": {
-            "fr": "Basse saison. Vent léger (12-18 kts) mais peu de monde. Grandes ailes recommandées.",
-            "en": "Low season. Light wind (12-18 kts) but few crowds. Bigger kites recommended."
-          },
-          "air_temp": 20,
-          "water_temp": 18,
-          "avg_wind_kts": 15,
-          "wind_score": 2,
-          "filters": [
-            "flat",
-            "beginner",
-            "cold"
-          ]
         }
       ]
     },
@@ -974,60 +920,6 @@
             "flat",
             "beginner",
             "warm"
-          ]
-        },
-        {
-          "name": "Dakhla",
-          "country": {
-            "fr": "Maroc",
-            "en": "Morocco"
-          },
-          "region": {
-            "fr": "Afrique",
-            "en": "Africa"
-          },
-          "tags": {
-            "fr": [
-              [
-                "10-20 kts"
-              ],
-              [
-                "flat"
-              ],
-              [
-                "intermédiaire"
-              ],
-              [
-                "freeride"
-              ]
-            ],
-            "en": [
-              [
-                "10-20 kts"
-              ],
-              [
-                "flat"
-              ],
-              [
-                "intermediate"
-              ],
-              [
-                "freeride"
-              ]
-            ]
-          },
-          "description": {
-            "fr": "Vent en hausse (15-20 kts). Début de saison, peu de monde sur la lagune.",
-            "en": "Wind building (15-20 kts). Season starting, few people on the lagoon."
-          },
-          "air_temp": 22,
-          "water_temp": 18,
-          "avg_wind_kts": 17,
-          "wind_score": 3,
-          "filters": [
-            "flat",
-            "beginner",
-            "cold"
           ]
         },
         {
@@ -1544,7 +1436,7 @@
           "air_temp": 23,
           "water_temp": 21,
           "avg_wind_kts": 22,
-          "wind_score": 4,
+          "wind_score": 5,
           "filters": [
             "flat",
             "beginner"
@@ -2228,7 +2120,8 @@
           "avg_wind_kts": 27,
           "wind_score": 5,
           "filters": [
-            "flat"
+            "flat",
+            "beginner"
           ]
         },
         {
@@ -2629,7 +2522,8 @@
           "wind_score": 5,
           "filters": [
             "flat",
-            "warm"
+            "warm",
+            "beginner"
           ]
         },
         {
@@ -2887,8 +2781,7 @@
                 "15-25 kts"
               ],
               [
-                "flat",
-                "vagues"
+                "flat"
               ],
               [
                 "débutant"
@@ -2902,8 +2795,7 @@
                 "15-25 kts"
               ],
               [
-                "flat",
-                "waves"
+                "flat"
               ],
               [
                 "beginner"
@@ -3328,64 +3220,6 @@
           "filters": [
             "wave",
             "cold"
-          ]
-        },
-        {
-          "name": "Dakhla",
-          "country": {
-            "fr": "Maroc",
-            "en": "Morocco"
-          },
-          "region": {
-            "fr": "Afrique",
-            "en": "Africa"
-          },
-          "tags": {
-            "fr": [
-              [
-                "15-25 kts"
-              ],
-              [
-                "flat",
-                "vagues"
-              ],
-              [
-                "débutant"
-              ],
-              [
-                "wave ride",
-                "freestyle"
-              ]
-            ],
-            "en": [
-              [
-                "15-25 kts"
-              ],
-              [
-                "flat",
-                "waves"
-              ],
-              [
-                "beginner"
-              ],
-              [
-                "wave ride",
-                "freestyle"
-              ]
-            ]
-          },
-          "description": {
-            "fr": "Bon pour les vagues (Oum Lamboiur). 70-80% jours ventés.",
-            "en": "Good for waves (Oum Lamboiur). 70-80% windy days."
-          },
-          "air_temp": 25,
-          "water_temp": 22,
-          "avg_wind_kts": 20,
-          "wind_score": 4,
-          "filters": [
-            "flat",
-            "wave",
-            "beginner"
           ]
         },
         {
@@ -4130,60 +3964,6 @@
             "flat",
             "beginner",
             "warm"
-          ]
-        },
-        {
-          "name": "Dakhla",
-          "country": {
-            "fr": "Maroc",
-            "en": "Morocco"
-          },
-          "region": {
-            "fr": "Afrique",
-            "en": "Africa"
-          },
-          "tags": {
-            "fr": [
-              [
-                "10-20 kts"
-              ],
-              [
-                "flat"
-              ],
-              [
-                "débutant"
-              ],
-              [
-                "freeride"
-              ]
-            ],
-            "en": [
-              [
-                "10-20 kts"
-              ],
-              [
-                "flat"
-              ],
-              [
-                "beginner"
-              ],
-              [
-                "freeride"
-              ]
-            ]
-          },
-          "description": {
-            "fr": "Basse saison (60% jours ventés). Vent léger mais navigable. Peu de monde.",
-            "en": "Low season (60% windy days). Light but rideable. Few crowds."
-          },
-          "air_temp": 20,
-          "water_temp": 18,
-          "avg_wind_kts": 15,
-          "wind_score": 2,
-          "filters": [
-            "flat",
-            "beginner",
-            "cold"
           ]
         },
         {
