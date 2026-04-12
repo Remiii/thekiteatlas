@@ -696,7 +696,9 @@
         const desc = spot.description[lang];
 
         const tagsHtml = tags
-          .map((g, j) => `<span class="tg ${TAG_CLASSES[j] || "tt"}">${g}</span>`)
+          .flatMap((group, j) =>
+            group.map((g) => `<span class="tg ${TAG_CLASSES[j] || "tt"}">${g}</span>`)
+          )
           .join("");
 
         const windBars = [1, 2, 3, 4, 5]

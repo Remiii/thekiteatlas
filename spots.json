@@ -13,11 +13,45 @@
       "spots": [
         {
           "name": "Cumbuco",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat & vagues", "tous niveaux", "freestyle"],
-            "en": ["15-25 kts", "flat & waves", "all levels", "freestyle"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Haut lieu du kite mondial. Lagunes flat et vagues côté océan. Vent constant.",
@@ -27,15 +61,53 @@
           "water_temp": 28,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["tropical", "wave", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "wave",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Cape Town",
-          "country": { "fr": "Afrique du Sud", "en": "South Africa" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Afrique du Sud",
+            "en": "South Africa"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["20-35 kts", "vagues", "confirmé", "wave"],
-            "en": ["20-35 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Été austral en pic. Cape Doctor 5j/7, 20-40 kts. Eau froide (15°C), combi obligatoire.",
@@ -45,15 +117,50 @@
           "water_temp": 15,
           "avg_wind_kts": 25,
           "wind_score": 5,
-          "filters": ["wave", "cold"]
+          "filters": [
+            "wave",
+            "cold"
+          ]
         },
         {
           "name": "Martinique - Le Vauclin",
-          "country": { "fr": "France (DOM)", "en": "France (DOM)" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "France (DOM)",
+            "en": "France (DOM)"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-20 kts", "flat", "débutant", "freeride"],
-            "en": ["15-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "On a pied partout, vent doux et régulier porté par les alizés d'hiver.",
@@ -63,15 +170,52 @@
           "water_temp": 27,
           "avg_wind_kts": 17,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Los Roques",
-          "country": { "fr": "Venezuela", "en": "Venezuela" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "Venezuela",
+            "en": "Venezuela"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["18-25 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Archipel paradisiaque. Flat sous le vent des îlots, eaux cristallines.",
@@ -81,15 +225,52 @@
           "water_temp": 27,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Mui Né",
-          "country": { "fr": "Vietnam", "en": "Vietnam" },
-          "region": { "fr": "Asie", "en": "Asia" },
+          "country": {
+            "fr": "Vietnam",
+            "en": "Vietnam"
+          },
+          "region": {
+            "fr": "Asie",
+            "en": "Asia"
+          },
           "tags": {
-            "fr": ["15-25 kts", "vagues", "intermédiaire+", "wave"],
-            "en": ["15-25 kts", "waves", "intermediate+", "wave"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Côte vietnamienne, vent fiable nov-mars. Vagues et prix abordables.",
@@ -99,15 +280,51 @@
           "water_temp": 26,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["tropical", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Zanzibar - Paje",
-          "country": { "fr": "Tanzanie", "en": "Tanzania" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Tanzanie",
+            "en": "Tanzania"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["12-18 kts", "flat à marée basse", "tous niveaux", "freeride"],
-            "en": ["12-18 kts", "flat at low tide", "all levels", "freeride"]
+            "fr": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Saison Kaskazi. Vent plus léger mais eau chaude et ambiance tropicale.",
@@ -117,15 +334,52 @@
           "water_temp": 28,
           "avg_wind_kts": 15,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Kalpitiya",
-          "country": { "fr": "Sri Lanka", "en": "Sri Lanka" },
-          "region": { "fr": "Asie", "en": "Asia" },
+          "country": {
+            "fr": "Sri Lanka",
+            "en": "Sri Lanka"
+          },
+          "region": {
+            "fr": "Asie",
+            "en": "Asia"
+          },
           "tags": {
-            "fr": ["15-20 kts", "flat", "débutant", "freeride"],
-            "en": ["15-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Péninsule avec douzaine de spots. Lagons peu profonds, mousson NE active.",
@@ -135,15 +389,52 @@
           "water_temp": 28,
           "avg_wind_kts": 17,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Cabarete",
-          "country": { "fr": "Rép. Dominicaine", "en": "Dominican Rep." },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "Rép. Dominicaine",
+            "en": "Dominican Rep."
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["12-18 kts", "choppy", "intermédiaire+", "freeride"],
-            "en": ["12-18 kts", "choppy", "intermediate+", "freeride"]
+            "fr": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Début de saison, vent plus léger qu'en été. Eau chaude, ambiance festive.",
@@ -153,11 +444,14 @@
           "water_temp": 27,
           "avg_wind_kts": 15,
           "wind_score": 3,
-          "filters": ["tropical", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "wave",
+            "warm"
+          ]
         }
       ]
     },
-
     {
       "id": "feb",
       "fr": {
@@ -171,11 +465,43 @@
       "spots": [
         {
           "name": "Cape Town",
-          "country": { "fr": "Afrique du Sud", "en": "South Africa" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Afrique du Sud",
+            "en": "South Africa"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["22-35 kts", "vagues", "confirmé", "wave"],
-            "en": ["22-35 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "22-35 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "22-35 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Mois le plus venté statistiquement. Les pros affluent du monde entier.",
@@ -185,15 +511,52 @@
           "water_temp": 16,
           "avg_wind_kts": 27,
           "wind_score": 5,
-          "filters": ["wave", "cold"]
+          "filters": [
+            "wave",
+            "cold"
+          ]
         },
         {
           "name": "Guadeloupe - Sainte-Anne",
-          "country": { "fr": "France (DOM)", "en": "France (DOM)" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "France (DOM)",
+            "en": "France (DOM)"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat & choppy", "tous niveaux", "freeride"],
-            "en": ["15-22 kts", "flat & choppy", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Lagons protégés par barrière de corail. Idéal en famille, kite et culture créole.",
@@ -203,15 +566,54 @@
           "water_temp": 26,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Boa Vista",
-          "country": { "fr": "Cap-Vert", "en": "Cape Verde" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Cap-Vert",
+            "en": "Cape Verde"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "intermédiaire+", "freeride"],
-            "en": ["18-25 kts", "flat & waves", "intermediate+", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Île sauvage, plages interminables battues par les alizés.",
@@ -221,15 +623,53 @@
           "water_temp": 22,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "wave", "flat"]
+          "filters": [
+            "tropical",
+            "wave",
+            "flat"
+          ]
         },
         {
           "name": "Les Grenadines",
-          "country": { "fr": "St Vincent", "en": "St Vincent" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "St Vincent",
+            "en": "St Vincent"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat & choppy", "intermédiaire", "freeride"],
-            "en": ["15-25 kts", "flat & choppy", "intermediate", "freeride"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Croisière kite entre les îles. Flat à Union Island, vagues à Mayreau.",
@@ -239,15 +679,53 @@
           "water_temp": 27,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "warm"
+          ]
         },
         {
           "name": "Jericoacoara",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["12-18 kts", "flat & vagues", "intermédiaire", "freeride"],
-            "en": ["12-18 kts", "flat & waves", "intermediate", "freeride"]
+            "fr": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Pré-saison au Nordeste. Le vent monte doucement. Moins de monde.",
@@ -257,15 +735,52 @@
           "water_temp": 28,
           "avg_wind_kts": 15,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["12-18 kts", "flat", "débutant", "freeride"],
-            "en": ["12-18 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "12-18 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Basse saison. Vent léger (12-18 kts) mais peu de monde. Grandes ailes recommandées.",
@@ -275,11 +790,14 @@
           "water_temp": 18,
           "avg_wind_kts": 15,
           "wind_score": 2,
-          "filters": ["flat", "beginner", "cold"]
+          "filters": [
+            "flat",
+            "beginner",
+            "cold"
+          ]
         }
       ]
     },
-
     {
       "id": "mar",
       "fr": {
@@ -293,11 +811,43 @@
       "spots": [
         {
           "name": "Maui",
-          "country": { "fr": "USA (Hawaï)", "en": "USA (Hawaii)" },
-          "region": { "fr": "Pacifique", "en": "Pacific" },
+          "country": {
+            "fr": "USA (Hawaï)",
+            "en": "USA (Hawaii)"
+          },
+          "region": {
+            "fr": "Pacifique",
+            "en": "Pacific"
+          },
           "tags": {
-            "fr": ["15-25 kts", "vagues", "confirmé", "wave"],
-            "en": ["15-25 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "North Shore mythique. Alizés Pacifique fiables, wave ride mondial.",
@@ -307,15 +857,52 @@
           "water_temp": 24,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["wave", "warm"]
+          "filters": [
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Aruba",
-          "country": { "fr": "Pays-Bas (Caraïbes)", "en": "Netherlands (Caribbean)" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "Pays-Bas (Caraïbes)",
+            "en": "Netherlands (Caribbean)"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & choppy", "tous niveaux", "freeride"],
-            "en": ["18-25 kts", "flat & choppy", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Vent constant toute l'année. Eaux cristallines et tièdes.",
@@ -325,15 +912,54 @@
           "water_temp": 27,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Santa Veronica",
-          "country": { "fr": "Colombie", "en": "Colombia" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Colombie",
+            "en": "Colombia"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["18-28 kts", "flat & choppy", "tous niveaux", "freeride"],
-            "en": ["18-28 kts", "flat & choppy", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Côte caribéenne. Thermique puissant, spot abordable, peu fréquenté.",
@@ -343,15 +969,52 @@
           "water_temp": 28,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["15-20 kts", "flat", "débutant+", "freeride"],
-            "en": ["15-20 kts", "flat", "beginner+", "freeride"]
+            "fr": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Vent en hausse (15-20 kts). Début de saison, peu de monde sur la lagune.",
@@ -361,15 +1024,51 @@
           "water_temp": 18,
           "avg_wind_kts": 17,
           "wind_score": 3,
-          "filters": ["flat", "beginner", "cold"]
+          "filters": [
+            "flat",
+            "beginner",
+            "cold"
+          ]
         },
         {
           "name": "El Gouna",
-          "country": { "fr": "Égypte", "en": "Egypt" },
-          "region": { "fr": "Moyen-Orient", "en": "Middle East" },
+          "country": {
+            "fr": "Égypte",
+            "en": "Egypt"
+          },
+          "region": {
+            "fr": "Moyen-Orient",
+            "en": "Middle East"
+          },
           "tags": {
-            "fr": ["15-20 kts", "flat", "débutant", "freeride"],
-            "en": ["15-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Mer Rouge, lagunes sécurisées. Vent modéré, conditions agréables.",
@@ -379,15 +1078,50 @@
           "water_temp": 22,
           "avg_wind_kts": 17,
           "wind_score": 3,
-          "filters": ["flat", "beginner"]
+          "filters": [
+            "flat",
+            "beginner"
+          ]
         },
         {
           "name": "Punta Chame",
-          "country": { "fr": "Panama", "en": "Panama" },
-          "region": { "fr": "Amérique Centrale", "en": "Central America" },
+          "country": {
+            "fr": "Panama",
+            "en": "Panama"
+          },
+          "region": {
+            "fr": "Amérique Centrale",
+            "en": "Central America"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat", "tous niveaux", "freeride"],
-            "en": ["15-25 kts", "flat", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Péninsule paisible, lagon à marée basse. Eau 28°C, idéal pour progresser.",
@@ -397,11 +1131,15 @@
           "water_temp": 28,
           "avg_wind_kts": 19,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         }
       ]
     },
-
     {
       "id": "apr",
       "fr": {
@@ -415,11 +1153,43 @@
       "spots": [
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["18-25 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Haute saison démarre. Thermiques fiables l'après-midi, 75% jours ventés.",
@@ -429,15 +1199,53 @@
           "water_temp": 19,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["flat", "beginner", "cold"]
+          "filters": [
+            "flat",
+            "beginner",
+            "cold"
+          ]
         },
         {
           "name": "Babaomby",
-          "country": { "fr": "Madagascar", "en": "Madagascar" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Madagascar",
+            "en": "Madagascar"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["20-28 kts", "flat & vagues", "intermédiaire+", "freeride"],
-            "en": ["20-28 kts", "flat & waves", "intermediate+", "freeride"]
+            "fr": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Top 10 mondial Windguru. Lagon d'émeraude, eaux cristallines peu profondes.",
@@ -447,15 +1255,52 @@
           "water_temp": 28,
           "avg_wind_kts": 23,
           "wind_score": 5,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Essaouira",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-28 kts", "vagues", "intermédiaire+", "wave"],
-            "en": ["18-28 kts", "waves", "intermediate+", "wave"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Cité des alizés. Vent fort, ambiance surf-kite, médina UNESCO.",
@@ -465,15 +1310,50 @@
           "water_temp": 18,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["wave", "cold"]
+          "filters": [
+            "wave",
+            "cold"
+          ]
         },
         {
           "name": "Rodrigues",
-          "country": { "fr": "Île Maurice", "en": "Mauritius" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Île Maurice",
+            "en": "Mauritius"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat", "tous niveaux", "freeride"],
-            "en": ["18-25 kts", "flat", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Lagon immense, flat turquoise. Authentique et paisible.",
@@ -483,15 +1363,54 @@
           "water_temp": 26,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Fuerteventura",
-          "country": { "fr": "Espagne (Canaries)", "en": "Spain (Canary Is.)" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Espagne (Canaries)",
+            "en": "Spain (Canary Is.)"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "tous niveaux", "freeride"],
-            "en": ["18-25 kts", "flat & waves", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Matas Bay : flat toute la journée. Paysages volcaniques spectaculaires.",
@@ -501,15 +1420,55 @@
           "water_temp": 19,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["europe", "flat", "beginner", "cold"]
+          "filters": [
+            "europe",
+            "flat",
+            "beginner",
+            "cold",
+            "wave"
+          ]
         },
         {
           "name": "Masirah Island",
-          "country": { "fr": "Oman", "en": "Oman" },
-          "region": { "fr": "Moyen-Orient", "en": "Middle East" },
+          "country": {
+            "fr": "Oman",
+            "en": "Oman"
+          },
+          "region": {
+            "fr": "Moyen-Orient",
+            "en": "Middle East"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "intermédiaire", "freeride"],
-            "en": ["18-25 kts", "flat & waves", "intermediate", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Île désertique, spot sauvage peu fréquenté. Paysages lunaires.",
@@ -519,11 +1478,14 @@
           "water_temp": 25,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["wave", "flat", "warm"]
+          "filters": [
+            "wave",
+            "flat",
+            "warm"
+          ]
         }
       ]
     },
-
     {
       "id": "may",
       "fr": {
@@ -537,11 +1499,43 @@
       "spots": [
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["20-28 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["20-28 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "80% jours ventés, thermiques fiables. L'eau remonte à 21°C.",
@@ -551,15 +1545,50 @@
           "water_temp": 21,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["flat", "beginner"]
+          "filters": [
+            "flat",
+            "beginner"
+          ]
         },
         {
           "name": "Kos - Mastichari",
-          "country": { "fr": "Grèce", "en": "Greece" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Grèce",
+            "en": "Greece"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["15-20 kts", "flat", "débutant", "freeride"],
-            "en": ["15-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Le Meltem commence. Spot plat et accessible, idéal pour apprendre.",
@@ -569,15 +1598,51 @@
           "water_temp": 20,
           "avg_wind_kts": 17,
           "wind_score": 3,
-          "filters": ["europe", "flat", "beginner"]
+          "filters": [
+            "europe",
+            "flat",
+            "beginner"
+          ]
         },
         {
           "name": "Sicile - Lo Stagnone",
-          "country": { "fr": "Italie", "en": "Italy" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Italie",
+            "en": "Italy"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["12-20 kts", "flat", "débutant", "freeride"],
-            "en": ["12-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "12-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "12-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Immense lagon flat. Eau peu profonde, couchers de soleil sur les salines.",
@@ -587,15 +1652,54 @@
           "water_temp": 19,
           "avg_wind_kts": 15,
           "wind_score": 3,
-          "filters": ["europe", "flat", "beginner", "cold"]
+          "filters": [
+            "europe",
+            "flat",
+            "beginner",
+            "cold"
+          ]
         },
         {
           "name": "Babaomby",
-          "country": { "fr": "Madagascar", "en": "Madagascar" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Madagascar",
+            "en": "Madagascar"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["22-30 kts", "flat & vagues", "intermédiaire+", "freestyle"],
-            "en": ["22-30 kts", "flat & waves", "intermediate+", "freestyle"]
+            "fr": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Pleine saison, vent au max. Sessions épiques garanties.",
@@ -605,15 +1709,52 @@
           "water_temp": 27,
           "avg_wind_kts": 25,
           "wind_score": 5,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Anse la Raie",
-          "country": { "fr": "Île Maurice", "en": "Mauritius" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Île Maurice",
+            "en": "Mauritius"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["18-25 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Lagon peu profond, barrière de corail. Paradis du freestyle.",
@@ -623,15 +1764,52 @@
           "water_temp": 25,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Guincho",
-          "country": { "fr": "Portugal", "en": "Portugal" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Portugal",
+            "en": "Portugal"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["18-28 kts", "vagues", "confirmé", "wave"],
-            "en": ["18-28 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Plage sauvage près de Lisbonne. Nortada puissante, vagues atlantiques.",
@@ -641,11 +1819,14 @@
           "water_temp": 16,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["europe", "wave", "cold"]
+          "filters": [
+            "europe",
+            "wave",
+            "cold"
+          ]
         }
       ]
     },
-
     {
       "id": "jun",
       "fr": {
@@ -659,11 +1840,43 @@
       "spots": [
         {
           "name": "Tarifa",
-          "country": { "fr": "Espagne", "en": "Spain" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Espagne",
+            "en": "Spain"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["20-35 kts", "choppy & vagues", "intermédiaire+", "wave"],
-            "en": ["20-35 kts", "choppy & waves", "intermediate+", "wave"]
+            "fr": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Le Levante souffle fort. Ambiance internationale, sessions face à l'Afrique.",
@@ -673,15 +1886,50 @@
           "water_temp": 20,
           "avg_wind_kts": 25,
           "wind_score": 5,
-          "filters": ["europe", "wave"]
+          "filters": [
+            "europe",
+            "wave"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["22-30 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["22-30 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "90% jours ventés, thermiques puissants. Shorty ou lycra suffisent.",
@@ -691,15 +1939,50 @@
           "water_temp": 20,
           "avg_wind_kts": 24,
           "wind_score": 5,
-          "filters": ["flat", "beginner"]
+          "filters": [
+            "flat",
+            "beginner"
+          ]
         },
         {
           "name": "Drepano",
-          "country": { "fr": "Grèce", "en": "Greece" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Grèce",
+            "en": "Greece"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat", "débutant", "freeride"],
-            "en": ["15-22 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Flat water grec. Le Meltem souffle fiablement tout l'été.",
@@ -709,15 +1992,52 @@
           "water_temp": 23,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["europe", "flat", "beginner", "warm"]
+          "filters": [
+            "europe",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Zanzibar - Paje",
-          "country": { "fr": "Tanzanie", "en": "Tanzania" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Tanzanie",
+            "en": "Tanzania"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat à marée basse", "tous niveaux", "freeride"],
-            "en": ["18-25 kts", "flat at low tide", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Kusi fort en juin. Haute saison kite à Zanzibar.",
@@ -727,15 +2047,54 @@
           "water_temp": 26,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Cumbuco",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "tous niveaux", "freestyle"],
-            "en": ["18-25 kts", "flat & waves", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Nordeste en haute saison. Vent constant, lagunes, ambiance festive.",
@@ -745,15 +2104,53 @@
           "water_temp": 27,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "wave", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "El Gouna",
-          "country": { "fr": "Égypte", "en": "Egypt" },
-          "region": { "fr": "Moyen-Orient", "en": "Middle East" },
+          "country": {
+            "fr": "Égypte",
+            "en": "Egypt"
+          },
+          "region": {
+            "fr": "Moyen-Orient",
+            "en": "Middle East"
+          },
           "tags": {
-            "fr": ["18-28 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["18-28 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Pleine saison Mer Rouge. Thermiques puissants, flat dans les lagunes.",
@@ -763,11 +2160,14 @@
           "water_temp": 26,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["flat", "beginner", "warm"]
+          "filters": [
+            "flat",
+            "beginner",
+            "warm"
+          ]
         }
       ]
     },
-
     {
       "id": "jul",
       "fr": {
@@ -781,11 +2181,43 @@
       "spots": [
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["25-35 kts", "flat", "intermédiaire+", "freestyle"],
-            "en": ["25-35 kts", "flat", "intermediate+", "freestyle"]
+            "fr": [
+              [
+                "25-35 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "25-35 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Sommet absolu. 90%+ jours ventés, rafales 35 kts. Petites ailes (7-9m).",
@@ -795,15 +2227,49 @@
           "water_temp": 22,
           "avg_wind_kts": 27,
           "wind_score": 5,
-          "filters": ["flat"]
+          "filters": [
+            "flat"
+          ]
         },
         {
           "name": "Tarifa",
-          "country": { "fr": "Espagne", "en": "Spain" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Espagne",
+            "en": "Spain"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["22-40 kts", "choppy & vagues", "confirmé", "wave"],
-            "en": ["22-40 kts", "choppy & waves", "advanced", "wave"]
+            "fr": [
+              [
+                "22-40 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "22-40 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Vent potentiellement extrême. Sessions épiques pour riders expérimentés.",
@@ -813,15 +2279,52 @@
           "water_temp": 21,
           "avg_wind_kts": 28,
           "wind_score": 5,
-          "filters": ["europe", "wave"]
+          "filters": [
+            "europe",
+            "wave"
+          ]
         },
         {
           "name": "Jericoacoara",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["20-30 kts", "flat & vagues", "intermédiaire+", "freestyle"],
-            "en": ["20-30 kts", "flat & waves", "intermediate+", "freestyle"]
+            "fr": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Pleine saison Nordeste. Vent non-stop, on ride en 7m. Downwinds légendaires.",
@@ -831,15 +2334,54 @@
           "water_temp": 26,
           "avg_wind_kts": 24,
           "wind_score": 5,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Naxos",
-          "country": { "fr": "Grèce", "en": "Greece" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Grèce",
+            "en": "Greece"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["18-28 kts", "flat & choppy", "tous niveaux", "freeride"],
-            "en": ["18-28 kts", "flat & choppy", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Meltem à son apogée. Baie de sable, ambiance cycladique.",
@@ -849,15 +2391,54 @@
           "water_temp": 24,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["europe", "flat", "beginner", "warm"]
+          "filters": [
+            "europe",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Beauduc",
-          "country": { "fr": "France", "en": "France" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "France",
+            "en": "France"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["20-30 kts", "flat & choppy", "intermédiaire+", "freeride"],
-            "en": ["20-30 kts", "flat & choppy", "intermediate+", "freeride"]
+            "fr": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Camargue sauvage. Mistral puissant, plus grande plage de Méditerranée.",
@@ -867,15 +2448,52 @@
           "water_temp": 22,
           "avg_wind_kts": 23,
           "wind_score": 4,
-          "filters": ["europe", "flat"]
+          "filters": [
+            "europe",
+            "flat"
+          ]
         },
         {
           "name": "Le Morne",
-          "country": { "fr": "Île Maurice", "en": "Mauritius" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Île Maurice",
+            "en": "Mauritius"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "tous niveaux", "freeride"],
-            "en": ["18-25 kts", "flat & waves", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Hiver austral = haute saison vent. Lagon turquoise, One Eye pour wave riders.",
@@ -885,11 +2503,16 @@
           "water_temp": 23,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm",
+            "beginner"
+          ]
         }
       ]
     },
-
     {
       "id": "aug",
       "fr": {
@@ -903,11 +2526,43 @@
       "spots": [
         {
           "name": "Barra Grande",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["22-30 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["22-30 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Kitelagoon parfait. Eau tiède, vent constant, cocotiers.",
@@ -917,15 +2572,52 @@
           "water_temp": 26,
           "avg_wind_kts": 25,
           "wind_score": 5,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["25-35 kts", "flat", "intermédiaire+", "freestyle"],
-            "en": ["25-35 kts", "flat", "intermediate+", "freestyle"]
+            "fr": [
+              [
+                "25-35 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "25-35 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Avec juillet le plus venté. Rafales fréquentes, petites ailes de rigueur.",
@@ -935,15 +2627,50 @@
           "water_temp": 23,
           "avg_wind_kts": 27,
           "wind_score": 5,
-          "filters": ["flat", "warm"]
+          "filters": [
+            "flat",
+            "warm"
+          ]
         },
         {
           "name": "Sardaigne - Punta Trettu",
-          "country": { "fr": "Italie", "en": "Italy" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Italie",
+            "en": "Italy"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["15-25 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Flat cristallin en Sardaigne sud. Un des meilleurs spots flat d'Europe.",
@@ -953,15 +2680,54 @@
           "water_temp": 25,
           "avg_wind_kts": 19,
           "wind_score": 4,
-          "filters": ["europe", "flat", "beginner", "warm"]
+          "filters": [
+            "europe",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Leucate",
-          "country": { "fr": "France", "en": "France" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "France",
+            "en": "France"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["20-35 kts", "flat & choppy", "intermédiaire+", "freeride"],
-            "en": ["20-35 kts", "flat & choppy", "intermediate+", "freeride"]
+            "fr": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Tramontane forte sur l'étang et la mer. Spot emblématique du sud.",
@@ -971,15 +2737,53 @@
           "water_temp": 23,
           "avg_wind_kts": 24,
           "wind_score": 4,
-          "filters": ["europe", "flat", "warm"]
+          "filters": [
+            "europe",
+            "flat",
+            "warm"
+          ]
         },
         {
           "name": "Sakalava",
-          "country": { "fr": "Madagascar", "en": "Madagascar" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Madagascar",
+            "en": "Madagascar"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["22-30 kts", "flat & vagues", "intermédiaire+", "freeride"],
-            "en": ["22-30 kts", "flat & waves", "intermediate+", "freeride"]
+            "fr": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "22-30 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Baie spectaculaire avec pain de sucre. Conditions parfaites.",
@@ -989,15 +2793,52 @@
           "water_temp": 25,
           "avg_wind_kts": 25,
           "wind_score": 5,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Gnaraloo",
-          "country": { "fr": "Australie", "en": "Australia" },
-          "region": { "fr": "Océanie", "en": "Oceania" },
+          "country": {
+            "fr": "Australie",
+            "en": "Australia"
+          },
+          "region": {
+            "fr": "Océanie",
+            "en": "Oceania"
+          },
           "tags": {
-            "fr": ["20-30 kts", "vagues", "confirmé", "wave"],
-            "en": ["20-30 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Côte ouest australienne reculée. Vent offshore, vagues parfaites.",
@@ -1007,11 +2848,12 @@
           "water_temp": 20,
           "avg_wind_kts": 24,
           "wind_score": 5,
-          "filters": ["wave"]
+          "filters": [
+            "wave"
+          ]
         }
       ]
     },
-
     {
       "id": "sep",
       "fr": {
@@ -1025,11 +2867,45 @@
       "spots": [
         {
           "name": "Cumbuco",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["20-28 kts", "flat & vagues", "tous niveaux", "freestyle"],
-            "en": ["20-28 kts", "flat & waves", "all levels", "freestyle"]
+            "fr": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Un des meilleurs mois au Nordeste. Vent fort et constant.",
@@ -1039,15 +2915,55 @@
           "water_temp": 26,
           "avg_wind_kts": 23,
           "wind_score": 5,
-          "filters": ["tropical", "flat", "wave", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "tous niveaux", "freestyle"],
-            "en": ["18-25 kts", "flat & waves", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "85% jours ventés, chaleur douce. Début saison vagues côté océan.",
@@ -1057,15 +2973,52 @@
           "water_temp": 24,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["flat", "beginner", "warm"]
+          "filters": [
+            "flat",
+            "beginner",
+            "warm",
+            "wave"
+          ]
         },
         {
           "name": "Tarifa",
-          "country": { "fr": "Espagne", "en": "Spain" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Espagne",
+            "en": "Spain"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["18-30 kts", "choppy & vagues", "intermédiaire+", "wave"],
-            "en": ["18-30 kts", "choppy & waves", "intermediate+", "wave"]
+            "fr": [
+              [
+                "18-30 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "18-30 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Arrière-saison, bon compromis vent/chaleur. Moins de monde.",
@@ -1075,15 +3028,52 @@
           "water_temp": 22,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["europe", "wave"]
+          "filters": [
+            "europe",
+            "wave"
+          ]
         },
         {
           "name": "Taiba",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["20-28 kts", "flat & vagues", "débutant+", "freeride"],
-            "en": ["20-28 kts", "flat & waves", "beginner+", "freeride"]
+            "fr": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "20-28 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Spot du Ceará idéal pour progresser. Écoles de qualité.",
@@ -1093,15 +3083,53 @@
           "water_temp": 27,
           "avg_wind_kts": 23,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm",
+            "wave"
+          ]
         },
         {
           "name": "El Gouna",
-          "country": { "fr": "Égypte", "en": "Egypt" },
-          "region": { "fr": "Moyen-Orient", "en": "Middle East" },
+          "country": {
+            "fr": "Égypte",
+            "en": "Egypt"
+          },
+          "region": {
+            "fr": "Moyen-Orient",
+            "en": "Middle East"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat", "tous niveaux", "freestyle"],
-            "en": ["18-25 kts", "flat", "all levels", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Encore très venté. Resort lifestyle Mer Rouge à prix doux.",
@@ -1111,15 +3139,53 @@
           "water_temp": 28,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["flat", "beginner", "warm"]
+          "filters": [
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Viana do Castelo",
-          "country": { "fr": "Portugal", "en": "Portugal" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Portugal",
+            "en": "Portugal"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat & vagues", "intermédiaire", "freeride"],
-            "en": ["15-25 kts", "flat & waves", "intermediate", "freeride"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Nord du Portugal, vent side-shore. Grande baie de sable.",
@@ -1129,11 +3195,15 @@
           "water_temp": 18,
           "avg_wind_kts": 19,
           "wind_score": 3,
-          "filters": ["europe", "wave", "flat", "cold"]
+          "filters": [
+            "europe",
+            "wave",
+            "flat",
+            "cold"
+          ]
         }
       ]
     },
-
     {
       "id": "oct",
       "fr": {
@@ -1147,11 +3217,45 @@
       "spots": [
         {
           "name": "Fuerteventura",
-          "country": { "fr": "Espagne (Canaries)", "en": "Spain (Canary Is.)" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Espagne (Canaries)",
+            "en": "Spain (Canary Is.)"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["18-28 kts", "flat & vagues", "tous niveaux", "freeride"],
-            "en": ["18-28 kts", "flat & waves", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Meilleure période aux Canaries. Température idéale, vent fiable.",
@@ -1161,15 +3265,54 @@
           "water_temp": 22,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["europe", "flat", "wave", "beginner"]
+          "filters": [
+            "europe",
+            "flat",
+            "wave",
+            "beginner"
+          ]
         },
         {
           "name": "Jericoacoara",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["18-25 kts", "flat & vagues", "intermédiaire+", "freestyle"],
-            "en": ["18-25 kts", "flat & waves", "intermediate+", "freestyle"]
+            "fr": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-25 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Fin haute saison mais vent encore là. Tarifs plus doux.",
@@ -1179,15 +3322,52 @@
           "water_temp": 27,
           "avg_wind_kts": 21,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Cape Town",
-          "country": { "fr": "Afrique du Sud", "en": "South Africa" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Afrique du Sud",
+            "en": "South Africa"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-28 kts", "vagues", "confirmé", "wave"],
-            "en": ["18-28 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Début saison australe. Le vent monte, moins de monde qu'en déc.",
@@ -1197,15 +3377,54 @@
           "water_temp": 14,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["wave", "cold"]
+          "filters": [
+            "wave",
+            "cold"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-22 kts", "flat & vagues", "tous niveaux", "wave/freestyle"],
-            "en": ["18-22 kts", "flat & waves", "all levels", "wave/freestyle"]
+            "fr": [
+              [
+                "18-22 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "wave",
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "18-22 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "wave",
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Bon pour les vagues (Oum Lamboiur). 70-80% jours ventés.",
@@ -1215,15 +3434,53 @@
           "water_temp": 22,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["flat", "wave", "beginner"]
+          "filters": [
+            "flat",
+            "wave",
+            "beginner"
+          ]
         },
         {
           "name": "Le Morne",
-          "country": { "fr": "Île Maurice", "en": "Mauritius" },
-          "region": { "fr": "Océan Indien", "en": "Indian Ocean" },
+          "country": {
+            "fr": "Île Maurice",
+            "en": "Mauritius"
+          },
+          "region": {
+            "fr": "Océan Indien",
+            "en": "Indian Ocean"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat & vagues", "tous niveaux", "freeride"],
-            "en": ["15-22 kts", "flat & waves", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Printemps austral, retour des alizés SE. Cadre luxueux.",
@@ -1233,15 +3490,53 @@
           "water_temp": 24,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm",
+            "wave"
+          ]
         },
         {
           "name": "Dahab",
-          "country": { "fr": "Égypte", "en": "Egypt" },
-          "region": { "fr": "Moyen-Orient", "en": "Middle East" },
+          "country": {
+            "fr": "Égypte",
+            "en": "Egypt"
+          },
+          "region": {
+            "fr": "Moyen-Orient",
+            "en": "Middle East"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat", "débutant", "freeride"],
-            "en": ["15-22 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Lagon Mer Rouge, ambiance backpacker. Montagnes du Sinaï en fond.",
@@ -1251,11 +3546,14 @@
           "water_temp": 25,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["flat", "beginner", "warm"]
+          "filters": [
+            "flat",
+            "beginner",
+            "warm"
+          ]
         }
       ]
     },
-
     {
       "id": "nov",
       "fr": {
@@ -1269,11 +3567,43 @@
       "spots": [
         {
           "name": "Cape Town",
-          "country": { "fr": "Afrique du Sud", "en": "South Africa" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Afrique du Sud",
+            "en": "South Africa"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["20-35 kts", "vagues", "confirmé", "wave"],
-            "en": ["20-35 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "20-35 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Le plus de jours ventés de l'année statistiquement. Cape Doctor lancé.",
@@ -1283,15 +3613,52 @@
           "water_temp": 14,
           "avg_wind_kts": 25,
           "wind_score": 5,
-          "filters": ["wave", "cold"]
+          "filters": [
+            "wave",
+            "cold"
+          ]
         },
         {
           "name": "Sal",
-          "country": { "fr": "Cap-Vert", "en": "Cape Verde" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Cap-Vert",
+            "en": "Cape Verde"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["18-28 kts", "vagues & flat", "intermédiaire+", "wave"],
-            "en": ["18-28 kts", "waves & flat", "intermediate+", "wave"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Kite beach de Santa Maria. Alizés en forme, conditions variées.",
@@ -1301,15 +3668,54 @@
           "water_temp": 24,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["tropical", "wave", "flat", "warm"]
+          "filters": [
+            "tropical",
+            "wave",
+            "flat",
+            "warm"
+          ]
         },
         {
           "name": "Fuerteventura",
-          "country": { "fr": "Espagne (Canaries)", "en": "Spain (Canary Is.)" },
-          "region": { "fr": "Europe", "en": "Europe" },
+          "country": {
+            "fr": "Espagne (Canaries)",
+            "en": "Spain (Canary Is.)"
+          },
+          "region": {
+            "fr": "Europe",
+            "en": "Europe"
+          },
           "tags": {
-            "fr": ["18-28 kts", "flat & vagues", "tous niveaux", "freeride"],
-            "en": ["18-28 kts", "flat & waves", "all levels", "freeride"]
+            "fr": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "18-28 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Escapade hivernale à quelques heures de Paris. Vent excellent.",
@@ -1319,15 +3725,52 @@
           "water_temp": 21,
           "avg_wind_kts": 22,
           "wind_score": 4,
-          "filters": ["europe", "flat", "wave", "beginner"]
+          "filters": [
+            "europe",
+            "flat",
+            "wave",
+            "beginner"
+          ]
         },
         {
           "name": "Bonaire",
-          "country": { "fr": "Pays-Bas (Caraïbes)", "en": "Netherlands (Caribbean)" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "Pays-Bas (Caraïbes)",
+            "en": "Netherlands (Caribbean)"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat", "tous niveaux", "freeride"],
-            "en": ["15-25 kts", "flat", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Lac Bay : flat protégé en mangrove. Parfait pour débutants.",
@@ -1337,15 +3780,52 @@
           "water_temp": 27,
           "avg_wind_kts": 20,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Cabarete",
-          "country": { "fr": "Rép. Dominicaine", "en": "Dominican Rep." },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "Rép. Dominicaine",
+            "en": "Dominican Rep."
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-22 kts", "choppy", "intermédiaire", "freeride"],
-            "en": ["15-22 kts", "choppy", "intermediate", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "intermédiaire"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "choppy"
+              ],
+              [
+                "intermediate"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Retour des alizés. Ambiance latino, sessions au coucher de soleil.",
@@ -1355,15 +3835,51 @@
           "water_temp": 27,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["tropical", "wave", "warm"]
+          "filters": [
+            "tropical",
+            "wave",
+            "warm"
+          ]
         },
         {
           "name": "Koh Phangan",
-          "country": { "fr": "Thaïlande", "en": "Thailand" },
-          "region": { "fr": "Asie", "en": "Asia" },
+          "country": {
+            "fr": "Thaïlande",
+            "en": "Thailand"
+          },
+          "region": {
+            "fr": "Asie",
+            "en": "Asia"
+          },
           "tags": {
-            "fr": ["15-20 kts", "flat", "débutant", "freeride"],
-            "en": ["15-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Lagon sable blanc, eau 28°C. Yoga le matin, kite l'après-midi.",
@@ -1373,11 +3889,15 @@
           "water_temp": 28,
           "avg_wind_kts": 17,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         }
       ]
     },
-
     {
       "id": "dec",
       "fr": {
@@ -1391,11 +3911,43 @@
       "spots": [
         {
           "name": "Cape Town",
-          "country": { "fr": "Afrique du Sud", "en": "South Africa" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Afrique du Sud",
+            "en": "South Africa"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["22-35 kts", "vagues", "confirmé", "wave"],
-            "en": ["22-35 kts", "waves", "advanced", "wave"]
+            "fr": [
+              [
+                "22-35 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave"
+              ]
+            ],
+            "en": [
+              [
+                "22-35 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave"
+              ]
+            ]
           },
           "description": {
             "fr": "Pic austral. Red Bull King of the Air. Conditions extrêmes, eau froide (15°C).",
@@ -1405,15 +3957,52 @@
           "water_temp": 15,
           "avg_wind_kts": 26,
           "wind_score": 5,
-          "filters": ["wave", "cold"]
+          "filters": [
+            "wave",
+            "cold"
+          ]
         },
         {
           "name": "Saint-Martin",
-          "country": { "fr": "France (DOM)", "en": "France (DOM)" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "France (DOM)",
+            "en": "France (DOM)"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-25 kts", "flat & choppy", "tous niveaux", "freeride"],
-            "en": ["15-25 kts", "flat & choppy", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-25 kts"
+              ],
+              [
+                "flat",
+                "choppy"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Orient Bay, eaux turquoises. Kite, gastronomie et culture.",
@@ -1423,15 +4012,54 @@
           "water_temp": 27,
           "avg_wind_kts": 19,
           "wind_score": 4,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Cumbuco",
-          "country": { "fr": "Brésil", "en": "Brazil" },
-          "region": { "fr": "Amérique du Sud", "en": "South America" },
+          "country": {
+            "fr": "Brésil",
+            "en": "Brazil"
+          },
+          "region": {
+            "fr": "Amérique du Sud",
+            "en": "South America"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat & vagues", "tous niveaux", "freestyle"],
-            "en": ["15-22 kts", "flat & waves", "all levels", "freestyle"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat",
+                "vagues"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat",
+                "waves"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freestyle"
+              ]
+            ]
           },
           "description": {
             "fr": "Fin haute saison mais conditions encore bonnes. Réveillon mémorable.",
@@ -1441,15 +4069,53 @@
           "water_temp": 28,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "wave", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "wave",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Zanzibar - Jambiani",
-          "country": { "fr": "Tanzanie", "en": "Tanzania" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Tanzanie",
+            "en": "Tanzania"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat à marée basse", "tous niveaux", "freeride"],
-            "en": ["15-22 kts", "flat at low tide", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Vents NE de retour. Plages de rêve, décembre est excellent.",
@@ -1459,15 +4125,52 @@
           "water_temp": 28,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         },
         {
           "name": "Dakhla",
-          "country": { "fr": "Maroc", "en": "Morocco" },
-          "region": { "fr": "Afrique", "en": "Africa" },
+          "country": {
+            "fr": "Maroc",
+            "en": "Morocco"
+          },
+          "region": {
+            "fr": "Afrique",
+            "en": "Africa"
+          },
           "tags": {
-            "fr": ["12-20 kts", "flat", "débutant", "freeride"],
-            "en": ["12-20 kts", "flat", "beginner", "freeride"]
+            "fr": [
+              [
+                "12-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "débutant"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "12-20 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Basse saison (60% jours ventés). Vent léger mais navigable. Peu de monde.",
@@ -1477,15 +4180,51 @@
           "water_temp": 18,
           "avg_wind_kts": 15,
           "wind_score": 2,
-          "filters": ["flat", "beginner", "cold"]
+          "filters": [
+            "flat",
+            "beginner",
+            "cold"
+          ]
         },
         {
           "name": "Cuba - Cayo Guillermo",
-          "country": { "fr": "Cuba", "en": "Cuba" },
-          "region": { "fr": "Caraïbes", "en": "Caribbean" },
+          "country": {
+            "fr": "Cuba",
+            "en": "Cuba"
+          },
+          "region": {
+            "fr": "Caraïbes",
+            "en": "Caribbean"
+          },
           "tags": {
-            "fr": ["15-22 kts", "flat", "tous niveaux", "freeride"],
-            "en": ["15-22 kts", "flat", "all levels", "freeride"]
+            "fr": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ],
+            "en": [
+              [
+                "15-22 kts"
+              ],
+              [
+                "flat"
+              ],
+              [
+                "beginner"
+              ],
+              [
+                "freeride"
+              ]
+            ]
           },
           "description": {
             "fr": "Eaux turquoises peu profondes. Alizés fiables, cadre cubain.",
@@ -1495,10 +4234,14 @@
           "water_temp": 25,
           "avg_wind_kts": 18,
           "wind_score": 3,
-          "filters": ["tropical", "flat", "beginner", "warm"]
+          "filters": [
+            "tropical",
+            "flat",
+            "beginner",
+            "warm"
+          ]
         }
       ]
     }
   ]
 }
-
