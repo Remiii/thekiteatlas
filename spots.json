@@ -415,7 +415,7 @@
                 "clapot"
               ],
               [
-                "confirmé"
+                "intermédiaire"
               ],
               [
                 "freeride"
@@ -429,7 +429,7 @@
                 "choppy"
               ],
               [
-                "advanced"
+                "intermediate"
               ],
               [
                 "freeride"
@@ -619,7 +619,7 @@
             "fr": "Île sauvage, plages interminables battues par les alizés.",
             "en": "Wild island, endless beaches swept by trade winds."
           },
-          "air_temp": 24,
+          "air_temp": 22,
           "water_temp": 22,
           "avg_wind_kts": 21,
           "wind_score": 4,
@@ -1254,7 +1254,7 @@
           "air_temp": 30,
           "water_temp": 28,
           "avg_wind_kts": 23,
-          "wind_score": 5,
+          "wind_score": 4,
           "filters": [
             "tropical",
             "flat",
@@ -1275,7 +1275,7 @@
           "tags": {
             "fr": [
               [
-                "15-25 kts"
+                "10-20 kts"
               ],
               [
                 "vagues"
@@ -1289,7 +1289,7 @@
             ],
             "en": [
               [
-                "15-25 kts"
+                "10-20 kts"
               ],
               [
                 "waves"
@@ -1307,9 +1307,9 @@
             "en": "City of trade winds. Strong wind, surf-kite vibe, UNESCO medina."
           },
           "air_temp": 20,
-          "water_temp": 18,
-          "avg_wind_kts": 22,
-          "wind_score": 4,
+          "water_temp": 17,
+          "avg_wind_kts": 17,
+          "wind_score": 3,
           "filters": [
             "wave",
             "cold"
@@ -1477,7 +1477,7 @@
           "air_temp": 30,
           "water_temp": 25,
           "avg_wind_kts": 20,
-          "wind_score": 4,
+          "wind_score": 3,
           "filters": [
             "wave",
             "flat",
@@ -1816,7 +1816,7 @@
             "en": "Wild beach near Lisbon. Powerful Nortada, Atlantic waves."
           },
           "air_temp": 20,
-          "water_temp": 16,
+          "water_temp": 15,
           "avg_wind_kts": 22,
           "wind_score": 4,
           "filters": [
@@ -2361,7 +2361,7 @@
                 "clapot"
               ],
               [
-                "débutant"
+                "intermédiaire"
               ],
               [
                 "freeride"
@@ -2376,7 +2376,7 @@
                 "choppy"
               ],
               [
-                "beginner"
+                "intermediate"
               ],
               [
                 "freeride"
@@ -2418,7 +2418,7 @@
                 "clapot"
               ],
               [
-                "confirmé"
+                "intermédiaire"
               ],
               [
                 "freeride"
@@ -2433,7 +2433,7 @@
                 "choppy"
               ],
               [
-                "advanced"
+                "intermediate"
               ],
               [
                 "freeride"
@@ -2798,58 +2798,6 @@
             "flat",
             "wave",
             "warm"
-          ]
-        },
-        {
-          "name": "Gnaraloo",
-          "country": {
-            "fr": "Australie",
-            "en": "Australia"
-          },
-          "region": {
-            "fr": "Océanie",
-            "en": "Oceania"
-          },
-          "tags": {
-            "fr": [
-              [
-                "20-30 kts"
-              ],
-              [
-                "vagues"
-              ],
-              [
-                "confirmé"
-              ],
-              [
-                "wave ride"
-              ]
-            ],
-            "en": [
-              [
-                "20-30 kts"
-              ],
-              [
-                "waves"
-              ],
-              [
-                "advanced"
-              ],
-              [
-                "wave ride"
-              ]
-            ]
-          },
-          "description": {
-            "fr": "Côte ouest australienne reculée. Vent offshore, vagues parfaites.",
-            "en": "Remote West Australian coast. Offshore wind, perfect waves."
-          },
-          "air_temp": 22,
-          "water_temp": 20,
-          "avg_wind_kts": 24,
-          "wind_score": 5,
-          "filters": [
-            "wave"
           ]
         }
       ]
@@ -3551,6 +3499,58 @@
             "beginner",
             "warm"
           ]
+        },
+        {
+          "name": "Gnaraloo",
+          "country": {
+            "fr": "Australie",
+            "en": "Australia"
+          },
+          "region": {
+            "fr": "Océanie",
+            "en": "Oceania"
+          },
+          "tags": {
+            "fr": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "vagues"
+              ],
+              [
+                "confirmé"
+              ],
+              [
+                "wave ride"
+              ]
+            ],
+            "en": [
+              [
+                "20-30 kts"
+              ],
+              [
+                "waves"
+              ],
+              [
+                "advanced"
+              ],
+              [
+                "wave ride"
+              ]
+            ]
+          },
+          "description": {
+            "fr": "Côte ouest australienne reculée. Vent offshore, vagues parfaites.",
+            "en": "Remote West Australian coast. Offshore wind, perfect waves."
+          },
+          "air_temp": 25,
+          "water_temp": 22,
+          "avg_wind_kts": 24,
+          "wind_score": 5,
+          "filters": [
+            "wave"
+          ]
         }
       ]
     },
@@ -3745,7 +3745,7 @@
           "tags": {
             "fr": [
               [
-                "15-25 kts"
+                "10-20 kts"
               ],
               [
                 "flat"
@@ -3759,7 +3759,7 @@
             ],
             "en": [
               [
-                "15-25 kts"
+                "10-20 kts"
               ],
               [
                 "flat"
@@ -3778,8 +3778,8 @@
           },
           "air_temp": 30,
           "water_temp": 27,
-          "avg_wind_kts": 20,
-          "wind_score": 4,
+          "avg_wind_kts": 16,
+          "wind_score": 2,
           "filters": [
             "tropical",
             "flat",
@@ -3888,7 +3888,7 @@
           "air_temp": 30,
           "water_temp": 28,
           "avg_wind_kts": 17,
-          "wind_score": 3,
+          "wind_score": 2,
           "filters": [
             "tropical",
             "flat",
