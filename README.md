@@ -80,7 +80,7 @@ Each spot has 4 tag groups. Each group is an array (supports multiple values).
 | 1 | Purple | Wind range | `10-20 kts`, `15-25 kts`, `20-30 kts`, `25-35 kts` | same |
 | 2 | Teal | Water type | `flat`, `waves`, `choppy` | `flat`, `vagues`, `clapot` |
 | 3 | Orange | Level | `beginner`, `intermediate`, `advanced` | `débutant`, `intermédiaire`, `confirmé` |
-| 4 | Sky blue | Ride style | `freeride`, `freestyle`, `wave ride` | same |
+| 4 | Sky blue | Ride style | `freeride`, `freestyle`, `wave ride`, `big air` | same |
 
 Multi-value example: a spot with flat water and waves uses `["flat", "waves"]` for tag 2.
 
@@ -92,11 +92,11 @@ Filters are displayed grouped on the home page and are combinable (AND logic).
 |-------|-------------|--------|
 | Wind | `10-20 kts`, `15-25 kts`, `20-30 kts`, `25-35 kts` | Tag 1 |
 | Water | `flat`, `waves`, `choppy` | Tag 2 |
-| Level | `beginner`, `intermediate` | Tag 3 (inclusive) |
-| Style | `freeride`, `freestyle`, `wave ride` | Tag 4 |
-| Conditions | `warm` (water ≥ 23°C), `cold` (water < 20°C), `europe`, `tropical` | Computed / region |
+| Level | `beginner`, `intermediate`, `advanced` | Tag 3 (direct match) |
+| Style | `freeride`, `freestyle`, `wave ride`, `big air` | Tag 4 |
+| Other | `warm` (water ≥ 23°C), `cold` (water < 20°C), `europe`, `tropical` | Computed / region |
 
-Level filters are inclusive: `beginner` shows only beginner spots, `intermediate` shows beginner + intermediate spots. No `advanced` filter needed (all spots).
+Each level filter shows only the spots with that exact level tag.
 
 ## Adding a spot page
 
