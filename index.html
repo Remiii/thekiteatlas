@@ -573,11 +573,11 @@
           sub: "Spots de kitesurf - mois par mois - dans le monde entier",
           exp: "Explorer",
           fl: "Filtrer :",
-          fg: { wind: "Vent", water: "Eau", level: "Niveau", style: "Style", cond: "Conditions" },
+          fg: { wind: "Vent", water: "Eau", level: "Niveau", style: "Style", cond: "Autres" },
           filters: {
             "10-20 kts": "10-20 kts", "15-25 kts": "15-25 kts", "20-30 kts": "20-30 kts", "25-35 kts": "25-35 kts",
             flat: "Flat", waves: "Vagues", choppy: "Clapot",
-            beginner: "Débutant", intermediate: "Intermédiaire",
+            beginner: "Débutant", intermediate: "Intermédiaire", advanced: "Confirmé",
             freeride: "Freeride", freestyle: "Freestyle", "wave ride": "Wave ride",
             warm: "Eau chaude", cold: "Eau froide",
             europe: "Europe", tropical: "Tropical",
@@ -597,11 +597,11 @@
           sub: "Kitesurf spots - month by month - worldwide",
           exp: "Explore",
           fl: "Filter:",
-          fg: { wind: "Wind", water: "Water", level: "Level", style: "Style", cond: "Conditions" },
+          fg: { wind: "Wind", water: "Water", level: "Level", style: "Style", cond: "Other" },
           filters: {
             "10-20 kts": "10-20 kts", "15-25 kts": "15-25 kts", "20-30 kts": "20-30 kts", "25-35 kts": "25-35 kts",
             flat: "Flat", waves: "Waves", choppy: "Choppy",
-            beginner: "Beginner", intermediate: "Intermediate",
+            beginner: "Beginner", intermediate: "Intermediate", advanced: "Advanced",
             freeride: "Freeride", freestyle: "Freestyle", "wave ride": "Wave ride",
             warm: "Warm water", cold: "Cold water",
             europe: "Europe", tropical: "Tropical",
@@ -683,7 +683,7 @@
         const groups = [
           { label: t.fg.wind,  keys: ["10-20 kts", "15-25 kts", "20-30 kts", "25-35 kts"] },
           { label: t.fg.water, keys: ["flat", "waves", "choppy"] },
-          { label: t.fg.level, keys: ["beginner", "intermediate"] },
+          { label: t.fg.level, keys: ["beginner", "intermediate", "advanced"] },
           { label: t.fg.style, keys: ["freeride", "freestyle", "wave ride"] },
           { label: t.fg.cond,  keys: ["warm", "cold", "europe", "tropical"] },
         ];
@@ -818,7 +818,7 @@
          ═══════════════════════════════════════════ */
       const WIND_KEYS = new Set(["10-20 kts", "15-25 kts", "20-30 kts", "25-35 kts"]);
       const WATER_KEYS = new Set(["flat", "waves", "choppy"]);
-      const LEVEL_KEYS = new Set(["beginner", "intermediate"]);
+      const LEVEL_KEYS = new Set(["beginner", "intermediate", "advanced"]);
       const LEVEL_RANK = { beginner: 1, intermediate: 2, advanced: 3 };
       const STYLE_KEYS = new Set(["freeride", "freestyle", "wave ride"]);
 
