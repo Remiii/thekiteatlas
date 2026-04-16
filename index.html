@@ -90,6 +90,25 @@
         text-transform: uppercase;
       }
 
+      .tool-link {
+        display: inline-block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--tq);
+        text-decoration: none;
+        padding: 0.5rem 1.2rem;
+        border: 1px solid rgba(45, 212, 191, 0.25);
+        border-radius: 100px;
+        margin-bottom: 2rem;
+        transition: all 0.3s;
+        letter-spacing: 0.03em;
+      }
+
+      .tool-link:hover {
+        background: rgba(45, 212, 191, 0.08);
+        border-color: var(--tq);
+      }
+
       /* ── Language switcher (position override for home) ── */
       .ls {
         position: absolute;
@@ -536,6 +555,8 @@
 
         <h1>TheKiteAtlas</h1>
         <p class="hs" id="hSub"></p>
+
+        <a class="tool-link" href="tools/kite-sizer.html" id="kiteSizerLink">Kite Sizer →</a>
 
         <div class="sh">
           <span id="hExp"></span>
