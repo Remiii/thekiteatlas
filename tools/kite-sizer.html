@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kite Sizer | TheKiteAtlas</title>
+  <meta name="description" content="Find your ideal kite size based on your weight, wind speed, riding style and level. Interactive calculator for kitesurfers." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Kite Sizer | TheKiteAtlas" />
+  <meta property="og:description" content="Find your ideal kite size based on your weight, wind speed, riding style and level." />
+  <meta property="og:url" content="https://thekiteatlas.com/tools/kite-sizer.html" />
+  <meta property="og:site_name" content="TheKiteAtlas" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kite Sizer | TheKiteAtlas" />
+  <meta name="twitter:description" content="Find your ideal kite size based on your weight, wind speed, riding style and level." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../favicon.svg" />
+  <link rel="canonical" href="https://thekiteatlas.com/tools/kite-sizer.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .back-link {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--ts);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.5rem 0.9rem; border-radius: 8px;
+      background: var(--gl); border: 1px solid var(--gb);
+      backdrop-filter: blur(8px); transition: color 0.3s;
+    }
+    .back-link:hover { color: var(--tq); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1.5rem 1rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 900;
+      background: linear-gradient(135deg, var(--sl), var(--tq));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 0.5rem;
+    }
+
+    .hero p { color: var(--ts); font-size: 0.95rem; font-weight: 300; }
+
+    /* ── Layout ── */
+    .calc {
+      max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--gl); border: 1px solid var(--gb);
+      border-radius: 16px; padding: 2rem;
+      backdrop-filter: blur(12px);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .card-title {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--tq); margin-bottom: 1.2rem;
+    }
+
+    .card.result { grid-column: 1 / -1; }
+
+    .card:not(.result):hover {
+      transform: scale(1.02);
+      border-color: rgba(45, 212, 191, 0.2);
+      box-shadow: 0 8px 40px rgba(45, 212, 191, 0.06);
+    }
+
+    /* ── Sliders ── */
+    .slider-row { margin-bottom: 1.8rem; }
+    .slider-row:last-child { margin-bottom: 0; }
+
+    .slider-header {
+      display: flex; justify-content: space-between;
+      align-items: baseline; margin-bottom: 0.8rem;
+    }
+
+    .slider-label { font-size: 0.85rem; font-weight: 500; color: var(--tp); }
+
+    .slider-value {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--sl);
+      min-width: 80px; text-align: right;
+    }
+
+    .slider-value .unit {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.75rem; font-weight: 400; color: var(--ts); margin-left: 2px;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 6px; border-radius: 3px;
+      background: rgba(255, 255, 255, 0.08); outline: none; cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--tq); border: 3px solid var(--od);
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.4);
+      cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px rgba(45, 212, 191, 0.6);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--tq); border: 3px solid var(--od);
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.4); cursor: pointer;
+    }
+
+    .slider-hints {
+      display: flex; justify-content: space-between;
+      margin-top: 0.4rem; font-size: 0.65rem; color: var(--ts); opacity: 0.5;
+    }
+
+    /* ── Unit toggle ── */
+    .unit-toggle {
+      display: inline-flex; border-radius: 6px; overflow: hidden;
+      border: 1px solid var(--gb); margin-left: 0.6rem; vertical-align: middle;
+    }
+
+    .unit-btn {
+      padding: 0.2rem 0.5rem; background: transparent; border: none;
+      color: var(--ts); font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s; letter-spacing: 0.03em;
+    }
+
+    .unit-btn.a { background: var(--tq); color: var(--od); }
+
+    /* ── Pills ── */
+    .pill-group { margin-bottom: 1.2rem; }
+    .pill-group:last-child { margin-bottom: 0; }
+
+    .pill-group-label {
+      font-size: 0.78rem; font-weight: 500; color: var(--tp); margin-bottom: 0.6rem;
+    }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .pill {
+      padding: 0.4rem 0.9rem; border-radius: 100px;
+      border: 1px solid var(--gb); background: transparent;
+      color: var(--ts); font-family: "DM Sans", sans-serif;
+      font-size: 0.75rem; font-weight: 500; cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .pill:hover { border-color: var(--tq); color: var(--tq); }
+
+    .pill.a {
+      border-color: var(--tq); color: var(--tq);
+      background: rgba(45, 212, 191, 0.08);
+    }
+
+    /* ── Result ── */
+    .result { text-align: center; padding: 2.5rem 2rem; position: relative; overflow: hidden; }
+
+    .result-glow {
+      position: absolute; top: 50%; left: 50%;
+      width: 200px; height: 200px;
+      transform: translate(-50%, -60%);
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 70%);
+      pointer-events: none; transition: opacity 0.5s;
+      opacity: 0;
+    }
+
+    .result-glow.pulse { opacity: 1; }
+
+    .result-size {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(4rem, 12vw, 7rem); font-weight: 900; line-height: 1;
+      background: linear-gradient(135deg, var(--coral), var(--sun), var(--tq));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .result-unit {
+      font-family: "DM Sans", sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 300;
+      color: var(--ts); margin-top: 0.2rem;
+    }
+
+    .result-note {
+      margin-top: 1.2rem; font-size: 0.8rem; color: var(--ts);
+      font-weight: 300; line-height: 1.6;
+    }
+
+    .range-badge {
+      display: inline-block;
+      background: rgba(45, 212, 191, 0.1);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      border-radius: 8px; padding: 0.3rem 0.8rem; margin-top: 1rem;
+      font-size: 0.78rem; color: var(--tq); font-weight: 500;
+    }
+
+    footer { padding: 3rem 1.5rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+    @media (max-width: 768px) {
+      .calc { grid-template-columns: 1fr; }
+      .card { padding: 1.4rem; }
+      .result { padding: 2rem 1rem; }
+      .topbar { padding: 1rem; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="G"></div>
+
+  <div class="C">
+
+    <div class="topbar">
+      <a class="back-link" href="../index.html" aria-label="Back to TheKiteAtlas home">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+        <span id="backLabel">TheKiteAtlas</span>
+      </a>
+      <div class="ls" role="group" aria-label="Language switcher">
+        <button class="lb a" data-lang="en" aria-label="English">EN</button>
+        <button class="lb" data-lang="fr" aria-label="Français">FR</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1 id="title">Kite Sizer</h1>
+      <p id="subtitle">Find your ideal kite size in seconds</p>
+    </section>
+
+    <div class="calc">
+
+      <!-- Inputs -->
+      <div class="card">
+        <div class="card-title" id="inputsTitle">Your setup</div>
+
+        <div class="slider-row">
+          <div class="slider-header">
+            <span class="slider-label">
+              <span id="weightLabel">Weight</span>
+              <span class="unit-toggle" id="weightUnitToggle">
+                <button class="unit-btn a" data-unit="kg">kg</button>
+                <button class="unit-btn" data-unit="lbs">lbs</button>
+              </span>
+            </span>
+            <span class="slider-value"><span id="weightVal">75</span><span class="unit" id="weightUnit">kg</span></span>
+          </div>
+          <input type="range" id="weightSlider" min="30" max="110" value="75" step="1" />
+          <div class="slider-hints"><span id="weightMin">30</span><span id="weightMax">110</span></div>
+        </div>
+
+        <div class="slider-row">
+          <div class="slider-header">
+            <span class="slider-label">
+              <span id="windLabel">Wind</span>
+              <span class="unit-toggle" id="windUnitToggle">
+                <button class="unit-btn a" data-unit="kts">kts</button>
+                <button class="unit-btn" data-unit="kmh">km/h</button>
+              </span>
+            </span>
+            <span class="slider-value"><span id="windVal">20</span><span class="unit" id="windUnit">kts</span></span>
+          </div>
+          <input type="range" id="windSlider" min="6" max="40" value="20" step="1" />
+          <div class="slider-hints"><span id="windMin">6</span><span id="windMax">40</span></div>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="card card-opts">
+        <div class="card-title" id="optionsTitle">Options</div>
+
+        <div class="pill-group">
+          <div class="pill-group-label" id="styleLabel">Riding style</div>
+          <div class="pills" id="stylePills">
+            <button class="pill a" data-style="freeride">Freeride</button>
+            <button class="pill" data-style="freestyle">Freestyle</button>
+            <button class="pill" data-style="wave">Wave ride</button>
+            <button class="pill" data-style="bigair">Big air</button>
+          </div>
+        </div>
+
+        <div class="pill-group">
+          <div class="pill-group-label" id="levelLabel">Level</div>
+          <div class="pills" id="levelPills">
+            <button class="pill" data-level="beginner" id="levelBeg">Beginner</button>
+            <button class="pill a" data-level="intermediate" id="levelInt">Intermediate</button>
+            <button class="pill" data-level="advanced" id="levelAdv">Advanced</button>
+          </div>
+        </div>
+
+        <div class="pill-group">
+          <div class="pill-group-label" id="kiteTypeLabel">Kite type</div>
+          <div class="pills" id="kiteTypePills">
+            <button class="pill a" data-ktype="tube" id="ktTube">Tube (LEI)</button>
+            <button class="pill" data-ktype="foil" id="ktFoil">Foil kite</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="card result" id="resultCard">
+        <div class="result-glow" id="glow"></div>
+        <div class="card-title" id="resultTitle">Recommended kite size</div>
+        <div class="result-size" id="resultSize">10</div>
+        <div class="result-unit">m²</div>
+        <div class="range-badge" id="resultRange">9 – 11 m²</div>
+        <p class="result-note" id="resultNote">This is an estimate. Always adapt to local conditions and your own experience.</p>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="logo">TheKiteAtlas</div>
+      <p id="footerText">Made with &#10084;&#65039; for riders worldwide</p>
+    </footer>
+
+  </div>
+
+  <script>
+    /* ═══════════════════════════════════════════
+       Translations
+       ═══════════════════════════════════════════ */
+    const UI = {
+      en: {
+        title: "Kite Sizer",
+        subtitle: "Find your ideal kite size in seconds",
+        back: "TheKiteAtlas",
+        inputs: "Your setup",
+        weight: "Weight",
+        wind: "Wind",
+        options: "Options",
+        style: "Riding style",
+        level: "Level",
+        kiteType: "Kite type",
+        tube: "Tube (LEI)",
+        foil: "Foil kite",
+        beginner: "Beginner",
+        intermediate: "Intermediate",
+        advanced: "Advanced",
+        result: "Recommended kite size",
+        note: "This is an estimate. Always adapt to local conditions and your own experience.",
+        footer: "Made with \u2764\uFE0F for riders worldwide",
+      },
+      fr: {
+        title: "Kite Sizer",
+        subtitle: "Trouve ta taille de kite en quelques secondes",
+        back: "TheKiteAtlas",
+        inputs: "Ton setup",
+        weight: "Poids",
+        wind: "Vent",
+        options: "Options",
+        style: "Style de ride",
+        level: "Niveau",
+        kiteType: "Type de kite",
+        tube: "Tube (LEI)",
+        foil: "Foil kite",
+        beginner: "Débutant",
+        intermediate: "Intermédiaire",
+        advanced: "Confirmé",
+        result: "Taille de kite recommandée",
+        note: "Ceci est une estimation. Adapte toujours aux conditions locales et à ton expérience.",
+        footer: "Fait avec \u2764\uFE0F pour les riders du monde entier",
+      },
+    };
+
+    /* ═══════════════════════════════════════════
+       State
+       ═══════════════════════════════════════════ */
+    let lang = "en";
+    let weightUnit = "kg";
+    let windUnit = "kts";
+    let style = "freeride";
+    let level = "intermediate";
+    let kiteType = "tube";
+    let displayedSize = 10;
+
+    const KG_TO_LBS = 2.205;
+    const KTS_TO_KMH = 1.852;
+
+    function getWeightKg() {
+      const v = parseInt(document.getElementById("weightSlider").value);
+      return weightUnit === "lbs" ? v / KG_TO_LBS : v;
+    }
+
+    function getWindKts() {
+      const v = parseInt(document.getElementById("windSlider").value);
+      return windUnit === "kmh" ? v / KTS_TO_KMH : v;
+    }
+
+    /* ═══════════════════════════════════════════
+       Kite size model — lookup table + interpolation
+
+       Calibrated from real-world kite size charts
+       (Duotone, Core, Cabrinha, Ozone) for a 75 kg
+       rider on a tube (LEI) kite, freeride, intermediate.
+
+       Foil kites generate more lift per m² thanks to
+       Formula: kite_m2 = (weight_kg / wind_kts) × K × style × level
+
+       K coefficient by kite type (benchmarked against 12 brands):
+         Tube (LEI) + twintip:  K = 2.2
+         Foil kite + twintip:   K = 1.5
+
+       See tools/KITE-SIZER-SPEC.md for full calibration data.
+       ═══════════════════════════════════════════ */
+
+    function calcKiteSize() {
+      const wKg = getWeightKg();
+      const wKts = getWindKts();
+
+      // Base coefficient by kite type (calibrated against 11 brands, see KITE-SIZER-SPEC.md)
+      const K = kiteType === "foil" ? 1.6 : 1.7;
+
+      // Core formula
+      let size = (wKg / wKts) * K;
+
+      // Style multiplier
+      const sm = { freeride: 1.0, freestyle: 0.90, wave: 0.85, bigair: 1.15 };
+      size *= (sm[style] || 1.0);
+
+      // Level multiplier
+      const lm = { beginner: 1.15, intermediate: 1.0, advanced: 0.90 };
+      size *= (lm[level] || 1.0);
+
+      return Math.max(3, Math.min(25, size));
+    }
+
+    /* ═══════════════════════════════════════════
+       Animated number counter
+       ═══════════════════════════════════════════ */
+    let animFrame = null;
+
+    function animateSize(target) {
+      const el = document.getElementById("resultSize");
+      const start = displayedSize;
+      const diff = target - start;
+      if (Math.abs(diff) < 0.01) { el.textContent = Math.round(target); return; }
+
+      const duration = 250;
+      const t0 = performance.now();
+
+      function tick(now) {
+        const p = Math.min(1, (now - t0) / duration);
+        const ease = 1 - Math.pow(1 - p, 3); // ease-out cubic
+        const current = start + diff * ease;
+        el.textContent = Math.round(current);
+        if (p < 1) animFrame = requestAnimationFrame(tick);
+        else displayedSize = target;
+      }
+
+      if (animFrame) cancelAnimationFrame(animFrame);
+      animFrame = requestAnimationFrame(tick);
+    }
+
+    /* ═══════════════════════════════════════════
+       Glow pulse effect
+       ═══════════════════════════════════════════ */
+    let glowTimer = null;
+
+    function pulseGlow() {
+      const g = document.getElementById("glow");
+      g.classList.add("pulse");
+      if (glowTimer) clearTimeout(glowTimer);
+      glowTimer = setTimeout(() => g.classList.remove("pulse"), 500);
+    }
+
+    /* ═══════════════════════════════════════════
+       Update
+       ═══════════════════════════════════════════ */
+    function update() {
+      const ws = document.getElementById("weightSlider");
+      const windS = document.getElementById("windSlider");
+
+      document.getElementById("weightVal").textContent = ws.value;
+      document.getElementById("windVal").textContent = windS.value;
+
+      const size = calcKiteSize();
+      const rounded = Math.round(size);
+      const lo = Math.max(3, Math.round(size * 0.85));
+      const hi = Math.min(25, Math.round(size * 1.15));
+
+      animateSize(size);
+      document.getElementById("resultRange").textContent = `${lo} – ${hi} m²`;
+
+      pulseGlow();
+      updateSliderTrack(ws);
+      updateSliderTrack(windS);
+    }
+
+    function updateSliderTrack(s) {
+      const pct = ((s.value - s.min) / (s.max - s.min)) * 100;
+      s.style.background = `linear-gradient(to right, var(--tq) 0%, var(--tq) ${pct}%, rgba(255,255,255,0.08) ${pct}%)`;
+    }
+
+    /* ═══════════════════════════════════════════
+       Unit toggles
+       ═══════════════════════════════════════════ */
+    function switchWeightUnit(u) {
+      const s = document.getElementById("weightSlider");
+      const v = parseInt(s.value);
+      if (u === "lbs" && weightUnit === "kg") {
+        s.min = Math.round(30 * KG_TO_LBS); s.max = Math.round(110 * KG_TO_LBS);
+        s.value = Math.round(v * KG_TO_LBS);
+      } else if (u === "kg" && weightUnit === "lbs") {
+        s.min = 30; s.max = 110; s.value = Math.round(v / KG_TO_LBS);
+      }
+      weightUnit = u;
+      document.getElementById("weightUnit").textContent = u;
+      document.getElementById("weightMin").textContent = s.min;
+      document.getElementById("weightMax").textContent = s.max;
+      document.querySelectorAll("#weightUnitToggle .unit-btn").forEach(b => b.classList.toggle("a", b.dataset.unit === u));
+      update();
+    }
+
+    function switchWindUnit(u) {
+      const s = document.getElementById("windSlider");
+      const v = parseInt(s.value);
+      if (u === "kmh" && windUnit === "kts") {
+        s.min = Math.round(6 * KTS_TO_KMH); s.max = Math.round(40 * KTS_TO_KMH);
+        s.value = Math.round(v * KTS_TO_KMH);
+      } else if (u === "kts" && windUnit === "kmh") {
+        s.min = 6; s.max = 40; s.value = Math.round(v / KTS_TO_KMH);
+      }
+      windUnit = u;
+      document.getElementById("windUnit").textContent = u === "kmh" ? "km/h" : "kts";
+      document.getElementById("windMin").textContent = s.min;
+      document.getElementById("windMax").textContent = s.max;
+      document.querySelectorAll("#windUnitToggle .unit-btn").forEach(b => b.classList.toggle("a", b.dataset.unit === u));
+      update();
+    }
+
+    /* ═══════════════════════════════════════════
+       Language
+       ═══════════════════════════════════════════ */
+    function switchLang(l) {
+      lang = l;
+      document.documentElement.lang = l;
+      const t = UI[l];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("backLabel").textContent = t.back;
+      document.getElementById("inputsTitle").textContent = t.inputs;
+      document.getElementById("weightLabel").textContent = t.weight;
+      document.getElementById("windLabel").textContent = t.wind;
+      document.getElementById("optionsTitle").textContent = t.options;
+      document.getElementById("styleLabel").textContent = t.style;
+      document.getElementById("levelLabel").textContent = t.level;
+      document.getElementById("kiteTypeLabel").textContent = t.kiteType;
+      document.getElementById("ktTube").textContent = t.tube;
+      document.getElementById("ktFoil").textContent = t.foil;
+      document.getElementById("levelBeg").textContent = t.beginner;
+      document.getElementById("levelInt").textContent = t.intermediate;
+      document.getElementById("levelAdv").textContent = t.advanced;
+      document.getElementById("resultTitle").textContent = t.result;
+      document.getElementById("resultNote").textContent = t.note;
+      document.getElementById("footerText").textContent = t.footer;
+      document.querySelectorAll(".lb").forEach(b => b.classList.toggle("a", b.dataset.lang === l));
+    }
+
+    /* ═══════════════════════════════════════════
+       Events
+       ═══════════════════════════════════════════ */
+    document.getElementById("weightSlider").addEventListener("input", update);
+    document.getElementById("windSlider").addEventListener("input", update);
+
+    document.getElementById("weightUnitToggle").addEventListener("click", e => {
+      const b = e.target.closest(".unit-btn"); if (b) switchWeightUnit(b.dataset.unit);
+    });
+    document.getElementById("windUnitToggle").addEventListener("click", e => {
+      const b = e.target.closest(".unit-btn"); if (b) switchWindUnit(b.dataset.unit);
+    });
+
+    document.getElementById("stylePills").addEventListener("click", e => {
+      const p = e.target.closest(".pill"); if (!p) return;
+      document.querySelectorAll("#stylePills .pill").forEach(x => x.classList.remove("a"));
+      p.classList.add("a"); style = p.dataset.style; update();
+    });
+
+    document.getElementById("levelPills").addEventListener("click", e => {
+      const p = e.target.closest(".pill"); if (!p) return;
+      document.querySelectorAll("#levelPills .pill").forEach(x => x.classList.remove("a"));
+      p.classList.add("a"); level = p.dataset.level; update();
+    });
+
+    document.getElementById("kiteTypePills").addEventListener("click", e => {
+      const p = e.target.closest(".pill"); if (!p) return;
+      document.querySelectorAll("#kiteTypePills .pill").forEach(x => x.classList.remove("a"));
+      p.classList.add("a"); kiteType = p.dataset.ktype; update();
+    });
+
+    document.querySelectorAll(".lb").forEach(b => b.addEventListener("click", () => switchLang(b.dataset.lang)));
+
+    const browserLang = (navigator.language || "en").startsWith("fr") ? "fr" : "en";
+    switchLang(browserLang);
+    update();
+  </script>
+</body>
+</html>
